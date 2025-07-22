@@ -1,4 +1,64 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from ro!"
+	"festival_name": "Festivalul pentru Copii și Adolescenți Apolodor",
+	"festival_date": "18-21 septembrie 2025, Botoșani",
+	
+	"nav_about": "Despre",
+	"nav_guests": "Invitați",
+	"nav_exhibitions": "Expoziții",
+	"nav_program": "Program",
+	"nav_news": "Noutăți",
+	"nav_partners": "Parteneri",
+
+	"about_festival": "Despre festival",
+	"about_team": "Echipa",
+	"about_archive": "Arhivă",
+	"about_press": "APOLODOR în presă",
+	"about_description": "Un festival dedicat literaturii și artei pentru tineri",
+
+	"guests_writers": "Scriitori",
+	"guests_illustrators": "Ilustratori",
+	"guests_special": "Invitați speciali",
+	"guests_description": "Personalități din lumea literaturii și artei",
+
+	"exhibitions_title": "Expoziții și evenimente",
+	"exhibitions_description": "Descoperă arta și creativitatea",
+
+	"program_title": "Program",
+	"program_description": "Programul complet al festivalului",
+	"program_daily": "Program zilnic",
+	"program_workshops": "Ateliere",
+	"program_readings": "Lecturi",
+
+	"news_title": "Noutăți",
+	"news_latest": "Ultimele noutăți",
+	"news_press": "Comunicate de presă",
+
+	"partners_title": "Parteneri",
+	"partners_description": "Partenerii noștri care fac posibil acest festival",
+	"partners_sponsors": "Sponsori",
+	"partners_cultural": "Parteneri culturali",
+
+	"footer_contact": "Contact",
+	"footer_email": "contact@apolodor.ro",
+	"footer_phone": "+40 123 456 789",
+	"footer_location": "Botoșani, România",
+	"footer_address": "Str. Victoriei nr. 10, Botoșani",
+	"footer_quick_links": "Link-uri rapide",
+	"footer_social": "Social Media",
+	"footer_follow": "Urmărește-ne",
+	"footer_newsletter": "Abonează-te la newsletter",
+	"footer_copyright": "© 2024 Festivalul pentru Copii și Adolescenți Apolodor. Toate drepturile rezervate.",
+
+	"social_facebook": "Facebook",
+	"social_instagram": "Instagram",
+	"social_youtube": "YouTube",
+
+	"switch_to_en": "EN",
+	"switch_to_ro": "RO",
+
+	"button_read_more": "Citește mai mult",
+	"button_register": "Înscrie-te",
+	"button_subscribe": "Abonează-te",
+	"button_details": "Detalii"
 }

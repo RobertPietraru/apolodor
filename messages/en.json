@@ -1,4 +1,64 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"festival_name": "Apolodor Children and Youth Festival",
+	"festival_date": "September 18-21, 2025, Botoșani",
+	
+	"nav_about": "About",
+	"nav_guests": "Guests",
+	"nav_exhibitions": "Exhibitions",
+	"nav_program": "Program",
+	"nav_news": "News",
+	"nav_partners": "Partners",
+
+	"about_festival": "About the Festival",
+	"about_team": "Team",
+	"about_archive": "Archive",
+	"about_press": "APOLODOR in the Press",
+	"about_description": "A festival dedicated to literature and art for young people",
+
+	"guests_writers": "Writers",
+	"guests_illustrators": "Illustrators",
+	"guests_special": "Special Guests",
+	"guests_description": "Personalities from the world of literature and art",
+
+	"exhibitions_title": "Exhibitions & Events",
+	"exhibitions_description": "Discover art and creativity",
+
+	"program_title": "Program",
+	"program_description": "Complete festival schedule",
+	"program_daily": "Daily Schedule",
+	"program_workshops": "Workshops",
+	"program_readings": "Readings",
+
+	"news_title": "News",
+	"news_latest": "Latest News",
+	"news_press": "Press Releases",
+
+	"partners_title": "Partners",
+	"partners_description": "Our partners who make this festival possible",
+	"partners_sponsors": "Sponsors",
+	"partners_cultural": "Cultural Partners",
+
+	"footer_contact": "Contact",
+	"footer_email": "contact@apolodor.ro",
+	"footer_phone": "+40 123 456 789",
+	"footer_location": "Botoșani, Romania",
+	"footer_address": "10 Victoriei Street, Botoșani",
+	"footer_quick_links": "Quick Links",
+	"footer_social": "Social Media",
+	"footer_follow": "Follow Us",
+	"footer_newsletter": "Subscribe to Newsletter",
+	"footer_copyright": "© 2024 Apolodor Children and Youth Festival. All rights reserved.",
+
+	"social_facebook": "Facebook",
+	"social_instagram": "Instagram",
+	"social_youtube": "YouTube",
+
+	"switch_to_en": "EN",
+	"switch_to_ro": "RO",
+
+	"button_read_more": "Read More",
+	"button_register": "Register",
+	"button_subscribe": "Subscribe",
+	"button_details": "Details"
 }
