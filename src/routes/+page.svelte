@@ -20,15 +20,10 @@
 			title: 'INVITAȚI',
 			color: 'text-primary hover:text-primary/90',
 			items: [
-				{ title: 'Scriitori', href: '/scriitori' },
-				{ title: 'Ilustratori', href: '/ilustratori' },
-				{ title: 'Invitați speciali', href: '/invitati-speciali' }
+				{ title: 'Echipa', href: '/echipa' },
+				{ title: 'Invitați speciali', href: '/invitati-speciali' },
+				{ title: 'Parteneri', href: '/parteneri' }
 			]
-		},
-		{
-			title: 'EXPOZIȚII',
-			color: 'text-success hover:text-success/90',
-			href: '/expozitii'
 		},
 		{
 			title: 'PROGRAM',
@@ -45,11 +40,6 @@
 				{ title: 'APOLODOR în presă', href: '/presa', disabled: true }
 			]
 		},
-		{
-			title: 'PARTENERI',
-			color: 'text-accent hover:text-accent/90',
-			href: '/parteneri'
-		}
 	];
 
 	type ListItemProps = HTMLAttributes<HTMLAnchorElement> & {
@@ -62,33 +52,10 @@
 	let openDropdown = $state<string | null>(null);
 </script>
 
-{#snippet ListItem({ title, content, href, class: className, ...restProps }: ListItemProps)}
-	<li>
-		<NavigationMenu.Link>
-			{#snippet child()}
-				<a
-					{href}
-					class={cn(
-						'block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-						className
-					)}
-					{...restProps}
-				>
-					<div class="text-sm leading-none font-medium">{title}</div>
-					<p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-						{content}
-					</p>
-				</a>
-			{/snippet}
-		</NavigationMenu.Link>
-	</li>
-{/snippet}
-
 <div class="min-h-screen bg-background">
 	<header class="border-b-2 border-warning bg-background shadow-sm">
 		<div class="container mx-auto px-4 py-4">
 			<div class="flex items-center justify-between">
-				<!-- Logo -->
 				<div class="flex-shrink-0">
 					<a
 						href="/"
@@ -215,8 +182,8 @@
 	</nav>
 
 	<main>
-		<section class="bg-gradient-to-br from-muted/50 via-accent/50 to-primary/50 py-16 lg:py-24">
-			<div class="container mx-auto px-4 text-center">
+		<section class="py-16 lg:py-24">
+			<div class="text-center" >
 				<div class="mx-auto max-w-4xl">
 					<h1 class="font-rubik mb-6 text-4xl leading-tight font-bold text-foreground lg:text-6xl">
 						Bun venit la <span class="text-primary">APOLODOR</span>
@@ -268,7 +235,7 @@
 </div>
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" >
 	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </svelte:head>
 
