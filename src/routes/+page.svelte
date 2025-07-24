@@ -56,10 +56,9 @@
 	]);
 
 	let mobileMenuOpen = $state(false);
-	let openDropdown = $state<string | null>(null);
 </script>
 
-<div class="min-h-screen bg-background">
+<div >
 	<header class="border-warning border-b-2 bg-background shadow-sm">
 		<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 			<div class="relative flex h-16 items-center justify-between">
@@ -269,6 +268,8 @@
 			</div>
 		</section>
 	</main>
+
+
 </div>
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
