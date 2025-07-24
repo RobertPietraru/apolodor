@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { Calendar, MapPin, Users, ChevronDown, Menu, X } from '@lucide/svelte';
+	import { Calendar, MapPin, Menu, X } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { page } from '$app/stores';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
 	import { cn } from '$lib/utils.js';
 	import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
 
 	const navigationItems = [
 		{
@@ -39,21 +37,15 @@
 				{ title: 'Arhiva', href: '/arhiva', disabled: true },
 				{ title: 'APOLODOR în presă', href: '/presa', disabled: true }
 			]
-		},
+		}
 	];
-
-	type ListItemProps = HTMLAttributes<HTMLAnchorElement> & {
-		title: string;
-		href: string;
-		content: string;
-	};
 
 	let mobileMenuOpen = $state(false);
 	let openDropdown = $state<string | null>(null);
 </script>
 
 <div class="min-h-screen bg-background">
-	<header class="border-b-2 border-warning bg-background shadow-sm">
+	<header class="border-warning border-b-2 bg-background shadow-sm">
 		<div class="container mx-auto px-4 py-4">
 			<div class="flex items-center justify-between">
 				<div class="flex-shrink-0">
@@ -114,7 +106,7 @@
 				<h1 class="text-xl leading-tight font-bold text-foreground">
 					Festivalul pentru Copii și Adolescenți Apolodor
 				</h1>
-				<p class="mt-1 text-lg font-semibold text-warning">18-21 septembrie 2025, Botoșani</p>
+				<p class="text-warning mt-1 text-lg font-semibold">18-21 septembrie 2025, Botoșani</p>
 			</div>
 		</div>
 	</header>
@@ -182,61 +174,62 @@
 	</nav>
 
 	<main>
-		<section class="py-16 lg:py-24">
-			<div class="text-center" >
-				<div class="mx-auto max-w-4xl">
-					<h1 class="font-rubik mb-6 text-4xl leading-tight font-bold text-foreground lg:text-6xl">
-						Bun venit la <span class="text-primary">APOLODOR</span>
-					</h1>
+		<section class="flex min-h-[100vh-74px] items-center justify-between px-16 py-8">
+			<div class="w-1/2">
+				<h1 class="font-rubik mb-6 text-left text-4xl leading-tight font-bold lg:text-6xl">
+					Festivalul de <span class="text-accent">Literatură</span>
+				</h1>
 
-					<p class="font-caveat mb-8 text-xl leading-relaxed font-bold text-muted-foreground lg:text-2xl">
-						Primul festival dedicat copiilor și adolescenților din Botoșani! O sărbătoare a
-						cărților, poveștilor și imaginației.
-					</p>
+				<p class="font-caveat mb-8 text-left text-lg leading-relaxed font-bold lg:text-xl">
+					Dedicat copiilor și adolescenților din Botoșani! O sărbătoare a cărților, poveștilor și
+					imaginației.
+				</p>
 
-					<div
-						class="mb-10 flex flex-col items-center justify-center space-y-4 md:flex-row md:space-y-0 md:space-x-8"
-					>
-						<div class="flex items-center space-x-2 text-lg text-muted-foreground">
-							<Calendar class="h-6 w-6 text-warning" />
-							<span class="font-semibold">18-21 septembrie 2025</span>
-						</div>
-						<div class="flex items-center space-x-2 text-lg text-muted-foreground">
-							<MapPin class="h-6 w-6 text-destructive" />
-							<span class="font-semibold">Botoșani, România</span>
-						</div>
-						<div class="flex items-center space-x-2 text-lg text-muted-foreground">
-							<Users class="h-6 w-6 text-primary" />
-							<span class="font-semibold">Pentru copii și adolescenți</span>
-						</div>
+				<div
+					class="items-left justify-left mb-10 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-8"
+				>
+					<div class="text-md flex items-center space-x-2 text-primary">
+						<Calendar class="h-5 w-5" />
+						<span class="font-semibold">18-21 septembrie 2025</span>
 					</div>
-
-					<div
-						class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6"
-					>
-						<Button
-							size="lg"
-							class="bg-primary px-8 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90"
-						>
-							Descoperă Programul
-						</Button>
-						<Button
-							size="lg"
-							variant="outline"
-							class="border-2 border-warning bg-transparent px-8 py-3 text-lg font-bold text-warning hover:bg-warning/10"
-						>
-							Despre Festival
-						</Button>
+					<div class="text-md flex items-center space-x-2 text-primary">
+						<MapPin class="h-5 w-5" />
+						<span class="font-semibold">Botoșani, România</span>
 					</div>
 				</div>
+
+				<div
+					class="items-left justify-left flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6"
+				>
+					<Button
+						size="lg"
+						class="bg-primary px-8 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90"
+					>
+						Descoperă Programul
+					</Button>
+					<Button
+						size="lg"
+						variant="outline"
+						class="border-warning text-warning hover:bg-warning/10 border-2 bg-transparent px-8 py-3 text-lg font-bold"
+					>
+						Despre Festival
+					</Button>
+				</div>
+			</div>
+
+			<div class="w-1/3">
+				<img src="/landing2.png" alt="APOLODOR" class="h-auto w-full object-cover" />
 			</div>
 		</section>
 	</main>
 </div>
 <svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" >
-	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+		rel="stylesheet"
+	/>
 </svelte:head>
 
 <style>
