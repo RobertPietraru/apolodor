@@ -4,8 +4,7 @@
 </script>
 
 <main class="min-h-screen">
-
-{@render children()}
+	{@render children()}
 </main>
 
 <footer class="border-t bg-background">
@@ -23,7 +22,6 @@
 				<ul class="flex flex-wrap gap-4 text-sm text-muted-foreground md:block md:space-y-2">
 					<li>contact@apolodor.ro</li>
 					<li>+40 123 456 789</li>
-
 				</ul>
 			</div>
 			<div>
@@ -42,14 +40,23 @@
 			<div>
 				<h3 class="mb-4 text-lg font-bold">Social Media</h3>
 				<ul class="flex flex-wrap gap-4 text-sm md:block md:space-y-2">
-					<li><a href="#" class="text-muted-foreground hover:text-primary">Facebook</a></li>
-					<li><a href="#" class="text-muted-foreground hover:text-primary">Instagram</a></li>
-					<li><a href="#" class="text-muted-foreground hover:text-primary">YouTube</a></li>
+					<li>
+						<a
+							href="https://www.facebook.com/festivalul.apolodor"
+							class="text-muted-foreground hover:text-primary">Facebook</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://www.instagram.com/festivalul_apolodor/"
+							class="text-muted-foreground hover:text-primary">Instagram</a
+						>
+					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="border-t pt-8">
-			<div class="flex flex-col items-center md:flex-row gap-4 justify-between">
+			<div class="flex flex-col items-center justify-between gap-4 md:flex-row">
 				<p class="mb-4 text-center text-sm text-muted-foreground md:mb-0">
 					&copy; {new Date().getFullYear()} APOLODOR. Toate drepturile rezervate.
 				</p>
@@ -58,7 +65,9 @@
 						>Politica de Confidențialitate</a
 					>
 					<a href="/termeni-conditii" class="hover:text-primary">Termeni și Condiții</a>
-					<img src="/logos/github.svg" alt="GitHub" class="h-4 w-4" />
+					<a href="https://github.com/RobertPietraru/apolodor">
+						<img src="/logos/github.svg" alt="GitHub" class="h-4 w-4" />
+					</a>
 				</div>
 			</div>
 		</div>
