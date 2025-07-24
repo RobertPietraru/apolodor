@@ -276,37 +276,173 @@
 		</div>
 	</section>
 
+	<section class="px-4 py-16 bg-accent/5">
+		<h2 class="mb-12 text-center text-4xl font-bold">Invitați Speciali</h2>
+		
+		<div class="max-w-6xl mx-auto">
+			<div class="grid gap-12">
+				<!-- Scriitori Section -->
+				<div>
+					<h3 class="text-2xl font-semibold mb-6  border-b pb-2">Literatura</h3>
+					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+						<div class="flex flex-col items-center text-center">
+							<div class="w-32 h-32 mb-4">
+								<img src="/people/florin_bican.jpeg  " alt="Florin Bican" 
+									class="w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-lg" />
+							</div>
+							<h4 class="font-semibold">Florin Bican</h4>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-32 h-32 mb-4">
+								<img src="/people/veronica_niculescu.jpeg  " alt="Veronica D. Niculescu" 
+									class="w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-lg" />
+							</div>
+							<h4 class="font-semibold">Veronica D. Niculescu</h4>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-32 h-32 mb-4">
+								<img src="/people/adina_rosetti.webp" alt="Adina Rosetti" 
+									class="w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-lg" />
+							</div>
+							<h4 class="font-semibold">Adina Rosetti</h4>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-32 h-32 mb-4">
+								<img src="/people/matei_visiniec.jpeg" alt="Matei Vișniec" 
+									class="w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-lg" />
+							</div>
+							<h4 class="font-semibold">Matei Vișniec</h4>
+						</div>
+					</div>
+				</div>
+
+				<!-- Artiste Vizuale Section -->
+				<div>
+					<h3 class="text-2xl font-semibold mb-6 border-b pb-2">Arte Vizuale</h3>
+					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+						<div class="flex flex-col items-center text-center">
+							<div class="w-32 h-32 mb-4">
+								<img src="/people/raluca_burca.jpg  " alt="Raluca Ioana Burcă" 
+									class="w-full h-full object-cover rounded-full border-4 border-destructive/20 shadow-lg" />
+							</div>
+							<h4 class="font-semibold">Raluca Ioana Burcă</h4>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-32 h-32 mb-4">
+								<img src="/people/sabina_drinceanu.jpeg  " alt="Sabina Drînceanu" 
+									class="w-full h-full object-cover rounded-full border-4 border-destructive/20 shadow-lg" />
+							</div>
+							<h4 class="font-semibold">Sabina Drînceanu</h4>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-32 h-32 mb-4">
+								<img src="/people/bianca_simionescu.jpeg  " alt="Nu am gasit" 
+									class="w-full h-full object-cover rounded-full border-4 border-destructive/20 shadow-lg" />
+							</div>
+							<h4 class="font-semibold">Bianca Simionescu</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Concert Section -->
+	<section class="px-4 py-16 relative overflow-hidden bg-[url('/bg-concert.jpg')] bg-cover bg-center">
+		<div class="absolute inset-0 bg-background/90"></div>
+		<div class="relative max-w-4xl mx-auto text-center">
+			<h2 class="mb-8 text-4xl font-bold">Concert Extraordinar</h2>
+			<div class="flex flex-col md:flex-row items-center gap-8">
+				<div class="w-48 h-48 shrink-0">
+					<img src="/people/ada_milea.jpeg" alt="Ada Milea" 
+						class="w-full h-full object-cover rounded-full border-4 border-warning shadow-lg" />
+				</div>
+				<div class="flex-1">
+					<h3 class="text-3xl font-bold text-warning mb-4">Ada Milea</h3>
+					<p class="text-xl mb-6">
+						Un moment unic de muzică și poezie care va încânta toate vârstele!
+					</p>
+					<div class="flex items-center justify-center gap-4 text-lg">
+						<Calendar class="h-6 w-6 text-warning" />
+						<span class="font-semibold">20 septembrie 2025</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="container mx-auto px-4 py-16">
-		<h2 class="mb-12 text-center text-4xl font-bold">Despre Festival</h2>
-		<div class="grid gap-8 md:grid-cols-3">
+		<h2 class="mb-12 text-center text-4xl font-bold">Activități și Evenimente</h2>
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 			<div class="flex flex-col items-center text-center">
 				<div class="mb-4 rounded-full bg-primary/10 p-4">
-					<Book class="h-8 w-8 text-primary" />
+					<Image class="h-8 w-8 text-primary" />
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">Lectură și Imaginație</h3>
+				<h3 class="mb-2 text-xl font-semibold">Expoziții de Ilustrație</h3>
 				<p class="text-secondary">
-					Descoperă lumea magică a cărților prin ateliere interactive și sesiuni de lectură captivante.
+					Expoziții spectaculoase de ilustrație și carte-obiect care vor încânta privitorii de toate vârstele.
 				</p>
 			</div>
 
 			<div class="flex flex-col items-center text-center">
 				<div class="mb-4 rounded-full bg-destructive/10 p-4">
-					<Users class="h-8 w-8 text-destructive" />
+					<FileText class="h-8 w-8 text-destructive" />
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">Întâlniri cu Autorii</h3>
+				<h3 class="mb-2 text-xl font-semibold">Seri de Lectură</h3>
 				<p class="text-secondary">
-					Conectează-te cu scriitori renumiți și descoperă poveștile din spatele cărților tale preferate.
+					Momente magice de lectură și povești, unde cărțile prind viață prin vocile autorilor îndrăgiți.
 				</p>
 			</div>
 
 			<div class="flex flex-col items-center text-center">
 				<div class="mb-4 rounded-full bg-warning/10 p-4">
-					<Palette class="h-8 w-8 text-warning" />
+					<Star class="h-8 w-8 text-warning" />
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">Ateliere Creative</h3>
+				<h3 class="mb-2 text-xl font-semibold">Ateliere Interactive</h3>
 				<p class="text-secondary">
-					Participă la ateliere de scriere creativă, ilustrație și storytelling pentru toate vârstele.
+					Ateliere de creație și storytelling unde copiii își pot dezvolta imaginația și talentele.
 				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class=" px-4 py-16 bg-accent/5">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="mb-12 text-4xl font-bold text-center">Despre APOLODOR</h2>
+			
+			<div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+				<div class="w-48 h-48 shrink-0">
+					<img 
+						src="/people/dan_paper.jpg" 
+						alt="Dan Lungu" 
+						class="w-full h-full object-cover rounded-full border-4 border-primary/20 shadow-lg"
+					/>
+				</div>
+				<div class="flex-1">
+					<blockquote class="text-xl italic">
+						"Un omagiu adus celor care au făcut posibil să apară personalități ca Eminescu, Enescu, Iorga, Luchian. Literatura pentru copii merită să fie tratată cu respect și creativitate."
+						<footer class="text-lg font-semibold mt-4 text-primary">
+							— Dan Lungu, Directorul Festivalului
+						</footer>
+					</blockquote>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-12">
+				<div>
+					<h3 class="text-2xl font-semibold mb-3 text-primary border-b pb-2">Misiunea Noastră</h3>
+					<p class="text-secondary leading-relaxed">
+						APOLODOR este mai mult decât un festival - este o celebrare a literaturii, imaginației și copilăriei. 
+						Timp de patru zile magice, transformăm Botoșaniul într-un tărâm al poveștilor și al creativității.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-2xl font-semibold mb-3 text-primary border-b pb-2">Organizatori</h3>
+					<p class="text-secondary leading-relaxed">
+						APOLODOR este organizat de Fundația Corona și finanțat de Consiliul Local și Primăria Municipiului 
+						Botoșani, aducând împreună cei mai talentați scriitori și artiști pentru a inspira noua generație de cititori.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
