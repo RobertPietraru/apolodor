@@ -174,51 +174,40 @@
 	</nav>
 
 	<main>
-		<section class="flex min-h-[100vh-74px] items-center justify-between px-16 py-8">
-			<div class="w-1/2">
-				<h1 class="font-rubik mb-6 text-left text-4xl leading-tight font-bold lg:text-6xl">
-					Festivalul de <span class="text-accent">Literatură</span>
+		<section class="container mx-auto flex min-h-[calc(100vh-74px)] flex-col items-center lg:gap-16 px-4 py-8 lg:flex-row lg:justify-between lg:px-10">
+			<div class="w-full lg:w-1/2">
+				<h1 class="font-rubik mb-6 text-left text-4xl leading-tight font-bold lg:text-7xl xl:text-8xl">
+					<span class="whitespace-nowrap">Festivalul de</span> <span class="text-accent">Literatură</span>
 				</h1>
 
-				<p class="font-caveat mb-8 text-left text-lg leading-relaxed font-bold lg:text-xl">
+				<p class="font-caveat mb-8 text-left text-lg leading-relaxed font-bold lg:text-2xl xl:text-3xl">
 					Dedicat copiilor și adolescenților din Botoșani! O sărbătoare a cărților, poveștilor și
 					imaginației.
 				</p>
 
-				<div
-					class="items-left justify-left mb-10 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-8"
-				>
-					<div class="text-md flex items-center space-x-2 text-primary">
-						<Calendar class="h-5 w-5" />
-						<span class="font-semibold">18-21 septembrie 2025</span>
-					</div>
-					<div class="text-md flex items-center space-x-2 text-primary">
-						<MapPin class="h-5 w-5" />
-						<span class="font-semibold">Botoșani, România</span>
-					</div>
+				<div class="mb-10 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-8">
+					<div class="text-md flex items-center space-x-2 text-primary lg:text-lg xl:text-xl whitespace-nowrap"><Calendar class="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7" /><span class="font-semibold">18-21 septembrie 2025</span></div>
+					<div class="text-md flex items-center space-x-2 text-primary lg:text-lg xl:text-xl whitespace-nowrap"><MapPin class="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7" /><span class="font-semibold">Botoșani, România</span></div>
 				</div>
 
 				<div
-					class="items-left justify-left flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6"
+					class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6"
 				>
 					<Button
-						size="lg"
-						class="bg-primary px-8 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90"
+					size=""
+						class=" bg-primary px-8 text-lg font-extrabold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-primary/90 lg:px-10 lg:py-4 lg:text-xl xl:px-12 xl:text-2xl after:absolute after:inset-0 after:z-[-1] after:opacity-0 after:transition-opacity hover:after:opacity-100 after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:animate-shine rounded-full"
 					>
 						Descoperă Programul
-					</Button>
-					<Button
-						size="lg"
-						variant="outline"
-						class="border-warning text-warning hover:bg-warning/10 border-2 bg-transparent px-8 py-3 text-lg font-bold"
-					>
-						Despre Festival
 					</Button>
 				</div>
 			</div>
 
-			<div class="w-1/3">
-				<img src="/landing2.png" alt="APOLODOR" class="h-auto w-full object-cover" />
+			<div class="mt-16 w-full lg:mt-0 lg:w-5/12">
+				<img 
+					src="/landing2.png" 
+					alt="APOLODOR" 
+					class="h-auto w-full object-contain lg:max-h-[700px] xl:max-h-[800px]" 
+				/>
 			</div>
 		</section>
 	</main>
