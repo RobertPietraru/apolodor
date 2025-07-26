@@ -2,43 +2,35 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"festival_name": "Festivalul pentru Copii și Adolescenți Apolodor",
 	"festival_date": "18-21 septembrie 2025, Botoșani",
-	
 	"nav_about": "Despre",
 	"nav_guests": "Invitați",
 	"nav_exhibitions": "Expoziții",
 	"nav_program": "Program",
 	"nav_news": "Noutăți",
 	"nav_partners": "Parteneri",
-
 	"about_festival": "Despre festival",
 	"about_team": "Echipa",
 	"about_archive": "Arhivă",
 	"about_press": "APOLODOR în presă",
 	"about_description": "Un festival dedicat literaturii și artei pentru tineri",
-
 	"guests_writers": "Scriitori",
 	"guests_illustrators": "Ilustratori",
 	"guests_special": "Invitați speciali",
 	"guests_description": "Personalități din lumea literaturii și artei",
-
 	"exhibitions_title": "Expoziții și evenimente",
 	"exhibitions_description": "Descoperă arta și creativitatea",
-
 	"program_title": "Program",
 	"program_description": "Programul complet al festivalului",
 	"program_daily": "Program zilnic",
 	"program_workshops": "Ateliere",
 	"program_readings": "Lecturi",
-
 	"news_title": "Noutăți",
 	"news_latest": "Ultimele noutăți",
 	"news_press": "Comunicate de presă",
-
 	"partners_title": "Parteneri",
 	"partners_description": "Partenerii noștri care fac posibil acest festival",
 	"partners_sponsors": "Sponsori",
 	"partners_cultural": "Parteneri culturali",
-
 	"footer_contact": "Contact",
 	"footer_email": "contact@apolodor.ro",
 	"footer_phone": "+40 123 456 789",
@@ -49,16 +41,33 @@
 	"footer_follow": "Urmărește-ne",
 	"footer_newsletter": "Abonează-te la newsletter",
 	"footer_copyright": "© 2024 Festivalul pentru Copii și Adolescenți Apolodor. Toate drepturile rezervate.",
-
 	"social_facebook": "Facebook",
 	"social_instagram": "Instagram",
 	"social_youtube": "YouTube",
-
 	"switch_to_en": "EN",
 	"switch_to_ro": "RO",
-
 	"button_read_more": "Citește mai mult",
 	"button_register": "Înscrie-te",
 	"button_subscribe": "Abonează-te",
-	"button_details": "Detalii"
+	"button_details": "Detalii",
+	"landing_title": "Festivalul de Literatură",
+	"landing_subtitle": "Dedicat copiilor și adolescenților din Botoșani! O sărbătoare a cărților, poveștilor și imaginației.",
+	"discover_program": "Descoperă Programul",
+	"concert_title": "Concert Extraordinar",
+	"concert_description": "Un moment unic de muzică și poezie care va încânta toate vârstele! Pregătiți-vă pentru o seară magică plină de surprize muzicale și versuri care prind viață.",
+	"concert_date": "20 septembrie 2025",
+	"concert_details": "Detalii Concert",
+	"activities_title": "Activități și Evenimente",
+	"exhibitions_subtitle": "Expoziții spectaculoase de ilustrație și carte-obiect care vor încânta privitorii de toate vârstele.",
+	"readings_subtitle": "Momente magice de lectură și povești, unde cărțile prind viață prin vocile autorilor îndrăgiți.",
+	"workshops_subtitle": "Ateliere de creație și storytelling unde copiii își pot dezvolta imaginația și talentele.",
+	"about_mission_title": "Misiunea Noastră",
+	"about_mission_description": "APOLODOR este mai mult decât un festival - este o celebrare a literaturii, imaginației și copilăriei. Timp de patru zile magice, transformăm Botoșaniul într-un tărâm al poveștilor și al creativității.",
+	"about_organizers_title": "Organizatori",
+	"about_organizers_description": "APOLODOR este organizat de Fundația Corona și finanțat de Consiliul Local și Primăria Municipiului Botoșani, aducând împreună cei mai talentați scriitori și artiști pentru a inspira noua generație de cititori.",
+	"gallery": "Galerie",
+	"privacy_policy": "Politica de Confidențialitate",
+	"terms_conditions": "Termeni și Condiții",
+	"dan_lungu_quote": "Un omagiu adus celor care au făcut posibil să apară personalități ca Eminescu, Enescu, Iorga, Luchian. Literatura pentru copii merită să fie tratată cu respect și creativitate.",
+	"dan_lungu_title": "— Dan Lungu, Directorul Festivalului"
 }
