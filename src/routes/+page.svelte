@@ -29,7 +29,11 @@
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
 				{ title: 'Despre festival', href: '/despre-festival', expanded: false, icon: Info },
-				{ title: 'Echipa', href: '/echipa', expanded: false, icon: Users }
+				{ title: 'Echipa', href: '/echipa', expanded: false, icon: Users },
+				{ title: 'Galerie', href: '/galerie', expanded: false, icon: Image },
+				{ title: 'Arhiva', href: '/arhiva', expanded: false, icon: Archive },
+				{ title: 'APOLODOR în presă', href: '/presa', expanded: false, icon: Newspaper },
+				{ title: 'Parteneri', href: '/parteneri', expanded: false, icon: Handshake }
 			]
 		},
 		{
@@ -48,12 +52,6 @@
 		{
 			title: 'NOUTĂȚI',
 			color: 'text-warning hover:text-warning/90',
-			items: [
-				{ title: 'Blog', href: '/blog', expanded: false, icon: FileText },
-				{ title: 'Galerie', href: '/galerie', expanded: false, icon: Image },
-				{ title: 'Arhiva', href: '/arhiva', expanded: false, icon: Archive },
-				{ title: 'APOLODOR în presă', href: '/presa', expanded: false, icon: Newspaper }
-			]
 		}
 	]);
 
