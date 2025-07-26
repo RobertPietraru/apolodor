@@ -74,54 +74,18 @@
 				>
 					<span class="absolute -inset-0.5"></span>
 					<span class="sr-only">Open main menu</span>
-					<!--
-			  Icon when menu is closed.
-  
-			  Menu open: "hidden", Menu closed: "block"
-			-->
-					<svg
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						data-slot="icon"
-						aria-hidden="true"
-						class="block size-6"
-					>
-						<path
-							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-					</svg>
-					<!--
-			  Icon when menu is open.
-  
-			  Menu open: "block", Menu closed: "hidden"
-			-->
-					<svg
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						data-slot="icon"
-						aria-hidden="true"
-						class="hidden size-6"
-					>
-						<path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
+					<!-- Icon when menu is closed.  Menu open: "hidden", Menu closed: "block" -->
+					<Menu class="block size-6" />
+					<!-- Icon when menu is open.  Menu open: "block", Menu closed: "hidden" -->
+					<X class="hidden size-6" />
 				</button>
 			</div>
-			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-				<div class="flex shrink-0 items-center">
-					<img
-						src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-						alt="APL"
-						class="h-8 w-auto"
-					/>
-				</div>
-				<div class="hidden sm:ml-6 sm:block"></div>
-			</div>
+
+			<img
+				src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+				alt="APL"
+				class="hidden h-8 sm:block"
+			/>
 			<div
 				class="absolute inset-y-0 right-0 flex items-center gap-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
 			>
@@ -216,8 +180,15 @@
 </header>
 
 <main>
+	{@render landingSection()}
+	{@render aboutSection()}
+	{@render activitiesSection()}
+	{@render guestsSection()}
+	{@render concertSection()}
+</main>
+{#snippet landingSection()}
 	<section
-		class="container mx-auto flex min-h-[calc(100vh-74px)] flex-col items-center px-4 py-8 lg:flex-row lg:justify-between lg:gap-16 lg:px-10"
+		class="container mx-auto flex flex-col items-center px-4 py-8 lg:min-h-[calc(100vh-74px)] lg:flex-row lg:justify-between lg:gap-16 lg:px-10"
 	>
 		<div class="flex w-full flex-col items-center justify-center md:items-start lg:w-1/2">
 			<h1
@@ -267,18 +238,11 @@
 			<img
 				src="/landing2.png"
 				alt="APOLODOR"
-				class="mx-auto hidden w-full max-w-96 object-contain md:block"
+				class="mx-auto hidden w-full max-w-96 md:block md:object-contain lg:mx-0 lg:max-w-4/5"
 			/>
 		</div>
 	</section>
-
-	<!-- Concert Section -->
-
-	{@render concertSection()}
-	{@render activitiesSection()}
-	{@render guestsSection()}
-	{@render aboutSection()}
-</main>
+{/snippet}
 {#snippet guestsSection()}
 	<section class="bg-accent/5 px-4 py-16">
 		<h2 class="mb-12 text-center text-4xl font-bold">Invitați Speciali</h2>
