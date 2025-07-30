@@ -1,5 +1,7 @@
 <script lang="ts">
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
+	import * as m from '$lib/paraglide/messages';
+	import { setLocale, getLocale } from '$lib/paraglide/runtime';
 
 	import {
 		Calendar,
@@ -23,34 +25,41 @@
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
 	import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
 
+	// Language switching function
+	function switchLanguage() {
+		const currentLocale = getLocale();
+		const newLocale = currentLocale === 'ro' ? 'en' : 'ro';
+		setLocale(newLocale);
+	}
+
 	const navigationItems = $state([
 		{
-			title: 'DESPRE',
+			title: m.nav_about(),
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
-				{ title: 'Despre festival', href: '/despre-festival', expanded: false, icon: Info },
-				{ title: 'Echipa', href: '/echipa', expanded: false, icon: Users },
-				{ title: 'Galerie', href: '/galerie', expanded: false, icon: Image },
-				{ title: 'Arhiva', href: '/arhiva', expanded: false, icon: Archive },
-				{ title: 'APOLODOR în presă', href: '/presa', expanded: false, icon: Newspaper },
-				{ title: 'Parteneri', href: '/parteneri', expanded: false, icon: Handshake }
+				{ title: m.about_festival(), href: '/despre-festival', expanded: false, icon: Info },
+				{ title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
+				{ title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
+				{ title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
+				{ title: m.about_press(), href: '/presa', expanded: false, icon: Newspaper },
+				{ title: m.nav_partners(), href: '/parteneri', expanded: false, icon: Handshake }
 			]
 		},
 		{
-			title: 'INVITAȚI',
+			title: m.nav_guests(),
 			color: 'text-primary hover:text-primary/90',
 			items: [
-				{ title: 'Invitați speciali', href: '/invitati-speciali', expanded: false, icon: Star },
-				{ title: 'Parteneri', href: '/parteneri', expanded: false, icon: Handshake }
+				{ title: m.guests_special(), href: '/invitati-speciali', expanded: false, icon: Star },
+				{ title: m.nav_partners(), href: '/parteneri', expanded: false, icon: Handshake }
 			]
 		},
 		{
-			title: 'PROGRAM',
+			title: m.nav_program(),
 			color: 'text-primary hover:text-primary/90',
 			href: '/program'
 		},
 		{
-			title: 'NOUTĂȚI',
+			title: m.nav_news(),
 			color: 'text-warning hover:text-warning/90',
 		}
 	]);
@@ -131,8 +140,10 @@
 					<Button
 						variant="outline"
 						class="border-2 border-primary bg-transparent font-semibold text-primary hover:bg-primary/10"
+						onclick={switchLanguage}
 					>
 						<Languages class="h-4 w-4" />
+						<span class="ml-2">{getLocale() === 'ro' ? m.switch_to_en() : m.switch_to_ro()}</span>
 					</Button>
 				</div>
 			</div>
@@ -199,8 +210,7 @@
 			<p
 				class="font-caveat mb-8 text-center text-lg leading-relaxed font-bold md:text-start lg:text-2xl xl:text-3xl"
 			>
-				Dedicat copiilor și adolescenților din Botoșani! O sărbătoare a cărților, poveștilor și
-				imaginației.
+				{m.landing_subtitle()}
 			</p>
 
 			<div
@@ -210,14 +220,14 @@
 					class="text-md flex items-center space-x-2 whitespace-nowrap text-primary lg:text-lg xl:text-xl"
 				>
 					<Calendar class="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7" /><span class="font-semibold"
-						>18-21 septembrie 2025</span
+						>{m.festival_date()}</span
 					>
 				</div>
 				<div
 					class="text-md flex items-center space-x-2 whitespace-nowrap text-primary lg:text-lg xl:text-xl"
 				>
 					<MapPin class="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7" /><span class="font-semibold"
-						>Botoșani, România</span
+						>{m.footer_location()}</span
 					>
 				</div>
 			</div>
@@ -227,7 +237,7 @@
 					size="custom"
 					class=" after:animate-shine rounded-full bg-primary px-8 text-lg font-extrabold text-primary-foreground transition-all duration-300 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:opacity-0 after:transition-opacity hover:scale-105   lg:px-10 lg:py-4 lg:text-xl xl:px-12 xl:text-2xl"
 				>
-					Descoperă Programul
+					{m.discover_program()}
 				</Button>
 			</div>
 		</div>
@@ -243,13 +253,13 @@
 {/snippet}
 {#snippet guestsSection()}
 	<section class="bg-accent/5 px-4 py-16">
-		<h2 class="mb-12 text-center text-4xl font-bold">Invitați Speciali</h2>
+		<h2 class="mb-12 text-center text-4xl font-bold">{m.guests_special()}</h2>
 
 		<div class="mx-auto max-w-6xl">
 			<div class="grid gap-12">
 				<!-- Scriitori Section -->
 				<div>
-					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">Literatura</h3>
+					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_writers()}</h3>
 					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 						<div class="flex flex-col items-center text-center">
 							<div class="mb-4 h-32 w-32">
@@ -296,7 +306,7 @@
 
 				<!-- Artiste Vizuale Section -->
 				<div>
-					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">Arte Vizuale</h3>
+					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_illustrators()}</h3>
 					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						<div class="flex flex-col items-center text-center">
 							<div class="mb-4 h-32 w-32">
@@ -342,7 +352,7 @@
 		<div class="relative container mx-auto">
 			<div class="mx-auto max-w-3xl">
 				<div class="mb-12 text-center">
-					<h2 class="mb-4 text-4xl font-bold">Concert Extraordinar</h2>
+					<h2 class="mb-4 text-4xl font-bold">{m.concert_title()}</h2>
 					<div class="bg-warning mx-auto h-1 w-24"></div>
 				</div>
 
@@ -359,19 +369,18 @@
 						<div class="flex-1 text-center md:text-left">
 							<h3 class="text-warning mb-4 text-4xl font-bold">Ada Milea</h3>
 							<p class="mb-8 text-xl leading-relaxed">
-								Un moment unic de muzică și poezie care va încânta toate vârstele! Pregătiți-vă
-								pentru o seară magică plină de surprize muzicale și versuri care prind viață.
+								{m.concert_description()}
 							</p>
 							<div class="flex flex-col items-center gap-8 text-lg sm:flex-row">
 								<div class="flex items-center gap-3">
 									<Calendar class="text-warning h-6 w-6" />
-									<span class="font-semibold">20 septembrie 2025</span>
+									<span class="font-semibold">{m.concert_date()}</span>
 								</div>
 								<Button
 									variant="outline"
 									class="border-warning text-warning hover:bg-warning/10 border-2"
 								>
-									Detalii Concert
+									{m.concert_details()}
 								</Button>
 							</div>
 						</div>
@@ -383,16 +392,15 @@
 {/snippet}
 {#snippet activitiesSection()}
 	<section class="container mx-auto px-4 py-16">
-		<h2 class="mb-12 text-center text-4xl font-bold">Activități și Evenimente</h2>
+		<h2 class="mb-12 text-center text-4xl font-bold">{m.activities_title()}</h2>
 		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 			<div class="flex flex-col items-center text-center">
 				<div class="mb-4 rounded-full bg-primary/10 p-4">
 					<Image class="h-8 w-8 text-primary" />
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">Expoziții de Ilustrație</h3>
+				<h3 class="mb-2 text-xl font-semibold">{m.exhibitions_title()}</h3>
 				<p class="text-secondary">
-					Expoziții spectaculoase de ilustrație și carte-obiect care vor încânta privitorii de toate
-					vârstele.
+					{m.exhibitions_subtitle()}
 				</p>
 			</div>
 
@@ -400,10 +408,9 @@
 				<div class="mb-4 rounded-full bg-destructive/10 p-4">
 					<FileText class="h-8 w-8 text-destructive" />
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">Seri de Lectură</h3>
+				<h3 class="mb-2 text-xl font-semibold">{m.program_readings()}</h3>
 				<p class="text-secondary">
-					Momente magice de lectură și povești, unde cărțile prind viață prin vocile autorilor
-					îndrăgiți.
+					{m.readings_subtitle()}
 				</p>
 			</div>
 
@@ -411,9 +418,9 @@
 				<div class="bg-warning/10 mb-4 rounded-full p-4">
 					<Star class="text-warning h-8 w-8" />
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">Ateliere Interactive</h3>
+				<h3 class="mb-2 text-xl font-semibold">{m.program_workshops()}</h3>
 				<p class="text-secondary">
-					Ateliere de creație și storytelling unde copiii își pot dezvolta imaginația și talentele.
+					{m.workshops_subtitle()}
 				</p>
 			</div>
 		</div>
@@ -422,7 +429,7 @@
 {#snippet aboutSection()}
 	<section class=" bg-accent/5 px-4 py-16">
 		<div class="mx-auto max-w-4xl">
-			<h2 class="mb-12 text-center text-4xl font-bold">Despre APOLODOR</h2>
+			<h2 class="mb-12 text-center text-4xl font-bold">{m.about_festival()}</h2>
 
 			<div class="mb-12 flex flex-col items-center gap-8 md:flex-row">
 				<div class="h-48 w-48 shrink-0">
@@ -434,11 +441,9 @@
 				</div>
 				<div class="flex-1">
 					<blockquote class="text-xl italic">
-						"Un omagiu adus celor care au făcut posibil să apară personalități ca Eminescu, Enescu,
-						Iorga, Luchian. Literatura pentru copii merită să fie tratată cu respect și
-						creativitate."
+						"{m.dan_lungu_quote()}"
 						<footer class="mt-4 text-lg font-semibold text-primary">
-							— Dan Lungu, Directorul Festivalului
+							{m.dan_lungu_title()}
 						</footer>
 					</blockquote>
 				</div>
@@ -446,19 +451,15 @@
 
 			<div class="grid gap-12 md:grid-cols-2">
 				<div>
-					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">Misiunea Noastră</h3>
+					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">{m.about_mission_title()}</h3>
 					<p class="leading-relaxed text-secondary">
-						APOLODOR este mai mult decât un festival - este o celebrare a literaturii, imaginației
-						și copilăriei. Timp de patru zile magice, transformăm Botoșaniul într-un tărâm al
-						poveștilor și al creativității.
+						{m.about_mission_description()}
 					</p>
 				</div>
 				<div>
-					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">Organizatori</h3>
+					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">{m.about_organizers_title()}</h3>
 					<p class="leading-relaxed text-secondary">
-						APOLODOR este organizat de Fundația Corona și finanțat de Consiliul Local și Primăria
-						Municipiului Botoșani, aducând împreună cei mai talentați scriitori și artiști pentru a
-						inspira noua generație de cititori.
+						{m.about_organizers_description()}
 					</p>
 				</div>
 			</div>
