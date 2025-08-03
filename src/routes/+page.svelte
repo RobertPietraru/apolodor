@@ -60,7 +60,7 @@
 		},
 		{
 			title: m.nav_news(),
-			color: 'text-warning hover:text-warning/90',
+			color: 'text-warning hover:text-warning/90'
 		}
 	]);
 
@@ -161,7 +161,7 @@
 								{#each item.items as subItem}
 									<a
 										href={subItem.href}
-										class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+										class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted hover:bg-accent hover:text-accent-foreground"
 									>
 										<svelte:component this={subItem.icon} class="h-4 w-4" />
 										{subItem.title}
@@ -197,45 +197,44 @@
 </main>
 {#snippet landingSection()}
 	<section
-		class="container mx-auto flex flex-col items-center px-4 py-8 lg:min-h-[calc(100vh-74px)] lg:flex-row lg:justify-between lg:gap-16 lg:px-10"
+		class="container mx-auto flex flex-col-reverse items-center px-4 py-8 lg:min-h-[calc(100vh-74px)] lg:flex-row lg:justify-between lg:gap-16 lg:px-10 gap-4"
 	>
-		<div class="flex w-full flex-col items-center justify-center md:items-start lg:w-1/2">
+		<div class="flex w-full flex-col items-center justify-center lg:w-1/2 lg:items-start">
 			<h1
-				class="font-rubik mb-6 text-center text-4xl leading-tight font-bold md:text-start lg:text-7xl xl:text-8xl"
+				class="font-rubik mb-4 text-center text-4xl leading-tight font-bold lg:text-5xl lg:text-left"
 			>
-				<span class="whitespace-nowrap">Festivalul de</span>
-				<span class="text-accent">Literatură</span>
+				{@html m.landing_title()}
 			</h1>
 
 			<p
-				class="font-caveat mb-8 text-center text-lg leading-relaxed font-bold md:text-start lg:text-2xl xl:text-3xl"
+				class="font-caveat mb-6 text-center text-base leading-relaxed font-bold lg:text-lg lg:text-left"
 			>
 				{m.landing_subtitle()}
 			</p>
 
 			<div
-				class="mb-10 flex flex-col justify-center space-y-4 md:mb-0 md:flex-row md:justify-start md:space-y-0 md:space-x-8"
+				class="mb-8 flex flex-col items-center justify-center space-y-3 md:mb-0 md:flex-row md:space-y-0 md:space-x-6"
 			>
 				<div
-					class="text-md flex items-center space-x-2 whitespace-nowrap text-primary lg:text-lg xl:text-xl"
+					class="flex items-center space-x-2 whitespace-nowrap text-primary text-sm lg:text-base"
 				>
-					<Calendar class="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7" /><span class="font-semibold"
+					<Calendar class="h-4 w-4 lg:h-5 lg:w-5" /><span class="font-semibold"
 						>{m.festival_date()}</span
 					>
 				</div>
 				<div
-					class="text-md flex items-center space-x-2 whitespace-nowrap text-primary lg:text-lg xl:text-xl"
+					class="flex items-center space-x-2 whitespace-nowrap text-primary text-sm lg:text-base"
 				>
-					<MapPin class="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7" /><span class="font-semibold"
+					<MapPin class="h-4 w-4 lg:h-5 lg:w-5" /><span class="font-semibold"
 						>{m.footer_location()}</span
 					>
 				</div>
 			</div>
 
-			<div class="flex flex-col space-y-4 sm:mt-8 sm:flex-row sm:space-y-0 sm:space-x-6">
+			<div class="flex flex-col items-center space-y-4 sm:mt-6 sm:flex-row sm:space-y-0 sm:space-x-4">
 				<Button
 					size="custom"
-					class=" after:animate-shine rounded-full bg-primary px-8 text-lg font-extrabold text-primary-foreground transition-all duration-300 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:opacity-0 after:transition-opacity hover:scale-105   lg:px-10 lg:py-4 lg:text-xl xl:px-12 xl:text-2xl"
+					class="after:animate-shine rounded-full bg-primary px-6 text-base font-bold text-primary-foreground transition-all duration-300 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:opacity-0 after:transition-opacity hover:scale-105 lg:px-8 lg:py-3 lg:text-lg"
 				>
 					{m.discover_program()}
 				</Button>
@@ -246,7 +245,7 @@
 			<img
 				src="/landing2.png"
 				alt="APOLODOR"
-				class="mx-auto hidden w-full max-w-96 md:block md:object-contain lg:mx-0 lg:max-w-4/5"
+				class="mx-auto w-full max-w-96 md:block md:object-contain lg:mx-0 lg:max-w-4/5"
 			/>
 		</div>
 	</section>
@@ -451,13 +450,17 @@
 
 			<div class="grid gap-12 md:grid-cols-2">
 				<div>
-					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">{m.about_mission_title()}</h3>
+					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">
+						{m.about_mission_title()}
+					</h3>
 					<p class="leading-relaxed text-secondary">
 						{m.about_mission_description()}
 					</p>
 				</div>
 				<div>
-					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">{m.about_organizers_title()}</h3>
+					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">
+						{m.about_organizers_title()}
+					</h3>
 					<p class="leading-relaxed text-secondary">
 						{m.about_organizers_description()}
 					</p>
