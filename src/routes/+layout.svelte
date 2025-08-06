@@ -32,11 +32,10 @@
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
 				{ title: m.about_festival(), href: '/despre-festival', expanded: false, icon: Info },
-				{ title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
-				{ title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
-				{ title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
-				{ title: m.about_press(), href: '/presa', expanded: false, icon: FileText },
-				{ title: m.nav_partners(), href: '/parteneri', expanded: false, icon: Handshake }
+				// { title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
+				// { title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
+				// { title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
+				// { title: m.about_press(), href: '/presa', expanded: false, icon: FileText },
 			]
 		},
 		{
@@ -47,11 +46,11 @@
 				{ title: m.nav_partners(), href: '/parteneri', expanded: false, icon: Handshake }
 			]
 		},
-		{
-			title: m.nav_program(),
-			color: 'text-primary hover:text-primary/90',
-			href: '/program'
-		},
+		// {
+		// 	title: m.nav_program(),
+		// 	color: 'text-primary hover:text-primary/90',
+		// 	href: '/program'
+		// },
 		{
 			title: m.nav_news(),
 			color: 'text-warning hover:text-warning/90'
