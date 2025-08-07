@@ -8,6 +8,7 @@
 		Image,
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
+	const { data } = $props();
 </script>
 
 
@@ -84,46 +85,18 @@
 				<div>
 					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_writers()}</h3>
 					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+						{#each data.guests.writers as guest}
 						<div class="flex flex-col items-center text-center">
 							<div class="mb-4 h-32 w-32">
 								<img
-									src="/people/florin_bican.jpeg  "
-									alt="Florin Bican"
+									src={guest.photo}
+									alt={guest.name}
 									class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
 								/>
 							</div>
-							<h4 class="font-semibold">Florin Bican</h4>
+							<h4 class="font-semibold">{guest.name}</h4>
 						</div>
-						<div class="flex flex-col items-center text-center">
-							<div class="mb-4 h-32 w-32">
-								<img
-									src="/people/veronica_niculescu.jpeg  "
-									alt="Veronica D. Niculescu"
-									class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
-								/>
-							</div>
-							<h4 class="font-semibold">Veronica D. Niculescu</h4>
-						</div>
-						<div class="flex flex-col items-center text-center">
-							<div class="mb-4 h-32 w-32">
-								<img
-									src="/people/adina_rosetti.webp"
-									alt="Adina Rosetti"
-									class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
-								/>
-							</div>
-							<h4 class="font-semibold">Adina Rosetti</h4>
-						</div>
-						<div class="flex flex-col items-center text-center">
-							<div class="mb-4 h-32 w-32">
-								<img
-									src="/people/matei_visiniec.jpeg"
-									alt="Matei Vișniec"
-									class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
-								/>
-							</div>
-							<h4 class="font-semibold">Matei Vișniec</h4>
-						</div>
+						{/each}
 					</div>
 				</div>
 
@@ -131,36 +104,18 @@
 				<div>
 					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_illustrators()}</h3>
 					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+						{#each data.guests.illustrators as guest}
 						<div class="flex flex-col items-center text-center">
 							<div class="mb-4 h-32 w-32">
 								<img
-									src="/people/raluca_burca.jpg  "
-									alt="Raluca Ioana Burcă"
+									src={guest.photo}
+									alt={guest.name}
 									class="h-full w-full rounded-full border-4 border-destructive/20 object-cover shadow-lg"
 								/>
 							</div>
-							<h4 class="font-semibold">Raluca Ioana Burcă</h4>
+							<h4 class="font-semibold">{guest.name}</h4>
 						</div>
-						<div class="flex flex-col items-center text-center">
-							<div class="mb-4 h-32 w-32">
-								<img
-									src="/people/sabina_drinceanu.jpeg  "
-									alt="Sabina Drînceanu"
-									class="h-full w-full rounded-full border-4 border-destructive/20 object-cover shadow-lg"
-								/>
-							</div>
-							<h4 class="font-semibold">Sabina Drînceanu</h4>
-						</div>
-						<div class="flex flex-col items-center text-center">
-							<div class="mb-4 h-32 w-32">
-								<img
-									src="/people/bianca_simionescu.jpeg  "
-									alt="Nu am gasit"
-									class="h-full w-full rounded-full border-4 border-destructive/20 object-cover shadow-lg"
-								/>
-							</div>
-							<h4 class="font-semibold">Bianca Simionescu</h4>
-						</div>
+						{/each}
 					</div>
 				</div>
 			</div>
@@ -184,7 +139,7 @@
 						<div class="relative h-48 w-48 shrink-0">
 							<div class="bg-warning/20 absolute -inset-4 animate-pulse rounded-full"></div>
 							<img
-								src="/people/ada_milea.jpeg"
+								src="/assets/people/ada_milea.jpeg"
 								alt="Ada Milea"
 								class="border-warning relative h-full w-full rounded-full border-4 object-cover shadow-lg"
 							/>
@@ -257,7 +212,7 @@
 			<div class="mb-12 flex flex-col items-center gap-8 md:flex-row">
 				<div class="h-48 w-48 shrink-0">
 					<img
-						src="/people/dan_paper.jpg"
+						src="/assets/people/dan_paper.jpg"
 						alt="Dan Lungu"
 						class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
 					/>

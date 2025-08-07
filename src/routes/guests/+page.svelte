@@ -10,7 +10,7 @@
 	<div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 		{#each data.guests as guest}
 			<a class="flex flex-col items-center justify-center gap-2" href="/guests/{guest.name}">
-				<div class="h-48 w-48 shrink-0">
+				<div class="h-48 w-48 shrink-0 ">
 					<img
 						src={guest.photo}
 						alt={guest.name}
