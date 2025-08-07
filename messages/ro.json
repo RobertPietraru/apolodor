@@ -69,5 +69,9 @@
 	"privacy_policy": "Politica de Confidențialitate",
 	"terms_conditions": "Termeni și Condiții",
 	"dan_lungu_quote": "Un omagiu adus celor care au făcut posibil să apară personalități ca Eminescu, Enescu, Iorga, Luchian. Literatura pentru copii merită să fie tratată cu respect și creativitate.",
-	"dan_lungu_title": "— Dan Lungu, Directorul Festivalului"
+	"dan_lungu_title": "— Dan Lungu, Directorul Festivalului",
+	"errorTitle": "Ne pare rău, a apărut o eroare",
+	"notFoundError": "Pagina pe care ați încercat să o accesați nu există.",
+	"technicalError": "Ne pare rău, a apărut o eroare tehnică.",
+	"backToHome": "Înapoi acasă"
 }

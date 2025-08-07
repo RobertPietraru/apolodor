@@ -68,7 +68,7 @@
 
 		<div class="w-full lg:w-5/12">
 			<img
-				src="/landing2.svg"
+				src="/landing.svg"
 				alt="APOLODOR"
 				class="mx-auto w-full max-w-96 md:block md:object-contain lg:mx-0 lg:max-w-4/5"
 			/>
@@ -124,7 +124,7 @@
 {/snippet}
 {#snippet concertSection()}
 	<section
-		class="relative overflow-hidden bg-[url('/bg-concert.jpg')] bg-cover bg-fixed bg-center px-4 py-24"
+		class="relative overflow-hidden px-4 py-24"
 	>
 		<div class="absolute inset-0 bg-background/95 backdrop-blur-sm"></div>
 		<div class="relative container mx-auto">
