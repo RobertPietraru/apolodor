@@ -31,7 +31,7 @@
 			title: m.nav_about(),
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
-				{ title: m.about_festival(), href: '/despre-festival', expanded: false, icon: Info },
+				{ title: m.about_festival(), href: '/despre-festival', expanded: false, icon: Info }
 				// { title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
 				// { title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
 				// { title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
@@ -66,7 +66,7 @@
 <header class="border-warning border-b-2 bg-background shadow-sm">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-16 items-center justify-between">
-			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+			<div class="flex items-center sm:hidden">
 				<!-- Mobile menu button-->
 				<button
 					type="button"
@@ -84,13 +84,8 @@
 				</button>
 			</div>
 
-			<a class="flex items-center gap-1" href="/">
-
-			<img
-				src="/logos/logo.png"
-				alt="APL"
-				class="hidden h-8 sm:block"
-				/>
+			<a class="hidden items-center gap-1 sm:flex" href="/">
+				<img src="/logos/logo.png" alt="APL" class=" h-8" />
 				<span class="text-xl font-bold">Festivalul Apolodor</span>
 			</a>
 			<div
@@ -111,7 +106,7 @@
 														class=" rounded-md px-3 py-2 text-sm font-medium hover:bg-accent "
 													>
 														<div class="flex items-center gap-2">
-															<subItem.icon class="h-4 w-4 hover:text-accent-foreground"/>
+															<subItem.icon class="h-4 w-4 hover:text-accent-foreground" />
 															{subItem.title}
 														</div>
 													</NavigationMenu.Link>
@@ -186,7 +181,7 @@
 </header>
 
 <main class="min-h-screen bg-gradient-to-b from-accent/5 to-background">
-<!-- <main class="min-h-screen bg-background"> -->
+	<!-- <main class="min-h-screen bg-background"> -->
 	{@render children()}
 </main>
 
@@ -252,9 +247,7 @@
 					{m.footer_copyright()}
 				</p>
 				<div class="flex space-x-4 text-sm text-muted">
-					<a href="/politica-confidentialitate" class="hover:text-primary"
-						>{m.privacy_policy()}</a
-					>
+					<a href="/politica-confidentialitate" class="hover:text-primary">{m.privacy_policy()}</a>
 					<a href="/termeni-conditii" class="hover:text-primary">{m.terms_conditions()}</a>
 					<a href="https://github.com/RobertPietraru/apolodor">
 						<img src="/logos/github.svg" alt="GitHub" class="h-4 w-4" />

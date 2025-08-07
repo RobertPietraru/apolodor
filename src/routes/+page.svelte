@@ -13,8 +13,6 @@
 	const { data } = $props();
 </script>
 
-
-
 <main>
 	{@render landingSection()}
 	{@render aboutSection()}
