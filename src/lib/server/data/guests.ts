@@ -94,7 +94,7 @@ Fiecare întâlnire cu cei trei exploratori este ca o ieșire la cafea și depă
     } satisfies Guest,
     florinBican: {
         specialGuest: true,
-        photo: "/assets/people/florin_bican.JPG",
+        photo: "/assets/people/florin_bican.jpg",
         name: "Florin Bican",
         role: 'writer',
         content: `# Florin Bican
@@ -107,7 +107,7 @@ Cărțile pe care le scriu sunt generate de cărțile pe care le citesc. În „
     } satisfies Guest,
     ioanaBot: {
         specialGuest: true,
-        photo: "/assets/people/ioana_bot.PNG",
+        photo: "/assets/people/ioana_bot.png",
         name: "Ioana Bot",
         role: 'writer',
         content: `# Ioana Bot
@@ -209,7 +209,7 @@ Viorel Ilișoi, născut la Botoșani este scriitor, jurnalist și editor. Este c
     } satisfies Guest,
 
     sabinaDrinceanu: {
-        photo: "/assets/people/sabina_drinceanu.JPG",
+        photo: "/assets/people/sabina_drinceanu.jpg",
         name: "Sabina Drînceanu",
         role: 'illustrator',
         specialGuest: false,

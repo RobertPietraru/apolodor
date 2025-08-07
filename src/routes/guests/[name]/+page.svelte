@@ -16,7 +16,7 @@
 			<img
 				src={data.guest.photo}
 				alt={data.guest.name}
-				class="h-full w-full cursor-pointer rounded-full border-4 border-primary/20 object-cover shadow-lg"
+				class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
 			/>
 		</div>
 	</div>
