@@ -185,7 +185,7 @@
 	{/if}
 </header>
 
-<main class="min-h-screen">
+<main class="min-h-screen bg-gradient-to-b from-primary/10 to-background">
 	{@render children()}
 </main>
 
