@@ -53,7 +53,8 @@
 		// },
 		{
 			title: m.nav_news(),
-			color: 'text-warning hover:text-warning/90'
+			color: 'text-warning hover:text-warning/90',
+			href: '/blog'
 		}
 	]);
 
@@ -83,11 +84,15 @@
 				</button>
 			</div>
 
+			<a class="flex items-center gap-1" href="/">
+
 			<img
-				src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+				src="/logos/logo.png"
 				alt="APL"
 				class="hidden h-8 sm:block"
-			/>
+				/>
+				<span class="text-xl font-bold">Festivalul Apolodor</span>
+			</a>
 			<div
 				class="absolute inset-y-0 right-0 flex items-center gap-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
 			>
