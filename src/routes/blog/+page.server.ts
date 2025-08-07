@@ -11,7 +11,7 @@ export const load = async ({ url }) => {
 	let filteredNews = articles;
 
 	if (search) {
-		filteredNews = articles.filter((item) => item.title[locale].toLowerCase().includes(search.toLowerCase()));
+		filteredNews = articles.filter((item) => item.title[locale].toLowerCase().includes(search.toLowerCase()) || item.excerpt[locale].toLowerCase().includes(search.toLowerCase()));
 	}
 
 	if (sort) {

@@ -218,7 +218,7 @@
 					<Card.Root
 						class="group relative overflow-hidden rounded-xl border bg-card pt-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 					>
-						<a href="/news/${item.id}">
+						<a href="/blog/${item.id}">
 							<div class="aspect-[16/9] w-full overflow-hidden bg-muted">
 								<div
 									class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -252,7 +252,7 @@
 							<h3
 								class="text-lg leading-tight font-semibold transition-colors duration-200 group-hover:text-primary"
 							>
-								<a href={`/news/${item.id}`} class="focus:outline-none">
+								<a href={`/blog/${item.id}`} class="focus:outline-none">
 									<span class="absolute inset-0" aria-hidden="true"></span>
 									{item.title}
 								</a>
@@ -271,7 +271,7 @@
 								class="group/btn h-auto p-0 text-primary hover:bg-transparent hover:text-primary/80"
 							>
 								<a
-									href={`/news/${item.id}`}
+									href={`/blog/${item.id}`}
 									class="flex items-center gap-2"
 									aria-label={`${m.blog_read_more()}: ${item.title}`}
 								>

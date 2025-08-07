@@ -1,6 +1,7 @@
 export const articles = [
     {
         id: "1",
+        related: ["2", "3"],
         title: {
             en: 'Festival Program Announced',
             ro: 'Programul Festivalului Anunțat'
@@ -83,6 +84,7 @@ Fiecare zi va include:
     },
     {
         id: "2",
+        related: ["1", "3"],
         title: {
             en: 'Special Guest: Ada Milea Concert',
             ro: 'Invitat Special: Concert Ada Milea'
@@ -155,6 +157,7 @@ Ada Milea va prezenta un concert unic ce combină:
     },
     {
         id: "3",
+        related: ["1", "2"],
         title: {
             en: 'New Workshop Series Added',
             ro: 'Serie Nouă de Ateliere Adăugată'
@@ -223,6 +226,7 @@ Suntem încântați să anunțăm ateliere suplimentare ca răspuns la interesul
     },
     {
         id: "4",
+        related: ["1", "2", "3"],
         title: {
             en: 'Program Schedule Updates',
             ro: 'Modificări ale Programului'
@@ -289,6 +293,7 @@ Am făcut câteva ajustări pentru a optimiza experiența festivalului!
     },
     {
         id: "5",
+        related: ["1", "2", "3", "4"],
         title: {
             en: 'Meet Our Guest Authors',
             ro: 'Întâlniți Autorii Invitați'
@@ -349,25 +354,3 @@ Alăturați-vă nouă pentru lecturi, sesiuni de autografe și întâlniri inter
     }
 ];
 
-export const articleRelations = [
-    {
-        id: "1",
-        related: ["2", "3", "4", "5"]
-    },
-    {
-        id: "2",
-        related: ["1", "3", "4", "5"]
-    },
-    {
-        id: "3",
-        related: ["1", "2", "4", "5"]
-    },
-    {
-        id: "4",
-        related: ["1", "2", "3", "5"]
-    },
-    {
-        id: "5",
-        related: ["1", "2", "3", "4"]
-    }
-]
