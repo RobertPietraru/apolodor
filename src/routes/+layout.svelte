@@ -91,7 +91,7 @@
 				alt="APL"
 				class="hidden h-8 sm:block"
 				/>
-				<span class="text-xl font-bold">Festivalul Apolodor</span>
+				<span class="text-xl font-bold">{m.nav_title()}</span>
 			</a>
 			<div
 				class="absolute inset-y-0 right-0 flex items-center gap-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
