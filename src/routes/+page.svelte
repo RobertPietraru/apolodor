@@ -67,7 +67,7 @@
 
 		<div class="w-full lg:w-5/12">
 			<img
-				src="/landing2.png"
+				src="/landing2.svg"
 				alt="APOLODOR"
 				class="mx-auto w-full max-w-96 md:block md:object-contain lg:mx-0 lg:max-w-4/5"
 			/>
