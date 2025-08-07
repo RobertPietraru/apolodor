@@ -6,8 +6,10 @@
 		Star,
 		FileText,
 		Image,
+		ArrowRight,
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { Badge } from '$lib/components/ui/badge';
 	const { data } = $props();
 </script>
 
@@ -19,6 +21,7 @@
 	{@render activitiesSection()}
 	{@render guestsSection()}
 	{@render concertSection()}
+	{@render featuredArticlesSection()}
 </main>
 {#snippet landingSection()}
 	<section
@@ -68,7 +71,7 @@
 
 		<div class="w-full lg:w-5/12">
 			<img
-				src="/landing2.svg"
+				src="/landing.svg"
 				alt="APOLODOR"
 				class="mx-auto w-full max-w-96 md:block md:object-contain lg:mx-0 lg:max-w-4/5"
 			/>
@@ -124,7 +127,7 @@
 {/snippet}
 {#snippet concertSection()}
 	<section
-		class="relative overflow-hidden bg-[url('/bg-concert.jpg')] bg-cover bg-fixed bg-center px-4 py-24"
+		class="relative overflow-hidden px-4 py-24"
 	>
 		<div class="absolute inset-0 bg-background/95 backdrop-blur-sm"></div>
 		<div class="relative container mx-auto">
@@ -248,6 +251,101 @@
 		</div>
 	</section>
 {/snippet}
+{#snippet featuredArticlesSection()}
+	<section class="bg-accent/5  px-4 py-16">
+		<div class="container mx-auto">
+			<div class="mb-12 text-center">
+				<h2 class="mb-4 text-4xl font-bold">{m.news_section_title()}</h2>
+				<p class="mx-auto max-w-2xl text-lg text-muted-foreground">
+					{m.news_section_subtitle()}
+				</p>
+			</div>
+
+			{#if data.articles && data.articles.length > 0}
+				<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+					{#each data.articles.slice(0, 3) as article}
+						<div class="group relative overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+							<div class="aspect-[16/9] w-full overflow-hidden bg-muted">
+								<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+								<img
+									src={article.image}
+									alt={article.title}
+									class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+									loading="lazy"
+								/>
+							</div>
+
+							<div class="p-6">
+								<div class="mb-4 flex items-center justify-between gap-3">
+									<Badge
+										variant="secondary"
+										class="text-xs font-medium"
+									>
+										{article.category}
+									</Badge>
+									<div class="flex items-center gap-1 text-xs text-muted-foreground">
+										<Calendar class="h-3 w-3" />
+										{new Date(article.date).toLocaleDateString()}
+									</div>
+								</div>
+
+								<h3
+									class="text-lg leading-tight font-semibold transition-colors duration-200 group-hover:text-primary"
+								>
+									<a href={`/blog/${article.id}`} class="focus:outline-none">
+										<span class="absolute inset-0" aria-hidden="true"></span>
+										{article.title}
+									</a>
+								</h3>
+
+								<p class="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+									{article.excerpt}
+								</p>
+
+								<div class="mt-4">
+									<Button
+										variant="ghost"
+										class="group/btn h-auto p-0 text-primary hover:bg-transparent hover:text-primary/80"
+									>
+										<a
+											href={`/blog/${article.id}`}
+											class="flex items-center gap-2"
+											aria-label={`${m.blog_read_more()}: ${article.title}`}
+										>
+											{m.blog_read_more()}
+											<ArrowRight
+												class="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1"
+											/>
+										</a>
+									</Button>
+								</div>
+							</div>
+						</div>
+					{/each}
+				</div>
+
+				<div class="mt-12 text-center">
+					<Button
+						href="/blog"
+						variant="outline"
+						size="lg"
+						class="border-2 border-primary bg-transparent px-8 py-3 text-lg font-semibold text-primary transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary/10"
+					>
+						{m.news_view_all()}
+					</Button>
+				</div>
+			{:else}
+				<div class="mx-auto max-w-md py-20 text-center">
+					<div class="mb-6">
+						<FileText class="mx-auto h-16 w-16 text-muted-foreground/50" />
+					</div>
+					<h3 class="mb-2 text-2xl font-semibold">{m.blog_no_results_title()}</h3>
+					<p class="text-muted-foreground">{m.blog_no_results_description()}</p>
+				</div>
+			{/if}
+		</div>
+	</section>
+{/snippet}
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -260,5 +358,12 @@
 <style>
 	.font-rubik {
 		font-family: 'Rubik', sans-serif;
+	}
+	
+	.line-clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 </style>
