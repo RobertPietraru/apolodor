@@ -2,6 +2,7 @@ export const articles = [
     {
         id: "1",
         related: ["2", "3"],
+        featured: true,
         title: {
             en: 'Festival Program Announced',
             ro: 'Programul Festivalului Anunțat'
@@ -85,6 +86,7 @@ Fiecare zi va include:
     {
         id: "2",
         related: ["1", "3"],
+        featured: true,
         title: {
             en: 'Special Guest: Ada Milea Concert',
             ro: 'Invitat Special: Concert Ada Milea'
@@ -158,6 +160,7 @@ Ada Milea va prezenta un concert unic ce combină:
     {
         id: "3",
         related: ["1", "2"],
+        featured: true,
         title: {
             en: 'New Workshop Series Added',
             ro: 'Serie Nouă de Ateliere Adăugată'
@@ -226,6 +229,7 @@ Suntem încântați să anunțăm ateliere suplimentare ca răspuns la interesul
     },
     {
         id: "4",
+        featured: false,
         related: ["1", "2", "3"],
         title: {
             en: 'Program Schedule Updates',
@@ -294,6 +298,7 @@ Am făcut câteva ajustări pentru a optimiza experiența festivalului!
     {
         id: "5",
         related: ["1", "2", "3", "4"],
+        featured: false,
         title: {
             en: 'Meet Our Guest Authors',
             ro: 'Întâlniți Autorii Invitați'

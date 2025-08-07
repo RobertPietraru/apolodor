@@ -95,5 +95,8 @@
 	"blog_category_program": "Program",
 	"blog_category_guests": "Guests",
 	"blog_category_workshops": "Workshops",
-	"blog_recommended_articles": "Recommended Articles"
+	"blog_recommended_articles": "Recommended Articles",
+	"news_section_title": "Latest News",
+	"news_section_subtitle": "Stay updated with the latest festival announcements and events",
+	"news_view_all": "View All News"
 }

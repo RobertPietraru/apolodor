@@ -1,5 +1,19 @@
 import { getLocale } from '$lib/paraglide/runtime';
 import { articles } from '$lib/server/data/articles';
+import { m } from '$lib/paraglide/messages';
+function getCategory(item: typeof articles[number]) {
+	if (item.category === 'program') {
+		return m.blog_category_program();
+	}
+	if (item.category === 'guests') {
+		return m.blog_category_guests();
+	}
+	if (item.category === 'workshops') {
+		return m.blog_category_workshops();
+	}
+	return item.category;
+}
+
 export const load = async ({ url }) => {
 	const locale = getLocale();
 	const search = url.searchParams.get('q');
@@ -29,6 +43,7 @@ export const load = async ({ url }) => {
 	return {
 		articles: filteredNews.map((item) => ({
 			...item,
+			category: getCategory(item),
 			title: item.title[locale],
 			excerpt: item.excerpt[locale]
 		})),
