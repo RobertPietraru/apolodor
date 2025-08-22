@@ -6,7 +6,7 @@
 	const { data } = $props();
 </script>
 
-<main class="p-4">
+<main class="p-4 mx-auto container">
 	<Button href="./" variant="outline">
 		<ArrowLeft />
 		Inapoi

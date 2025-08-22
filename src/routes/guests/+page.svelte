@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	const { data } = $props();
 </script>
 
 <main class="space-y-8 p-4">
 	<div class="space-y-2">
-		<h1 class="text-center">Invitati speciali</h1>
-		<p class="text-center text-muted">Lista cu toti invitatii speciali</p>
+		<h1 class="text-center">{m.special_guests()}</h1>
+		<p class="text-center text-muted">{m.special_guests_subtitle()}</p>
 	</div>
 	<div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 		{#each data.guests as guest}
@@ -24,7 +25,7 @@
 					<h4 class="text-2xl font-bold transition-colors duration-300 group-hover:text-primary">{guest.name}</h4>
 					<p class="mt-3 text-sm text-muted-foreground transform transition-all duration-500 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
 						<span class="inline-flex items-center gap-2 font-medium">
-							Vezi detalii 
+							{m.see_details()}
 							<svg class="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 								<path d="M5 12h14m-7-7l7 7-7 7"/>
 							</svg>

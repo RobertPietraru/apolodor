@@ -1,6 +1,6 @@
 import { getLocale } from '$lib/paraglide/runtime.js';
 
-const prerender = true;
+export const prerender = true;
 
 export async function load() {
     const locale = getLocale();
@@ -10,7 +10,7 @@ export async function load() {
 }
 
 const partners = {
-    institutional: [
+    "Parteneri Instituționali": [
         'Inspectoratul Școlar Județean Botoșani',
         "Teatrul Național 'Mihai Eminescu' Botoșani",
         "Memorialul Ipotești - Centrul Național de Studii 'Mihai Eminescu'",
@@ -25,7 +25,7 @@ const partners = {
         'Asociația pentru Ospitalitate Culturală - AOC Iași',
         'Fundația Star of Hope – SOH Iași'
     ],
-    publishers: [
+    "Edituri Partenere": [
         'Editura Arthur',
         'Editura Polirom',
         'Editura Vlad și Cartea cu Genius',
@@ -35,7 +35,7 @@ const partners = {
         'Editura Gama',
         'Editura Alice Books'
     ],
-    media: [
+    "Media Partenere": [
         'Radio România Cultural',
         'TVR Cultural',
         'TVR Iasi',
@@ -45,7 +45,7 @@ const partners = {
         'Viva FM',
         'Observator Cultural'
     ],
-    sponsors: [
+    "Sponsori": [
         'Nea Ilie Bucătarul Sulița',
         'Practic-Comerț-Strugaru S.R.L Darabani',
         'Cofetăria Rida Botoșani',
@@ -55,7 +55,7 @@ const partners = {
 };
 
 const partnersEN = {
-    institutional: [
+    "Institutional Partners": [
         'Botoșani County School Inspectorate',
         "Mihai Eminescu National Theater Botoșani",
         "Ipotești Memorial - Mihai Eminescu National Study Center",
@@ -70,7 +70,7 @@ const partnersEN = {
         'Cultural Hospitality Association - AOC Iași',
         'Star of Hope Foundation – SOH Iași'
     ],
-    publishers: [
+    "Publishers Partners": [
         'Arthur Publishing House',
         'Polirom Publishing House',
         'Vlad and Genius Book Publishing House',
@@ -80,7 +80,7 @@ const partnersEN = {
         'Gama Publishing House',
         'Alice Books Publishing House'
     ],
-    media: [
+    "Media Partners": [
         'Radio Romania Cultural',
         'TVR Cultural',
         'TVR Iasi',
@@ -90,7 +90,7 @@ const partnersEN = {
         'Viva FM',
         'Cultural Observer'
     ],
-    sponsors: [
+    "Sponsors": [
         'Botoșani County School Inspectorate',
         "Mihai Eminescu National Theater Botoșani",
         "Ipotești Memorial - Mihai Eminescu National Study Center",
