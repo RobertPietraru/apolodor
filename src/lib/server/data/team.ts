@@ -1,28 +1,49 @@
 export const team: {
     name: string,
     photo: string,
-    role: 'developer' | 'designer' | 'organizer',
+    description: {
+        ro: string,
+        en: string
+    },
 }[] = [
         {
-            photo: "/assets/people/dan_paper.jpg",
+            photo: "assets/team/dan_lungu.jpg",
             name: "Dan Lungu",
-            role: 'organizer',
+            description: {
+                ro: 'Director, scriitor',
+                en: 'Director, writer'
+            }
         },
         {
-            photo: "/botosani.jpg",
+            photo: "assets/team/luminita_corneanu.jpg",
             name: "Luminița Corneanu",
-            role: 'organizer',
-        },
-
-        {
-            photo: "/botosani.jpg",
-            name: "Mari",
-            role: 'designer',
+            description: {
+                ro: 'Director artistic, critic literar, autoare de literatură pentru copii',
+                en: 'Artistic Director, literary critic, children\'s literature author'
+            }
         },
         {
-            photo: "/botosani.jpg",
-            name: "Robert Pietraru",
-            role: 'developer',
+            photo: "assets/team/cezarina_caloian.jpg",
+            name: "Cezarina Caloian",
+            description: {
+                ro: 'Curator al expozițiilor de ilustrație, artist vizual, cadru didactic la UNAGE Iași',
+                en: 'Illustration exhibitions curator, visual artist, professor at UNAGE Iași'
+            }
         },
-
+        {
+            photo: "assets/team/costica_roman.jpg",
+            name: "Costică Roman",
+            description: {
+                ro: 'Director executiv, președintele Fundației Corona',
+                en: 'Executive Director, Corona Foundation President'
+            }
+        },
+        {
+            photo: "assets/team/marinela_ciobanu.jpg",
+            name: "Marinela Ciobanu",
+            description: {
+                ro: 'Identitate vizuală',
+                en: 'Visual Identity'
+            }
+        },
     ]

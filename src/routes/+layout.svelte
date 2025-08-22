@@ -32,12 +32,12 @@
 			title: m.nav_about(),
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
-				{ title: m.about_section_title(), href: '/about', expanded: false, icon: BookOpen },
-				{ title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
-				{ title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
-				{ title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
-				{ title: m.about_press(), href: '/presa', expanded: false, icon: FileText },
-				{ title: m.nav_partners(), href: '/parteneri', expanded: false, icon: Handshake }
+				{ title: m.about_section_title(), href: '/about', expanded: false, icon: BookOpen, disabled: false },
+				{ title: m.about_team(), href: '/team', expanded: false, icon: Users, disabled: false },
+				{ title: m.nav_partners(), href: '/partners', expanded: false, icon: Handshake, disabled: false },
+				{ title: m.gallery(), href: '/gallery', expanded: false, icon: Image , disabled: true	},
+				{ title: m.about_archive(), href: '/archive', expanded: false, icon: Archive, disabled: true},
+				{ title: m.about_press(), href: '/press', expanded: false, icon: FileText, disabled: true },
 			]
 		},
 		{
@@ -139,6 +139,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if mobileMenuOpen}
 		<div id="mobile-menu" class="px-4 sm:hidden">

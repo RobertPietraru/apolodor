@@ -1,25 +1,33 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	const { data } = $props();
 </script>
 
-<main class="space-y-8 p-4">
-	<div class="space-y-2">
-		<h1 class="text-center">Echipa</h1>
-		<p class="text-center text-muted">Lista cu toti membrii echipei</p>
+<main class="container mx-auto px-4 py-12">
+	<div class="mb-16 text-center">
+		<h1 class="mb-6 text-4xl font-bold tracking-tight text-primary">{m.about_team()}</h1>
+		<p class="mx-auto max-w-2xl text-lg text-muted-foreground">
+			Cunoaște echipa care face posibil Festivalul Internațional de Literatură pentru Copii APOLODOR
+		</p>
 	</div>
-	<div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+
+	<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 		{#each data.team as member}
-			<a class="flex flex-col items-center justify-center gap-2" href="/team/{member.name}">
-				<div class="h-48 w-48 shrink-0">
+			<div
+				class="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+			>
+				<div class="aspect-square overflow-hidden">
 					<img
 						src={member.photo}
 						alt={member.name}
-						class="h-full w-full cursor-pointer rounded-full border-4 border-primary/20 object-cover shadow-lg"
+						class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 					/>
 				</div>
-				<h4 class="cursor-pointer">{member.name}</h4>
-				<h4 class="cursor-pointer text-muted text-sm">{member.role}</h4>
-			</a>
+				<div class="p-6">
+					<h3 class="mb-2 text-xl font-semibold text-foreground">{member.name}</h3>
+					<p class="mb-4 text-muted-foreground">{member.description}</p>
+				</div>
+			</div>
 		{/each}
 	</div>
 </main>
