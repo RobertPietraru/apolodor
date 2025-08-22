@@ -33,7 +33,7 @@
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
 				{ title: m.about_section_title(), href: '/about', expanded: false, icon: BookOpen },
-				{ title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
+				{ title: m.about_team(), href: '/team', expanded: false, icon: Users },
 				{ title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
 				{ title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
 				{ title: m.about_press(), href: '/presa', expanded: false, icon: FileText },
