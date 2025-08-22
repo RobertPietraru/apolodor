@@ -93,7 +93,7 @@
 			<div
 				class="absolute inset-y-0 right-0 flex items-center gap-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
 			>
-				<NavigationMenu.Root viewport={false} class="hidden sm:block">
+				<NavigationMenu.Root viewport={false} class="hidden sm:block z-50">
 					<NavigationMenu.List>
 						{#each navigationItems as item}
 							{#if item.items}
