@@ -1,13 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
-	import {
-		Calendar,
-		MapPin,
-		Star,
-		FileText,
-		Image,
-		ArrowRight,
-	} from '@lucide/svelte';
+	import { Calendar, MapPin, Star, FileText, Image, ArrowRight } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
 	const { data } = $props();
@@ -23,17 +16,17 @@
 </main>
 {#snippet landingSection()}
 	<section
-		class="container mx-auto flex flex-col-reverse items-center px-4 py-8 lg:min-h-[calc(100vh-74px)] lg:flex-row lg:justify-between lg:gap-16 lg:px-10 gap-4"
+		class="container mx-auto flex flex-col-reverse items-center gap-4 px-4 py-8 lg:min-h-[calc(100vh-74px)] lg:flex-row lg:justify-between lg:gap-16 lg:px-10"
 	>
 		<div class="flex w-full flex-col items-center justify-center lg:w-1/2 lg:items-start">
 			<h1
-				class="font-rubik mb-4 text-center text-4xl leading-tight font-bold lg:text-5xl lg:text-left"
+				class="font-rubik mb-4 text-center text-4xl leading-tight font-bold lg:text-left lg:text-5xl"
 			>
 				{@html m.landing_title()}
 			</h1>
 
 			<p
-				class="font-caveat mb-6 text-center text-base leading-relaxed font-bold lg:text-lg lg:text-left"
+				class="font-caveat mb-6 text-center text-base leading-relaxed font-bold lg:text-left lg:text-lg"
 			>
 				{m.landing_subtitle()}
 			</p>
@@ -42,14 +35,14 @@
 				class="mb-8 flex flex-col items-center justify-center space-y-3 md:mb-0 md:flex-row md:space-y-0 md:space-x-6"
 			>
 				<div
-					class="flex items-center space-x-2 whitespace-nowrap text-primary text-sm lg:text-base"
+					class="flex items-center space-x-2 text-sm whitespace-nowrap text-primary lg:text-base"
 				>
 					<Calendar class="h-4 w-4 lg:h-5 lg:w-5" /><span class="font-semibold"
 						>{m.festival_date()}</span
 					>
 				</div>
 				<div
-					class="flex items-center space-x-2 whitespace-nowrap text-primary text-sm lg:text-base"
+					class="flex items-center space-x-2 text-sm whitespace-nowrap text-primary lg:text-base"
 				>
 					<MapPin class="h-4 w-4 lg:h-5 lg:w-5" /><span class="font-semibold"
 						>{m.footer_location()}</span
@@ -57,12 +50,15 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center space-y-4 sm:mt-6 sm:flex-row sm:space-y-0 sm:space-x-4">
+			<div
+				class="flex flex-col items-center space-y-4 sm:mt-6 sm:flex-row sm:space-y-0 sm:space-x-4"
+			>
 				<Button
 					size="custom"
+					href="/guests"
 					class="after:animate-shine rounded-full bg-primary px-6 text-base font-bold text-primary-foreground transition-all duration-300 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:opacity-0 after:transition-opacity hover:scale-105 lg:px-8 lg:py-3 lg:text-lg"
 				>
-					{m.discover_program()}
+					{m.discover_guests()}
 				</Button>
 			</div>
 		</div>
@@ -87,16 +83,16 @@
 					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_writers()}</h3>
 					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 						{#each data.guests.writers as guest}
-						<div class="flex flex-col items-center text-center">
-							<div class="mb-4 h-32 w-32">
-								<img
-									src={guest.photo}
-									alt={guest.name}
-									class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
-								/>
+							<div class="flex flex-col items-center text-center">
+								<div class="mb-4 h-32 w-32">
+									<img
+										src={guest.photo}
+										alt={guest.name}
+										class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
+									/>
+								</div>
+								<h4 class="font-semibold">{guest.name}</h4>
 							</div>
-							<h4 class="font-semibold">{guest.name}</h4>
-						</div>
 						{/each}
 					</div>
 				</div>
@@ -106,16 +102,16 @@
 					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_illustrators()}</h3>
 					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 						{#each data.guests.illustrators as guest}
-						<div class="flex flex-col items-center text-center">
-							<div class="mb-4 h-32 w-32">
-								<img
-									src={guest.photo}
-									alt={guest.name}
-									class="h-full w-full rounded-full border-4 border-destructive/20 object-cover shadow-lg"
-								/>
+							<div class="flex flex-col items-center text-center">
+								<div class="mb-4 h-32 w-32">
+									<img
+										src={guest.photo}
+										alt={guest.name}
+										class="h-full w-full rounded-full border-4 border-destructive/20 object-cover shadow-lg"
+									/>
+								</div>
+								<h4 class="font-semibold">{guest.name}</h4>
 							</div>
-							<h4 class="font-semibold">{guest.name}</h4>
-						</div>
 						{/each}
 					</div>
 				</div>
@@ -124,9 +120,7 @@
 	</section>
 {/snippet}
 {#snippet concertSection()}
-	<section
-		class="relative overflow-hidden px-4 py-24"
-	>
+	<section class="relative overflow-hidden px-4 py-24">
 		<div class="absolute inset-0 bg-background/95 backdrop-blur-sm"></div>
 		<div class="relative container mx-auto">
 			<div class="mx-auto max-w-3xl">
@@ -155,10 +149,7 @@
 									<Calendar class="text-warning h-6 w-6" />
 									<span class="font-semibold">{m.concert_date()}</span>
 								</div>
-								<Button
-									variant="outline"
-									class="border-warning text-warning hover:bg-warning/10 border-2"
-								>
+								<Button variant="outline">
 									{m.concert_details()}
 								</Button>
 							</div>
@@ -178,7 +169,7 @@
 					<Image class="h-8 w-8 text-primary" />
 				</div>
 				<h3 class="mb-2 text-xl font-semibold">{m.exhibitions_title()}</h3>
-				<p class="text-secondary">
+				<p>
 					{m.exhibitions_subtitle()}
 				</p>
 			</div>
@@ -188,7 +179,7 @@
 					<FileText class="h-8 w-8 text-destructive" />
 				</div>
 				<h3 class="mb-2 text-xl font-semibold">{m.program_readings()}</h3>
-				<p class="text-secondary">
+				<p>
 					{m.readings_subtitle()}
 				</p>
 			</div>
@@ -198,7 +189,7 @@
 					<Star class="text-warning h-8 w-8" />
 				</div>
 				<h3 class="mb-2 text-xl font-semibold">{m.program_workshops()}</h3>
-				<p class="text-secondary">
+				<p>
 					{m.workshops_subtitle()}
 				</p>
 			</div>
@@ -233,7 +224,7 @@
 					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">
 						{m.about_mission_title()}
 					</h3>
-					<p class="leading-relaxed text-secondary">
+					<p class="leading-relaxed">
 						{m.about_mission_description()}
 					</p>
 				</div>
@@ -241,7 +232,7 @@
 					<h3 class="mb-3 border-b pb-2 text-2xl font-semibold text-primary">
 						{m.about_organizers_title()}
 					</h3>
-					<p class="leading-relaxed text-secondary">
+					<p class="leading-relaxed">
 						{m.about_organizers_description()}
 					</p>
 				</div>
@@ -250,7 +241,7 @@
 	</section>
 {/snippet}
 {#snippet featuredArticlesSection()}
-	<section class="bg-accent/5  px-4 py-16">
+	<section class="bg-accent/5 px-4 py-16">
 		<div class="container mx-auto">
 			<div class="mb-12 text-center">
 				<h2 class="mb-4 text-4xl font-bold">{m.news_section_title()}</h2>
@@ -262,9 +253,13 @@
 			{#if data.articles && data.articles.length > 0}
 				<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{#each data.articles.slice(0, 3) as article}
-						<div class="group relative overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+						<div
+							class="group relative overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+						>
 							<div class="aspect-[16/9] w-full overflow-hidden bg-muted">
-								<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+								<div
+									class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+								></div>
 								<img
 									src={article.image}
 									alt={article.title}
@@ -275,10 +270,7 @@
 
 							<div class="p-6">
 								<div class="mb-4 flex items-center justify-between gap-3">
-									<Badge
-										variant="secondary"
-										class="text-xs font-medium"
-									>
+									<Badge class="text-xs font-medium">
 										{article.category}
 									</Badge>
 									<div class="flex items-center gap-1 text-xs text-muted-foreground">
@@ -323,12 +315,7 @@
 				</div>
 
 				<div class="mt-12 text-center">
-					<Button
-						href="/blog"
-						variant="outline"
-						size="lg"
-						class="border-2 border-primary bg-transparent px-8 py-3 text-lg font-semibold text-primary transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary/10"
-					>
+					<Button href="/blog" variant="outline" size="lg">
 						{m.news_view_all()}
 					</Button>
 				</div>
@@ -357,7 +344,7 @@
 	.font-rubik {
 		font-family: 'Rubik', sans-serif;
 	}
-	
+
 	.line-clamp-3 {
 		display: -webkit-box;
 		-webkit-line-clamp: 3;

@@ -10,8 +10,9 @@
 		Languages,
 		Menu,
 		X,
-		FileText,
 		Info,
+		BookOpen,
+		FileText,
 		Users,
 		Star,
 		Handshake,
@@ -31,20 +32,18 @@
 			title: m.nav_about(),
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
-				{ title: m.about_festival(), href: '/despre-festival', expanded: false, icon: Info }
-				// { title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
-				// { title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
-				// { title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
-				// { title: m.about_press(), href: '/presa', expanded: false, icon: FileText },
+				{ title: m.about_section_title(), href: '/about', expanded: false, icon: BookOpen },
+				{ title: m.about_team(), href: '/echipa', expanded: false, icon: Users },
+				{ title: m.gallery(), href: '/galerie', expanded: false, icon: Image },
+				{ title: m.about_archive(), href: '/arhiva', expanded: false, icon: Archive },
+				{ title: m.about_press(), href: '/presa', expanded: false, icon: FileText },
+				{ title: m.nav_partners(), href: '/parteneri', expanded: false, icon: Handshake }
 			]
 		},
 		{
 			title: m.nav_guests(),
 			color: 'text-primary hover:text-primary/90',
-			items: [
-				{ title: m.guests_special(), href: '/guests', expanded: false, icon: Star },
-				{ title: m.nav_partners(), href: '/parteneri', expanded: false, icon: Handshake }
-			]
+			href: '/guests'
 		},
 		// {
 		// 	title: m.nav_program(),
@@ -58,14 +57,14 @@
 		}
 	]);
 
-	let mobileMenuOpen = $state(false);
+	let mobileMenuOpen = $state(true);
 
 	let { children } = $props();
 </script>
 
 <header class="border-warning border-b-2 bg-background shadow-sm">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-		<div class="relative flex h-16 items-center justify-between">
+		<div class="relative flex h-20 items-center justify-between">
 			<div class="flex items-center sm:hidden">
 				<!-- Mobile menu button-->
 				<button
@@ -85,8 +84,11 @@
 			</div>
 
 			<a class="hidden items-center gap-1 sm:flex" href="/">
-				<img src="/logos/logo.png" alt="APL" class=" h-8" />
-				<span class="text-xl font-bold">Festivalul Apolodor</span>
+				<img
+					src={getLocale() === 'ro' ? '/logos/logo.svg' : '/logos/logo_en.svg'}
+					alt="Apolodor"
+					class="h-16"
+				/>
 			</a>
 			<div
 				class="absolute inset-y-0 right-0 flex items-center gap-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
@@ -100,17 +102,15 @@
 									<NavigationMenu.Content>
 										<ul class="grid w-[300px] gap-4 p-2">
 											{#each item.items as subItem}
-												<li>
-													<NavigationMenu.Link
-														href={subItem.href}
-														class=" rounded-md px-3 py-2 text-sm font-medium hover:bg-accent "
-													>
-														<div class="flex items-center gap-2">
-															<subItem.icon class="h-4 w-4 hover:text-accent-foreground" />
-															{subItem.title}
-														</div>
-													</NavigationMenu.Link>
-												</li>
+												<NavigationMenu.Link
+													href={subItem.href}
+													class="group/nav flex flex-row items-center gap-2"
+												>
+													<subItem.icon
+														class="h-4 w-4 text-primary group-hover/nav:text-accent-foreground"
+													/>
+													<span class="text-sm font-medium">{subItem.title}</span>
+												</NavigationMenu.Link>
 											{/each}
 										</ul>
 									</NavigationMenu.Content>
@@ -129,13 +129,11 @@
 				</NavigationMenu.Root>
 				<!-- Language Switch -->
 				<div class="flex-shrink-0">
-					<Button
-						variant="outline"
-						class="border-2 border-primary bg-transparent font-semibold text-primary hover:bg-primary/10"
-						onclick={switchLanguage}
-					>
+					<Button variant="outline" class="border-2" onclick={switchLanguage}>
 						<Languages class="h-4 w-4" />
-						<span class="ml-2">{getLocale() === 'ro' ? m.switch_to_en() : m.switch_to_ro()}</span>
+						<span class="ml-2 font-semibold"
+							>{getLocale() === 'ro' ? m.switch_to_en() : m.switch_to_ro()}</span
+						>
 					</Button>
 				</div>
 			</div>
@@ -144,11 +142,11 @@
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if mobileMenuOpen}
 		<div id="mobile-menu" class="px-4 sm:hidden">
-			<Accordion.Root type="single" class="w-full sm:max-w-[70%]" value="item-1">
+			<Accordion.Root type="single" class="w-full sm:max-w-[70%]">
 				{#each navigationItems as item}
 					{#if item.items}
 						<Accordion.Item value={item.title}>
-							<Accordion.Trigger>{item.title}</Accordion.Trigger>
+							<Accordion.Trigger >{item.title}</Accordion.Trigger>
 							<Accordion.Content class="flex flex-col gap-4 text-balance">
 								{#each item.items as subItem}
 									<a
@@ -186,17 +184,17 @@
 </main>
 
 <footer class="border-t bg-background">
-	<div class="container mx-auto px-4 py-12">
+	<div class="container mx-auto px-4 py-8">
 		<div class="mb-8 grid grid-cols-1 gap-8 md:grid-cols-4">
 			<div>
 				<h3 class="mb-4 text-lg font-bold">{m.about_festival()}</h3>
-				<p class="text-sm text-muted">
+				<p class="text-sm">
 					{m.about_description()}
 				</p>
 			</div>
 			<div>
 				<h3 class="mb-4 text-lg font-bold">{m.footer_contact()}</h3>
-				<ul class="flex flex-wrap gap-4 text-sm text-muted md:block md:space-y-2">
+				<ul class="flex flex-wrap gap-4 text-sm md:block md:space-y-2">
 					<li>{m.footer_email()}</li>
 					<li>{m.footer_phone()}</li>
 				</ul>
@@ -205,21 +203,16 @@
 				<h3 class="mb-4 text-lg font-bold">{m.footer_quick_links()}</h3>
 				<ul class="flex flex-wrap gap-4 text-sm md:block md:space-y-2">
 					<li>
-						<a href="/program" class="text-muted-foreground hover:text-primary">{m.nav_program()}</a
-						>
+						<a href="/program" class=" hover:text-primary">{m.nav_program()}</a>
 					</li>
 					<li>
-						<a href="/guests" class="text-muted-foreground hover:text-primary"
-							>{m.guests_special()}</a
-						>
+						<a href="/guests" class=" hover:text-primary">{m.guests_special()}</a>
 					</li>
 					<li>
-						<a href="/blog" class="text-muted-foreground hover:text-primary">{m.nav_news()}</a>
+						<a href="/blog" class=" hover:text-primary">{m.nav_news()}</a>
 					</li>
 					<li>
-						<a href="/contact" class="text-muted-foreground hover:text-primary"
-							>{m.footer_contact()}</a
-						>
+						<a href="/contact" class=" hover:text-primary">{m.footer_contact()}</a>
 					</li>
 				</ul>
 			</div>
@@ -227,15 +220,13 @@
 				<h3 class="mb-4 text-lg font-bold">{m.footer_social()}</h3>
 				<ul class="flex flex-wrap gap-4 text-sm md:block md:space-y-2">
 					<li>
-						<a
-							href="https://www.facebook.com/festivalul.apolodor"
-							class="text-muted hover:text-primary">{m.social_facebook()}</a
+						<a href="https://www.facebook.com/festivalul.apolodor" class=" hover:text-primary"
+							>{m.social_facebook()}</a
 						>
 					</li>
 					<li>
-						<a
-							href="https://www.instagram.com/festivalul_apolodor/"
-							class="text-muted hover:text-primary">{m.social_instagram()}</a
+						<a href="https://www.instagram.com/festivalul_apolodor/" class=" hover:text-primary"
+							>{m.social_instagram()}</a
 						>
 					</li>
 				</ul>
@@ -243,10 +234,10 @@
 		</div>
 		<div class="border-t pt-8">
 			<div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-				<p class="mb-4 text-center text-sm text-muted md:mb-0">
+				<p class="mb-4 text-center text-sm md:mb-0">
 					{m.footer_copyright()}
 				</p>
-				<div class="flex space-x-4 text-sm text-muted">
+				<div class="flex space-x-4 text-sm">
 					<a href="/politica-confidentialitate" class="hover:text-primary">{m.privacy_policy()}</a>
 					<a href="/termeni-conditii" class="hover:text-primary">{m.terms_conditions()}</a>
 					<a href="https://github.com/RobertPietraru/apolodor">

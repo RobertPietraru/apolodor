@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"festival_name": "Festivalul pentru Copii și Adolescenți Apolodor",
-	"festival_date": "18-21 septembrie 2025, Botoșani",
+	"festival_date": "18-21 septembrie 2025",
 	"nav_about": "Despre",
 	"nav_guests": "Invitați",
 	"nav_exhibitions": "Expoziții",
@@ -102,5 +102,7 @@
 	"blog_recommended_articles": "Articole Recomandate",
 	"news_section_title": "Ultimele Știri",
 	"news_section_subtitle": "Rămâi la curent cu ultimele anunțuri și evenimente ale festivalului",
-	"news_view_all": "Vezi Toate Știrile"
+	"news_view_all": "Vezi Toate Știrile",
+	"about_section_title": "Despre Festival",
+	"discover_guests": "Descoperă Invitații"
 }
