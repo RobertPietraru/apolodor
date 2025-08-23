@@ -57,7 +57,7 @@
 		}
 	]);
 
-	let mobileMenuOpen = $state(true);
+	let mobileMenuOpen = $state(false);
 
 	let { children } = $props();
 </script>
