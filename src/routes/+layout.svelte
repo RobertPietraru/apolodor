@@ -32,12 +32,30 @@
 			title: m.nav_about(),
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
-				{ title: m.about_section_title(), href: '/about', expanded: false, icon: BookOpen, disabled: false },
+				{
+					title: m.about_section_title(),
+					href: '/about',
+					expanded: false,
+					icon: BookOpen,
+					disabled: false
+				},
 				{ title: m.about_team(), href: '/team', expanded: false, icon: Users, disabled: false },
-				{ title: m.nav_partners(), href: '/partners', expanded: false, icon: Handshake, disabled: false },
-				{ title: m.gallery(), href: '/gallery', expanded: false, icon: Image , disabled: true	},
-				{ title: m.about_archive(), href: '/archive', expanded: false, icon: Archive, disabled: true},
-				{ title: m.about_press(), href: '/press', expanded: false, icon: FileText, disabled: true },
+				{
+					title: m.nav_partners(),
+					href: '/partners',
+					expanded: false,
+					icon: Handshake,
+					disabled: false
+				},
+				{ title: m.gallery(), href: '/gallery', expanded: false, icon: Image, disabled: true },
+				{
+					title: m.about_archive(),
+					href: '/archive',
+					expanded: false,
+					icon: Archive,
+					disabled: true
+				},
+				{ title: m.about_press(), href: '/press', expanded: false, icon: FileText, disabled: true }
 			]
 		},
 		{
@@ -93,7 +111,7 @@
 			<div
 				class="absolute inset-y-0 right-0 flex items-center gap-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
 			>
-				<NavigationMenu.Root viewport={false} class="hidden sm:block z-50">
+				<NavigationMenu.Root viewport={false} class="z-50 hidden sm:block">
 					<NavigationMenu.List>
 						{#each navigationItems as item}
 							{#if item.items}
@@ -147,7 +165,7 @@
 				{#each navigationItems as item}
 					{#if item.items}
 						<Accordion.Item value={item.title}>
-							<Accordion.Trigger >{item.title}</Accordion.Trigger>
+							<Accordion.Trigger>{item.title}</Accordion.Trigger>
 							<Accordion.Content class="flex flex-col gap-4 text-balance">
 								{#each item.items as subItem}
 									<a
@@ -212,8 +230,9 @@
 					<li>
 						<a href="/blog" class=" hover:text-primary">{m.nav_news()}</a>
 					</li>
+
 					<li>
-						<a href="/contact" class=" hover:text-primary">{m.footer_contact()}</a>
+						<a href="/team" class=" hover:text-primary">{m.footer_team()}</a>
 					</li>
 				</ul>
 			</div>

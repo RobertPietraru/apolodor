@@ -12,7 +12,7 @@ export interface PageMetadata {
 	canonical?: string;
 }
 
-const DEFAULT_IMAGE = '/assets/logos/logo.png';
+const DEFAULT_IMAGE = 'https://apolodor.vercel.app/assets/logos/logo.png';
 
 export function getBaseMetadata(locale: string): PageMetadata {
 	return {
