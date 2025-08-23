@@ -1,13 +1,13 @@
-import { specialGuests } from "$lib/server/data/guests"
+import { specialGuests, type Guest } from "$lib/server/data/guests"
 import { error } from "@sveltejs/kit";
 import { getLocale } from '$lib/paraglide/runtime.js';
 import { getBaseMetadata, type PageMetadata } from '$lib/utils/metadata';
 import * as m from '$lib/paraglide/messages';
 
-function getGuestProfileMetadata(locale: string, guest: any): PageMetadata {
+function getGuestProfileMetadata(locale: string, guest: Guest): PageMetadata {
 	const base = getBaseMetadata(locale);
 	const guestTitle = `${guest.name} | ${m.meta_guest_profile_suffix()}`;
-	const guestDesc = guest.excerpt || m.meta_guest_profile_description().replace('{name}', guest.name);
+	const guestDesc = guest.content || m.meta_guest_profile_description().replace('{name}', guest.name);
 	
 	return {
 		...base,

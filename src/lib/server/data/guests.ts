@@ -1,4 +1,4 @@
-interface Guest {
+export interface Guest {
     photo: string,
     name: string,
     role: 'writer' | 'illustrator' | 'singer',
@@ -234,7 +234,7 @@ Din anul 2021 este cadrul didactic titular al specializării grafică la Univers
 
 }
 const allGuests = Object.values(guests)
-export const specialGuests = allGuests.filter(guest => guest.specialGuest)
+export const specialGuests: Guest[] = allGuests.filter(guest => guest.specialGuest)
 
 export const landingPageGuests = {
     writers: [
