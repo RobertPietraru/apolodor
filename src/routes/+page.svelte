@@ -151,9 +151,6 @@
 									<Calendar class="text-warning h-6 w-6" />
 									<span class="font-semibold">{m.concert_date()}</span>
 								</div>
-								<Button variant="outline">
-									{m.concert_details()}
-								</Button>
 							</div>
 						</div>
 					</div>
