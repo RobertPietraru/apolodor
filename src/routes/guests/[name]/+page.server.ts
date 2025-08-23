@@ -8,7 +8,7 @@ function getGuestProfileMetadata(locale: string, guest: Guest): PageMetadata {
 	const base = getBaseMetadata(locale);
 	const guestTitle = `${guest.name} | ${m.meta_guest_profile_suffix()}`;
 	const guestDesc = guest.content || m.meta_guest_profile_description().replace('{name}', guest.name);
-	
+
 	return {
 		...base,
 		title: `${guestTitle} | ${base.title}`,
@@ -19,14 +19,18 @@ function getGuestProfileMetadata(locale: string, guest: Guest): PageMetadata {
 	};
 }
 
-export const load = ({params}) => {
-    const locale = getLocale();
-    const guest = specialGuests.filter((g) => g.role === "writer" && g.name === params.name);
-    if (guest.length === 0){
-        error(404, "Nu am putut gasi scriitorul");
-    }
-    return {
-        guest: guest[0],
-        metadata: getGuestProfileMetadata(locale, guest[0])
-    }
+export const load = ({ params }) => {
+	const locale = getLocale();
+	const guests = specialGuests.filter((g) => g.role === "writer" && g.name === params.name);
+	if (guests.length === 0) {
+		error(404, "Nu am putut gasi scriitorul");
+	}
+	const guest = guests[0];
+	return {
+		guest: {
+			...guest,
+			content: guest.content[locale]
+		},
+		metadata: getGuestProfileMetadata(locale, guest)
+	}
 }
