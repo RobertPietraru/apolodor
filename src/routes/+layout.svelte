@@ -85,7 +85,7 @@
 
 			<a class="hidden items-center gap-1 sm:flex" href="/">
 				<img
-					src={getLocale() === 'ro' ? '/logos/logo.svg' : '/logos/logo_en.svg'}
+					src={getLocale() === 'ro' ? '/assets/logos/logo.svg' : '/assets/logos/logo_en.svg'}
 					alt="Apolodor"
 					class="h-16"
 				/>
@@ -242,7 +242,7 @@
 					<a href="/politica-confidentialitate" class="hover:text-primary">{m.privacy_policy()}</a>
 					<a href="/termeni-conditii" class="hover:text-primary">{m.terms_conditions()}</a>
 					<a href="https://github.com/RobertPietraru/apolodor">
-						<img src="/logos/github.svg" alt="GitHub" class="h-4 w-4" />
+						<img src="/assets/logos/github.svg" alt="GitHub" class="h-4 w-4" />
 					</a>
 				</div>
 			</div>
