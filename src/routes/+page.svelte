@@ -58,7 +58,7 @@
 			>
 				<Button
 					size="custom"
-					href={localizeHref("/guests", {locale})}
+					href={localizeHref('/guests', { locale })}
 					class="after:animate-shine rounded-full bg-primary px-6 text-base font-bold text-primary-foreground transition-all duration-300 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:opacity-0 after:transition-opacity hover:scale-105 lg:px-8 lg:py-3 lg:text-lg"
 				>
 					{m.discover_guests()}
@@ -163,7 +163,7 @@
 {#snippet activitiesSection()}
 	<section class="container mx-auto px-4 py-16">
 		<h2 class="mb-12 text-center text-4xl font-bold">{m.activities_title()}</h2>
-		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+		<div class="grid place-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
 			<div class="flex flex-col items-center text-center">
 				<div class="mb-4 rounded-full bg-primary/10 p-4">
 					<Image class="h-8 w-8 text-primary" />
@@ -184,14 +184,16 @@
 				</p>
 			</div>
 
-			<div class="flex flex-col items-center text-center">
-				<div class="bg-warning/10 mb-4 rounded-full p-4">
-					<Star class="text-warning h-8 w-8" />
+			<div class="flex items-center justify-center md:col-span-2 lg:col-span-1">
+				<div class="flex flex-col items-center text-center md:w-1/2 lg:w-full">
+					<div class="bg-warning/10 mb-4 rounded-full p-4">
+						<Star class="text-warning h-8 w-8" />
+					</div>
+					<h3 class="mb-2 text-xl font-semibold">{m.program_workshops()}</h3>
+					<p>
+						{m.workshops_subtitle()}
+					</p>
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">{m.program_workshops()}</h3>
-				<p>
-					{m.workshops_subtitle()}
-				</p>
 			</div>
 		</div>
 	</section>
@@ -282,7 +284,10 @@
 								<h3
 									class="text-lg leading-tight font-semibold transition-colors duration-200 group-hover:text-primary"
 								>
-									<a href={localizeHref(`/blog/${article.id}`, {locale})} class="focus:outline-none">
+									<a
+										href={localizeHref(`/blog/${article.id}`, { locale })}
+										class="focus:outline-none"
+									>
 										<span class="absolute inset-0" aria-hidden="true"></span>
 										{article.title}
 									</a>
@@ -298,7 +303,7 @@
 										class="group/btn h-auto p-0 text-primary hover:bg-transparent hover:text-primary/80"
 									>
 										<a
-											href={localizeHref(`/blog/${article.id}`, {locale})}
+											href={localizeHref(`/blog/${article.id}`, { locale })}
 											class="flex items-center gap-2"
 											aria-label={`${m.blog_read_more()}: ${article.title}`}
 										>
@@ -315,7 +320,7 @@
 				</div>
 
 				<div class="mt-12 text-center">
-					<Button href={localizeHref("/blog", {locale})} variant="outline" size="lg">
+					<Button href={localizeHref('/blog', { locale })} variant="outline" size="lg">
 						{m.news_view_all()}
 					</Button>
 				</div>
@@ -335,7 +340,7 @@
 	<title>{data.metadata.title}</title>
 	<meta name="description" content={data.metadata.description} />
 	<meta name="keywords" content={data.metadata.keywords} />
-	
+
 	<!-- Open Graph -->
 	<meta property="og:title" content={data.metadata.ogTitle} />
 	<meta property="og:description" content={data.metadata.ogDescription} />
@@ -343,18 +348,18 @@
 	<meta property="og:type" content={data.metadata.ogType} />
 	<meta property="og:url" content={$page.url.href} />
 	<meta property="og:site_name" content="APOLODOR" />
-	
+
 	<!-- Twitter -->
 	<meta name="twitter:card" content={data.metadata.twitterCard} />
 	<meta name="twitter:title" content={data.metadata.ogTitle} />
 	<meta name="twitter:description" content={data.metadata.ogDescription} />
 	<meta name="twitter:image" content={data.metadata.ogImage} />
-	
+
 	<!-- Additional SEO -->
 	<link rel="canonical" href={$page.url.href} />
 	<meta name="robots" content="index, follow" />
 	<meta name="author" content="APOLODOR Festival Team" />
-	
+
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
