@@ -1,108 +1,48 @@
 import { getLocale } from '$lib/paraglide/runtime.js';
+import { getBaseMetadata, type PageMetadata } from '$lib/utils/metadata';
+function getPartnersMetadata(locale: string): PageMetadata {
+    const base = getBaseMetadata(locale);
+    const partnersTitle = locale === 'en' ? 'Our Partners' : 'Partenerii Noștri';
+    const partnersDesc = locale === 'en'
+        ? 'Meet our valued partners and sponsors who make the APOLODOR Children and Youth Literature Festival possible.'
+        : 'Cunoaște partenerii și sponsorii noștri valoroși care fac posibil Festivalul de Literatură pentru Copii și Adolescenți APOLODOR.';
 
-export const prerender = true;
-
-export async function load() {
-    const locale = getLocale();
     return {
-        partners: locale === 'ro' ? partners : partnersEN
+        ...base,
+        title: `${partnersTitle} | ${base.title}`,
+        description: partnersDesc,
+        ogTitle: partnersTitle,
+        ogDescription: partnersDesc
     };
 }
 
-const partners = {
-    "Parteneri Instituționali": [
-        'Inspectoratul Școlar Județean Botoșani',
-        "Teatrul Național 'Mihai Eminescu' Botoșani",
-        "Memorialul Ipotești - Centrul Național de Studii 'Mihai Eminescu'",
-        "Biblioteca Județeană 'Mihai Eminescu' Botoșani",
-        "Universitatea Națională de Arte 'George Enescu' din Iași",
-        'Palatul Copiilor Botoșani',
-        'Casa Corpului Didactic Botoșani',
-        'Galeria ArtEast Iași',
-        'Tipografia Printco Iași',
-        'Agenția Caracteristic',
-        'CNIPT Botoșani',
-        'Asociația pentru Ospitalitate Culturală - AOC Iași',
-        'Fundația Star of Hope – SOH Iași'
-    ],
-    "Edituri Partenere": [
-        'Editura Arthur',
-        'Editura Polirom',
-        'Editura Vlad și Cartea cu Genius',
-        'Editura YoungArt',
-        'Editura Minigrafic',
-        'Editura Humanitas Junior',
-        'Editura Gama',
-        'Editura Alice Books'
-    ],
-    "Media Partenere": [
-        'Radio România Cultural',
-        'TVR Cultural',
-        'TVR Iasi',
-        'Buzz Botoșani',
-        'PressHub',
-        'Revista Clivaj',
-        'Viva FM',
-        'Observator Cultural'
-    ],
-    "Sponsori": [
-        'Nea Ilie Bucătarul Sulița',
-        'Practic-Comerț-Strugaru S.R.L Darabani',
-        'Cofetăria Rida Botoșani',
-        'Artechwine Botoșani',
-        'Danimet Exim SRL'
-    ]
-};
+export const load = async () => {
+    const locale = getLocale();
+    const partners = {
+        'Parteneri principali': [
+            'Consiliul Local Botoșani',
+            'Primăria Municipiului Botoșani',
+            'Fundația Corona'
+        ],
+        'Parteneri culturali': [
+            'Biblioteca Județeană Mihai Eminescu',
+            'Teatrul Municipal Botoșani',
+            'Casa de Cultură a Municipiului Botoșani'
+        ],
+        'Parteneri media': [
+            'Radio Botoșani',
+            'Ziar Local Plus',
+            'Botoșani News'
+        ],
+        'Sponsori': [
+            'Editura Cartea Românească',
+            'Editura Arthur',
+            'Librăria Humanitas'
+        ]
+    };
 
-const partnersEN = {
-    "Institutional Partners": [
-        'Botoșani County School Inspectorate',
-        "Mihai Eminescu National Theater Botoșani",
-        "Ipotești Memorial - Mihai Eminescu National Study Center",
-        "Mihai Eminescu County Library Botoșani",
-        "George Enescu National University of Arts Iași",
-        'Children\'s Palace Botoșani',
-        'Teaching Staff House Botoșani',
-        'ArtEast Gallery Iași',
-        'Printco Typography Iași',
-        'Caracteristic Agency',
-        'CNIPT Botoșani',
-        'Cultural Hospitality Association - AOC Iași',
-        'Star of Hope Foundation – SOH Iași'
-    ],
-    "Publishers Partners": [
-        'Arthur Publishing House',
-        'Polirom Publishing House',
-        'Vlad and Genius Book Publishing House',
-        'YoungArt Publishing House',
-        'Minigrafic Publishing House',
-        'Humanitas Junior Publishing House',
-        'Gama Publishing House',
-        'Alice Books Publishing House'
-    ],
-    "Media Partners": [
-        'Radio Romania Cultural',
-        'TVR Cultural',
-        'TVR Iasi',
-        'Buzz Botoșani',
-        'PressHub',
-        'Clivaj Magazine',
-        'Viva FM',
-        'Cultural Observer'
-    ],
-    "Sponsors": [
-        'Botoșani County School Inspectorate',
-        "Mihai Eminescu National Theater Botoșani",
-        "Ipotești Memorial - Mihai Eminescu National Study Center",
-        "Mihai Eminescu County Library Botoșani",
-        "George Enescu National University of Arts Iași",
-        'Children\'s Palace Botoșani',
-        'Teaching Staff House Botoșani',
-        'ArtEast Gallery Iași',
-        'Printco Typography Iași',
-        'Caracteristic Agency',
-        'CNIPT Botoșani',
-        'Cultural Hospitality Association - AOC Iași',
-        'Star of Hope Foundation – SOH Iași'
-    ]
+    return {
+        partners,
+        metadata: getPartnersMetadata(locale)
+    };
 };

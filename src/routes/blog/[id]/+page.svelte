@@ -2,8 +2,40 @@
 	import * as Card from '$lib/components/ui/card';
 	import { marked } from 'marked';
 	import * as m from '$lib/paraglide/messages';
+	import { page } from '$app/stores';
+	
 	const { data } = $props();
 </script>
+
+<svelte:head>
+	<title>{data.metadata.title}</title>
+	<meta name="description" content={data.metadata.description} />
+	<meta name="keywords" content={data.metadata.keywords} />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content={data.metadata.ogTitle} />
+	<meta property="og:description" content={data.metadata.ogDescription} />
+	<meta property="og:image" content={data.metadata.ogImage} />
+	<meta property="og:type" content={data.metadata.ogType} />
+	<meta property="og:url" content={$page.url.href} />
+	<meta property="og:site_name" content="APOLODOR" />
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content={data.metadata.twitterCard} />
+	<meta name="twitter:title" content={data.metadata.ogTitle} />
+	<meta name="twitter:description" content={data.metadata.ogDescription} />
+	<meta name="twitter:image" content={data.metadata.ogImage} />
+	
+	<!-- Additional SEO -->
+	<link rel="canonical" href={$page.url.href} />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="APOLODOR Festival Team" />
+	
+	<!-- Article specific meta -->
+	{#if data.article.date}
+		<meta property="article:published_time" content={data.article.date} />
+	{/if}
+</svelte:head>
 
 <div class="container mx-auto px-4 py-8">
 	<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">

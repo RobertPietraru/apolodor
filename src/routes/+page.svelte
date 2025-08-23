@@ -3,6 +3,8 @@
 	import { Calendar, MapPin, Star, FileText, Image, ArrowRight } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
+	import { page } from '$app/stores';
+	
 	const { data } = $props();
 </script>
 
@@ -332,6 +334,30 @@
 	</section>
 {/snippet}
 <svelte:head>
+	<title>{data.metadata.title}</title>
+	<meta name="description" content={data.metadata.description} />
+	<meta name="keywords" content={data.metadata.keywords} />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content={data.metadata.ogTitle} />
+	<meta property="og:description" content={data.metadata.ogDescription} />
+	<meta property="og:image" content={data.metadata.ogImage} />
+	<meta property="og:type" content={data.metadata.ogType} />
+	<meta property="og:url" content={$page.url.href} />
+	<meta property="og:site_name" content="APOLODOR" />
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content={data.metadata.twitterCard} />
+	<meta name="twitter:title" content={data.metadata.ogTitle} />
+	<meta name="twitter:description" content={data.metadata.ogDescription} />
+	<meta name="twitter:image" content={data.metadata.ogImage} />
+	
+	<!-- Additional SEO -->
+	<link rel="canonical" href={$page.url.href} />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="APOLODOR Festival Team" />
+	
+	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link

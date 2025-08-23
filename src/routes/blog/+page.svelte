@@ -8,6 +8,7 @@
 	import { Search, Filter, Calendar, ArrowRight, BookOpen, X } from '@lucide/svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
+	import { page as pageStore } from '$app/stores';
 
 	const { data } = $props();
 
@@ -74,6 +75,31 @@
 		za: m.blog_sort_za()
 	};
 </script>
+
+<svelte:head>
+	<title>{data.metadata.title}</title>
+	<meta name="description" content={data.metadata.description} />
+	<meta name="keywords" content={data.metadata.keywords} />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content={data.metadata.ogTitle} />
+	<meta property="og:description" content={data.metadata.ogDescription} />
+	<meta property="og:image" content={data.metadata.ogImage} />
+	<meta property="og:type" content={data.metadata.ogType} />
+	<meta property="og:url" content={$pageStore.url.href} />
+	<meta property="og:site_name" content="APOLODOR" />
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content={data.metadata.twitterCard} />
+	<meta name="twitter:title" content={data.metadata.ogTitle} />
+	<meta name="twitter:description" content={data.metadata.ogDescription} />
+	<meta name="twitter:image" content={data.metadata.ogImage} />
+	
+	<!-- Additional SEO -->
+	<link rel="canonical" href={$pageStore.url.href} />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="APOLODOR Festival Team" />
+</svelte:head>
 
 <!-- Hero Section -->
 <section class="">

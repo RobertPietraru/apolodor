@@ -1,6 +1,20 @@
 import { getLocale } from '$lib/paraglide/runtime';
 import { articles } from '$lib/server/data/articles';
 import { m } from '$lib/paraglide/messages';
+import { getBaseMetadata, type PageMetadata } from '$lib/utils/metadata';
+
+function getBlogMetadata(locale: string): PageMetadata {
+	const base = getBaseMetadata(locale);
+	
+	return {
+		...base,
+		title: `${m.meta_blog_title()} | ${base.title}`,
+		description: m.meta_blog_description(),
+		ogTitle: m.meta_blog_title(),
+		ogDescription: m.meta_blog_description()
+	};
+}
+
 function getCategory(item: typeof articles[number]) {
 	if (item.category === 'program') {
 		return m.blog_category_program();
@@ -14,39 +28,52 @@ function getCategory(item: typeof articles[number]) {
 	return item.category;
 }
 
-export const load = async ({ url }) => {
+export async function load({ url }) {
 	const locale = getLocale();
-	const search = url.searchParams.get('q');
-	const sort = url.searchParams.get('sort');
-	const filters = url.searchParams.getAll('category');
-	// Mock news data
+	
+	// Get URL parameters for search/filter
+	const query = url.searchParams.get('q') || '';
+	const category = url.searchParams.get('category') || 'all';
+	const sort = url.searchParams.get('sort') || 'newest';
 
+	// Process articles
+	let processedArticles = articles.map((item) => ({
+		...item,
+		category: getCategory(item),
+		title: item.title[locale],
+		excerpt: item.excerpt[locale]
+	}));
 
-	let filteredNews = articles;
-
-	if (search) {
-		filteredNews = articles.filter((item) => item.title[locale].toLowerCase().includes(search.toLowerCase()) || item.excerpt[locale].toLowerCase().includes(search.toLowerCase()));
+	// Apply filters
+	if (query) {
+		processedArticles = processedArticles.filter(
+			(article) =>
+				article.title.toLowerCase().includes(query.toLowerCase()) ||
+				article.excerpt.toLowerCase().includes(query.toLowerCase())
+		);
 	}
 
-	if (sort) {
-		filteredNews = filteredNews.sort((a, b) => {
-			if (sort === 'newest') {
+	if (category !== 'all') {
+		processedArticles = processedArticles.filter((article) => article.category === category);
+	}
+
+	// Apply sorting
+	processedArticles.sort((a, b) => {
+		switch (sort) {
+			case 'oldest':
+				return new Date(a.date).getTime() - new Date(b.date).getTime();
+			case 'az':
+				return a.title.localeCompare(b.title);
+			case 'za':
+				return b.title.localeCompare(a.title);
+			default: // newest
 				return new Date(b.date).getTime() - new Date(a.date).getTime();
-			}
-			return new Date(a.date).getTime() - new Date(b.date).getTime();
-		});
-	}
-	if (filters.length > 0) {
-		filteredNews = filteredNews.filter((item) => filters.includes(item.category));
-	}
+		}
+	});
 
 	return {
-		articles: filteredNews.map((item) => ({
-			...item,
-			category: getCategory(item),
-			title: item.title[locale],
-			excerpt: item.excerpt[locale]
-		})),
-		totalArticleCount: articles.length
+		articles: processedArticles,
+		totalArticleCount: articles.length,
+		metadata: getBlogMetadata(locale)
 	};
-};
+}
