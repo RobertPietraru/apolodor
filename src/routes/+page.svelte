@@ -4,8 +4,9 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
 	import { page } from '$app/stores';
-	
+	import { localizeHref, getLocale } from '$lib/paraglide/runtime';
 	const { data } = $props();
+	let locale = $state(getLocale());
 </script>
 
 <main>
@@ -57,7 +58,7 @@
 			>
 				<Button
 					size="custom"
-					href="/guests"
+					href={localizeHref("/guests", {locale})}
 					class="after:animate-shine rounded-full bg-primary px-6 text-base font-bold text-primary-foreground transition-all duration-300 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:opacity-0 after:transition-opacity hover:scale-105 lg:px-8 lg:py-3 lg:text-lg"
 				>
 					{m.discover_guests()}
@@ -281,7 +282,7 @@
 								<h3
 									class="text-lg leading-tight font-semibold transition-colors duration-200 group-hover:text-primary"
 								>
-									<a href={`/blog/${article.id}`} class="focus:outline-none">
+									<a href={localizeHref(`/blog/${article.id}`, {locale})} class="focus:outline-none">
 										<span class="absolute inset-0" aria-hidden="true"></span>
 										{article.title}
 									</a>
@@ -297,7 +298,7 @@
 										class="group/btn h-auto p-0 text-primary hover:bg-transparent hover:text-primary/80"
 									>
 										<a
-											href={`/blog/${article.id}`}
+											href={localizeHref(`/blog/${article.id}`, {locale})}
 											class="flex items-center gap-2"
 											aria-label={`${m.blog_read_more()}: ${article.title}`}
 										>
@@ -314,7 +315,7 @@
 				</div>
 
 				<div class="mt-12 text-center">
-					<Button href="/blog" variant="outline" size="lg">
+					<Button href={localizeHref("/blog", {locale})} variant="outline" size="lg">
 						{m.news_view_all()}
 					</Button>
 				</div>

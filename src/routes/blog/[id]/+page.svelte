@@ -3,8 +3,11 @@
 	import { marked } from 'marked';
 	import * as m from '$lib/paraglide/messages';
 	import { page } from '$app/stores';
-	
+	import { localizeHref } from '$lib/paraglide/runtime.js';
+	import { getLocale } from '$lib/paraglide/runtime.js';
+
 	const { data } = $props();
+	let locale = $state(getLocale());
 </script>
 
 <svelte:head>
@@ -73,7 +76,7 @@
 									<h3
 										class="text-base leading-tight font-semibold transition-colors duration-200 group-hover:text-primary"
 									>
-										<a href="/blog/{article.id}" class="focus:outline-none">
+										<a href={localizeHref(`/blog/${article.id}`, {locale})} class="focus:outline-none">
 											<span class="absolute inset-0" aria-hidden="true"></span>
 											{article.title}
 										</a>

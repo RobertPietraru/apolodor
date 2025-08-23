@@ -2,8 +2,9 @@
 	import { m } from '$lib/paraglide/messages';
 	import * as Card from '$lib/components/ui/card';
 	import { page } from '$app/stores';
-	
+	import { localizeHref, getLocale } from '$lib/paraglide/runtime';
 	const { data } = $props();
+	let locale = $state(getLocale());
 </script>
 
 <svelte:head>
@@ -38,7 +39,7 @@
 	</div>
 	<div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 		{#each data.guests as guest}
-			<a class="group relative flex flex-col items-center gap-4 p-6 rounded-xl transition-all duration-300 hover:bg-accent/10 hover:shadow-xl hover:-translate-y-2" href="/guests/{guest.name}">
+			<a class="group relative flex flex-col items-center gap-4 p-6 rounded-xl transition-all duration-300 hover:bg-accent/10 hover:shadow-xl hover:-translate-y-2" href={localizeHref(`/guests/${guest.name}`, {locale})}>
 				<div class="relative">
 					<div class="absolute -inset-4 rounded-full bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100 animate-pulse"></div>
 					<div class="relative h-52 w-52 overflow-hidden rounded-full border-4 border-primary/20 transition-all duration-500 group-hover:border-primary/60 shadow-md group-hover:shadow-2xl">

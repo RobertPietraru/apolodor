@@ -2,7 +2,7 @@
 	import '../app.css';
 	import * as m from '$lib/paraglide/messages';
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
-	import { setLocale, getLocale } from '$lib/paraglide/runtime';
+	import { setLocale, getLocale, localizeHref } from '$lib/paraglide/runtime';
 	import { Button } from '$lib/components/ui/button';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
 	import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
@@ -10,31 +10,32 @@
 		Languages,
 		Menu,
 		X,
-		Info,
 		BookOpen,
 		FileText,
 		Users,
-		Star,
 		Handshake,
 		Image,
 		Archive
 	} from '@lucide/svelte';
+	import { onMount } from 'svelte';
 
+	let locale = $state(getLocale());
 	// Language switching function
 	function switchLanguage() {
 		const currentLocale = getLocale();
+		locale = currentLocale;
 		const newLocale = currentLocale === 'ro' ? 'en' : 'ro';
 		setLocale(newLocale);
 	}
 
-	const navigationItems = $state([
+	const navigationItems = $derived([
 		{
 			title: m.nav_about(),
 			color: 'text-destructive hover:text-destructive/90',
 			items: [
 				{
 					title: m.about_section_title(),
-					href: '/about',
+					href: localizeHref('/about', {locale}),
 					expanded: false,
 					icon: BookOpen,
 					disabled: false
@@ -42,7 +43,7 @@
 				{ title: m.about_team(), href: '/team', expanded: false, icon: Users, disabled: false },
 				{
 					title: m.nav_partners(),
-					href: '/partners',
+					href: localizeHref('/partners', {locale}),
 					expanded: false,
 					icon: Handshake,
 					disabled: false
@@ -50,18 +51,18 @@
 				{ title: m.gallery(), href: '/gallery', expanded: false, icon: Image, disabled: true },
 				{
 					title: m.about_archive(),
-					href: '/archive',
+					href: localizeHref('/archive', {locale}),
 					expanded: false,
 					icon: Archive,
 					disabled: true
 				},
-				{ title: m.about_press(), href: '/press', expanded: false, icon: FileText, disabled: true }
+				{ title: m.about_press(), href: localizeHref('/press', {locale}), expanded: false, icon: FileText, disabled: true }
 			]
 		},
 		{
 			title: m.nav_guests(),
 			color: 'text-primary hover:text-primary/90',
-			href: '/guests'
+			href: localizeHref('/guests', {locale})
 		},
 		// {
 		// 	title: m.nav_program(),
@@ -71,7 +72,7 @@
 		{
 			title: m.nav_news(),
 			color: 'text-warning hover:text-warning/90',
-			href: '/blog'
+			href: localizeHref('/blog', {locale})
 		}
 	]);
 
@@ -101,7 +102,7 @@
 				</button>
 			</div>
 
-			<a class="hidden items-center gap-1 sm:flex" href="/">
+			<a class="hidden items-center gap-1 sm:flex" href={localizeHref('/', {locale})}>
 				<img
 					src={getLocale() === 'ro' ? '/assets/logos/logo.svg' : '/assets/logos/logo_en.svg'}
 					alt="Apolodor"
@@ -222,17 +223,17 @@
 				<h3 class="mb-4 text-lg font-bold">{m.footer_quick_links()}</h3>
 				<ul class="flex flex-wrap gap-4 text-sm md:block md:space-y-2">
 					<li>
-						<a href="/program" class=" hover:text-primary">{m.nav_program()}</a>
+						<a href={localizeHref("/program")} class=" hover:text-primary">{m.nav_program()}</a>
 					</li>
 					<li>
-						<a href="/guests" class=" hover:text-primary">{m.guests_special()}</a>
+						<a href={localizeHref("/guests")} class=" hover:text-primary">{m.guests_special()}</a>
 					</li>
 					<li>
-						<a href="/blog" class=" hover:text-primary">{m.nav_news()}</a>
+						<a href={localizeHref("/blog")} class=" hover:text-primary">{m.nav_news()}</a>
 					</li>
 
 					<li>
-						<a href="/team" class=" hover:text-primary">{m.footer_team()}</a>
+						<a href={localizeHref("/team")} class=" hover:text-primary">{m.footer_team()}</a>
 					</li>
 				</ul>
 			</div>
@@ -258,8 +259,8 @@
 					{m.footer_copyright()}
 				</p>
 				<div class="flex space-x-4 text-sm">
-					<a href="/politica-confidentialitate" class="hover:text-primary">{m.privacy_policy()}</a>
-					<a href="/termeni-conditii" class="hover:text-primary">{m.terms_conditions()}</a>
+					<a href={localizeHref("/privacy-policy", {locale})} class="hover:text-primary">{m.privacy_policy()}</a>
+					<a href={localizeHref("/terms-conditions", {locale})} class="hover:text-primary">{m.terms_conditions()}</a>
 					<a href="https://github.com/RobertPietraru/apolodor">
 						<img src="/assets/logos/github.svg" alt="GitHub" class="h-4 w-4" />
 					</a>
