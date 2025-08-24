@@ -29,23 +29,20 @@
 	<meta name="robots" content="index, follow" />
 	<meta name="author" content="APOLODOR Festival Team" />
 </svelte:head>
+<div class="container mx-auto px-4 py-16">
+	<div class="prose prose-lg mx-auto">
+		<h1 class="mb-8 text-4xl font-bold text-center">
+			Festivalul de Literatură pentru Copii și Adolescenți APOLODOR din Botoșani
+		</h1>
+		
+		<p class="mb-6 text-xl leading-relaxed">
+			Festivalul își propune să îi apropie pe cei mai mici cititori de literatura contemporană dedicată lor.aduce în prim-plan voci esențiale ale culturii române contemporane.
+		</p>
 
-<main class="container mx-auto px-4 py-12">
-	<div class="mb-16 text-center">
-		<h1 class="mb-6 text-4xl font-bold tracking-tight text-primary">{m.about_festival()}</h1>
-		<p class="mx-auto max-w-2xl text-lg text-muted-foreground">
-			{m.about_description()}
+		<p class="text-xl leading-relaxed">
+			Aducând în prim-plan voci esențiale ale culturii române contemporane,
+			Festivalul APOLODOR își propune să devină o platformă unică pentru dialog, reflecție și inițiative culturale inovatoare, cu un potențial real de impact în combaterea deficitului de lectură în România.
 		</p>
 	</div>
-	
-	<div class="grid gap-12 md:grid-cols-2">
-		<div>
-			<h2 class="mb-6 text-2xl font-semibold text-primary">{m.about_mission_title()}</h2>
-			<p class="leading-relaxed">{m.about_mission_description()}</p>
-		</div>
-		<div>
-			<h2 class="mb-6 text-2xl font-semibold text-primary">{m.about_organizers_title()}</h2>
-			<p class="leading-relaxed">{m.about_organizers_description()}</p>
-		</div>
-	</div>
-</main>
+</div>
+
