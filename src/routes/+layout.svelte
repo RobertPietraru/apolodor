@@ -18,7 +18,7 @@
 		Archive
 	} from '@lucide/svelte';
 	import { onMount } from 'svelte';
-
+	import { goto } from '$app/navigation';
 	let locale = $state(getLocale());
 	// Language switching function
 	function switchLanguage() {
@@ -128,8 +128,11 @@
 										<ul class="grid w-[300px] gap-4 p-2">
 											{#each item.items as subItem}
 												<NavigationMenu.Link
-													href={subItem.href}
-													class="group/nav flex flex-row items-center gap-2"
+													onclick={() => {
+														goto(subItem.href);
+														mobileMenuOpen = false;
+													}}
+													class="group/nav flex flex-row items-center gap-2 cursor-pointer"
 												>
 													<subItem.icon
 														class="h-4 w-4 text-primary group-hover/nav:text-accent-foreground"
@@ -144,7 +147,13 @@
 								<NavigationMenu.Item>
 									<NavigationMenu.Link>
 										{#snippet child()}
-											<a href={item.href} class={navigationMenuTriggerStyle()}>{item.title}</a>
+											<button
+												onclick={() => {
+													goto(item.href);
+													mobileMenuOpen = false;
+												}}
+												class={navigationMenuTriggerStyle()}>{item.title}</button
+											>
 										{/snippet}
 									</NavigationMenu.Link>
 								</NavigationMenu.Item>
@@ -175,27 +184,33 @@
 							<Accordion.Trigger>{item.title}</Accordion.Trigger>
 							<Accordion.Content class="flex flex-col gap-4 text-balance">
 								{#each item.items as subItem}
-									<a
-										href={subItem.href}
-										class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+									<button
+										onclick={() => {
+											goto(subItem.href);
+											mobileMenuOpen = false;
+										}}
+										class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground cursor-pointer"
 									>
 										<svelte:component this={subItem.icon} class="h-4 w-4" />
 										{subItem.title}
-									</a>
+									</button>
 								{/each}
 							</Accordion.Content>
 						</Accordion.Item>
 					{:else}
 						<div class="border-b last:border-b-0">
-							<a
-								href={item.href}
+							<button
+								onclick={() => {
+									goto(item.href);
+									mobileMenuOpen = false;
+								}}
 								class="flex flex-1 items-start justify-between gap-4
 								rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline
 								focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none
 								disabled:opacity-50 [&[data-state=open]>svg]:rotate-180"
 							>
 								{item.title}
-							</a>
+							</button>
 						</div>
 					{/if}
 				{/each}
