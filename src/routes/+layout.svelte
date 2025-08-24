@@ -132,7 +132,7 @@
 														goto(subItem.href);
 														mobileMenuOpen = false;
 													}}
-													class="group/nav flex flex-row items-center gap-2 cursor-pointer"
+													class="group/nav flex cursor-pointer flex-row items-center gap-2"
 												>
 													<subItem.icon
 														class="h-4 w-4 text-primary group-hover/nav:text-accent-foreground"
@@ -189,7 +189,7 @@
 											goto(subItem.href);
 											mobileMenuOpen = false;
 										}}
-										class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground cursor-pointer"
+										class="flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
 									>
 										<svelte:component this={subItem.icon} class="h-4 w-4" />
 										{subItem.title}
@@ -275,10 +275,14 @@
 			</div>
 		</div>
 		<div class="border-t pt-8">
-			<div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+			<div class="flex flex-col items-center justify-between gap-10 md:flex-row">
 				<p class="mb-4 text-center text-sm md:mb-0">
 					{m.footer_copyright()}
 				</p>
+				<div class="flex-1"></div>
+				<img src="/assets/sponsors/corona.png" alt="Corona" class="h-10" />
+				<img src="/assets/sponsors/primaria.png" alt="Primaria Botoșani" class="h-10" />
+
 				<a href="https://github.com/RobertPietraru/apolodor">
 					<img src="/assets/logos/github.svg" alt="GitHub" class="h-4 w-4" />
 				</a>

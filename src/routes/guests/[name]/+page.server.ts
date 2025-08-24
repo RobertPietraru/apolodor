@@ -7,14 +7,11 @@ import * as m from '$lib/paraglide/messages';
 function getGuestProfileMetadata(locale: string, guest: Guest): PageMetadata {
 	const base = getBaseMetadata(locale);
 	const guestTitle = `${guest.name} | ${m.meta_guest_profile_suffix()}`;
-	const guestDesc = guest.content || m.meta_guest_profile_description().replace('{name}', guest.name);
 
 	return {
 		...base,
 		title: `${guestTitle} | ${base.title}`,
-		description: guestDesc,
 		ogTitle: guestTitle,
-		ogDescription: guestDesc,
 		ogImage: guest.photo || base.ogImage
 	};
 }
