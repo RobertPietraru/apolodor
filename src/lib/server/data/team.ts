@@ -46,4 +46,12 @@ export const team: {
                 en: 'Visual Identity'
             }
         },
+        {
+            photo: "assets/team/alexandru_teosanu.jpg",
+            name: "Alexandru Teioșanu",
+            description: {
+                ro: 'Manager logistică și voluntatri',
+                en: 'Logistics and volunteers manager'
+            }
+        },
     ]
