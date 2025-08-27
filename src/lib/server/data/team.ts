@@ -47,7 +47,7 @@ export const team: {
             }
         },
         {
-            photo: "assets/team/alexandru_teosanu.jpg",
+            photo: "assets/team/alexandru_teiosanu.jpg",
             name: "Alexandru Teioșanu",
             description: {
                 ro: 'Manager logistică și voluntatri',

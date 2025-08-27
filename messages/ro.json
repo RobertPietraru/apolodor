@@ -32,7 +32,7 @@
 	"partners_sponsors": "Sponsori",
 	"partners_cultural": "Parteneri culturali",
 	"footer_contact": "Contact",
-	"footer_email": "contact@apolodor.ro",
+	"footer_email": "festivalul.apolodor@gmail.com",
 	"footer_phone": "+40 123 456 789",
 	"footer_location": "Botoșani, România",
 	"footer_address": "Str. Victoriei nr. 10, Botoșani",
@@ -137,7 +137,7 @@
 	"meta_gallery_title": "Galerie Foto",
 	"meta_gallery_description": "Imagini și momente din cadrul Festivalului pentru Copii și Adolescenți Apolodor",
 	"footer_team": "Echipa",
-	"meta_guest_profile_description": "Profilul {name} din Festivalul pentru Copii și Adolescenți Apolodor",
 	"meta_guest_profile_suffix": "Profil",
-	"go_back": "Înapoi"
+	"go_back": "Înapoi",
+	"meta_guest_profile_description": "Profilul {name} din Festivalul pentru Copii și Adolescenți Apolodor"
 }
