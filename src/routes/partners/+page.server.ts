@@ -32,7 +32,8 @@ export const load = async () => {
             'Agenția Caracteristic',
             'CNIPT Botoșani',
             'Asociația pentru Ospitalitate Culturală - AOC Iași',
-            'Fundația Star of Hope – SOH Iași'
+            'Fundația Star of Hope – SOH Iași',
+            'Asociația Scriitorilor de Literatură pentru Copii și Adolescenți din România – „De basm"'
         ],
 
         "Edituri partenere": [
@@ -80,7 +81,8 @@ export const load = async () => {
             'Caracteristic Agency',
             'CNIPT Botoșani',
             'Cultural Hospitality Association - AOC Iași',
-            'Star of Hope Foundation – SOH Iași'
+            'Star of Hope Foundation – SOH Iași',
+            'Romanian Association of Children and Youth Literature Writers – „De basm"'
         ],
 
         "Partner Publishers": [
