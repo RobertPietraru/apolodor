@@ -48,21 +48,21 @@
 					icon: Handshake,
 					disabled: false
 				},
-				{ title: m.gallery(), href: '/gallery', expanded: false, icon: Image, disabled: true },
-				{
-					title: m.about_archive(),
-					href: localizeHref('/archive', { locale }),
-					expanded: false,
-					icon: Archive,
-					disabled: true
-				},
-				{
-					title: m.about_press(),
-					href: localizeHref('/press', { locale }),
-					expanded: false,
-					icon: FileText,
-					disabled: true
-				}
+				// { title: m.gallery(), href: '/gallery', expanded: false, icon: Image, disabled: true },
+				// {
+				// 	title: m.about_archive(),
+				// 	href: localizeHref('/archive', { locale }),
+				// 	expanded: false,
+				// 	icon: Archive,
+				// 	disabled: true
+				// },
+				// {
+				// 	title: m.about_press(),
+				// 	href: localizeHref('/press', { locale }),
+				// 	expanded: false,
+				// 	icon: FileText,
+				// 	disabled: true
+				// }
 			]
 		},
 		{
