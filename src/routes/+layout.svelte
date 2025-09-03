@@ -79,6 +79,12 @@
 			title: m.nav_news(),
 			color: 'text-warning hover:text-warning/90',
 			href: localizeHref('/blog', { locale })
+		},
+
+		{
+			title: m.nav_contact(),
+			color: 'text-primary hover:text-primary/90',
+			href: localizeHref('/#contact_section', { locale })
 		}
 	]);
 

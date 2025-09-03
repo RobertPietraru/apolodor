@@ -20,7 +20,7 @@
 </main>
 
 {#snippet contactSection()}
-	<section class="container mx-auto px-4 py-16">
+	<section id="contact_section" class="container mx-auto px-4 py-16">
 		<h2 class="mb-12 text-center text-4xl font-bold">{m.footer_contact()}</h2>
 		<div class="grid place-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
 			<div class="flex flex-col items-center text-center">
