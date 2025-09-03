@@ -56,13 +56,13 @@
 				// 	icon: Archive,
 				// 	disabled: true
 				// },
-				// {
-				// 	title: m.about_press(),
-				// 	href: localizeHref('/press', { locale }),
-				// 	expanded: false,
-				// 	icon: FileText,
-				// 	disabled: true
-				// }
+				{
+					title: m.about_press(),
+					href: localizeHref('/press', { locale }),
+					expanded: false,
+					icon: FileText,
+					disabled: true
+				}
 			]
 		},
 		{
