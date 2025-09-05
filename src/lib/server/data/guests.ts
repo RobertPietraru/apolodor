@@ -451,12 +451,109 @@ Realizator de emisiuni şi prezentator la TVR Iaşi, cu o experinţă vastă în
         content: {
             ro: `# Matei Martin
 Matei Martin este jurnalist. 
-Co-realizator al emisiunii „Timpul prezent” la Radio România Cultural, redactor-șef al revistei „Observator cultural”, fondator al newsletterului „Vineri”,  Matei e interesat de transformarea instituțiilor și de evoluția politicilor culturale din Europa și din România.`, 
-en: `# Matei Martin
+Co-realizator al emisiunii „Timpul prezent” la Radio România Cultural, redactor-șef al revistei „Observator cultural”, fondator al newsletterului „Vineri”,  Matei e interesat de transformarea instituțiilor și de evoluția politicilor culturale din Europa și din România.`,
+            en: `# Matei Martin
 Matei Martin is a journalist. 
 Co-realizer of the "Timpul prezent" program at Radio România Cultural, editor-in-chief of the "Observator cultural" magazine, founder of the "Vineri" newsletter, Matei is interested in the transformation of institutions and the evolution of cultural policies in Europe and Romania.`,
         }
     } satisfies Guest,
+
+    mihneaMaruta: {
+        photo: "/assets/people/mihnea_maruta.jpg",
+        name: "Mihnea Maruta",
+        role: 'writer',
+        specialGuest: false,
+        content: {
+            ro: `„De ce petrecem tot mai mult timp, și de la vârste tot mai mici, în rețele de socializare?
+Aceste rețele sunt concepute să exploateze o vulnerabilitate a minții noastre. Care este aceasta? Fiecare anunț că ai primit un like sau o inimioară. Fiecare anunț cu privire la un comentariu. Fiecare anunț cu privire la cineva care a dat share postării tale. Afișarea permanentă a numărului de like-uri (pentru că vrei să crească). Posibilitatea de a face scrolling la infinit.
+Toate acestea declanșează o secreție de dopamină în creier.
+Dopamina este o substanță care joacă rolul de curier între neuroni, fiind răspunzătoare pentru senzațiile de plăcere. Creierul nostru o folosește ca răsplată pentru a ne determina să repetăm anumite comportamente care ne asigură supraviețuirea. Dopamina este secretată, de pildă, în timpul actului sexual, pe care creierul îl percepe ca indispensabil pentru procreare, deci pentru perpetuarea speciei.
+Ce anume vrea creierul să repetăm când vine vorba despre social media?
+Noutatea. Faptul că, la fiecare câteva secunde, primește o informație nouă, îi dă creierului iluzia că își extinde cunoașterea, că e mai pregătit pentru realitate și, deci, pentru supraviețuire.
+Deci, mecanismul prin care social media creează dependență este o combinație de excitație continuă cu noutate continuă, iar ceea ce creează dependență, la fel ca în cazul drogurilor sau al jocurilor mecanice, este secreția de dopamină în creier”.
+
+
+Mihnea Măruţă este jurnalist și doctor în filosofie al Universității „Babeș-Bolyai”. Teza sa de doctorat, publicată în 2023 sub titlul „Identitatea virtuală. Cum și de ce ne transformă rețelele de socializare", a devenit un bestseller al Editurii Humanitas.
+Mihnea Măruță predă cursul „Filosofia comunicării” la Departamentul de Jurnalism al UBB, scrie pentru reviste de cultură și încearcă să întrețină o dezbatere națională privind efectele mediului virtual asupra copiilor și adolescenților.
+
+`,
+            en: `“Why do we spend more and more time, and from an early age, on social media?
+These networks are designed to exploit a vulnerability of our mind. What is this? Every notification that you have received a like or a heart. Every notification about a comment. Every notification about someone who has shared your post. The constant display of the number of likes (because you want to increase it). The possibility of scrolling infinitely.
+All of these trigger a secretion of dopamine in the brain.
+Dopamine is a substance that plays the role of messenger between neurons, responsible for pleasure sensations. Our brain uses it as a reward for performing certain behaviors that ensure our survival. Dopamine is secreted, for example, during sexual act, which the brain perceives as indispensable for reproduction, therefore for the perpetuation of the species.
+What does the brain want us to repeat when it comes to social media?
+The novelty. The fact that, every few seconds, it receives a new piece of information, gives the brain the illusion that it expands its knowledge, that it is better prepared for reality and, therefore, for survival.
+So, the mechanism by which social media creates dependence is a combination of continuous excitement with continuous novelty, and what creates dependence, just like with drugs or mechanical games, is the secretion of dopamine in the brain”.
+
+
+Mihnea Măruță is a journalist and PhD in philosophy from the "Babeș-Bolyai" University. His PhD thesis, published in 2023 under the title "Virtual Identity. How and why social media transforms our lives", has become a bestseller of the Humanitas Publishing House.
+Mihnea Măruță teaches the "Philosophy of Communication" course at the Department of Journalism at UBB, writes for cultural magazines and tries to maintain a national debate on the effects of the virtual environment on children and adolescents.
+`,
+        }
+    } satisfies Guest,
+    svetlanaCirstean: {
+        photo: "/assets/people/svetlana_cirstlean.jpg",
+        name: "Svetlana Cârstean",
+        role: 'writer',
+        specialGuest: false,
+        content: {
+            ro: `#SVETLANA CÂRSTEAN
+
+Svetlana Cârstean (n. Botoșani,1969) este poetă, traducătoare și curatoare de proiecte culturale. Pentru Floarea de menghină (Cartea Românească, 2008), a primit Premiul pentru Debut în Poezie al Uniunii Scriitorilor, dar și Premiul Național de Poezie ”Mihai Eminescu”. A publicat apoi: Gravitație (Trei, 2015), volumul Trado, împreună cu poeta suedeză Athena Farrokhzad (Nemira, 2016), Sînt alta (Nemira, 2021), Restul (Nemira, 2025), prima carte dintr-o trilogie. Cea de a doua, Arteziana, este în curs de apariție. Coordonează la editura Nemira colecția de poezie Vorpal. 
+`,
+            en: `#SVETLANA CÂRSTEAN
+
+Svetlana Cârstean (born in Botoșani, 1969) is a poet, translator, and curator of cultural projects. For The Menghin Flower (Cartea Românească, 2008), she received the Prize for New Poetry of the Writers' Union, as well as the Mihai Eminescu National Poetry Prize. She published: Gravity (Trei, 2015), the volume Trado, together with the Swedish poet Athena Farrokhzad (Nemira, 2016), I Am Another (Nemira, 2021), Rest (Nemira, 2025), the first book in a trilogy. The second, Arteziana, is in progress. She coordinates the Nemira collection of poetry Vorpal. 
+`,
+        },
+
+    } satisfies Guest,
+    gabrielaAdamesteanu: {
+        photo: "/assets/people/gabriela_adamesteanu.jpg",
+        name: "Gabriela Adamesteanu",
+        role: 'writer',
+        specialGuest: false,
+        content: {
+            ro: `„Copilăria este vârsta pe care o purtăm în noi toată viața. Din poveștile ascultate și citite atunci ne-am ales modelele imaginare, așa cum din anturaj ne-am ales modelele umane.
+Conștientă de puterea  deprinderilor din copilărie, o tot mai largă comunitate de părinți și profesori, psihologi și sociologi, editori, ilustratori și scriitori  pentru copii, se străduie să stabilizeze obiceiul cititului de la vârstele mici care îmbogățește mințile tinere. Destinul omului, confruntat azi cu tehnologia înaltă, creată tot de el, capătă  o șansă în plus prin cartea copilăriei și  adolescenței.
+Generațiile noi de părinți par să-i înțeleagă utilitatea, iar târgurile și festivalurile se înviorează și se colorează cu un aflux de mici cititori”. - Gabriela Adameșteanu
+
+
+Gabriela Adameșteanu este una dintre cele mai importante prozatoare ale literaturii române postbelice. A absolvit Facultatea de Limba şi Literatura Română, Universitatea Bucureşti (1965). Redactor la Editura Enciclopedică (1965-1984) şi lector la Cartea Românească (1985-1989). A condus revista 22, publicată de Grupul pentru Dialog Social (1991-2005), şi apoi suplimentul ei literar, Bucureştiul Cultural (până în 2013). 
+A primit Premiul Hellman-Hammett pentru curaj în jurnalism, acordat de Human Rights Watch (2002), şi titlul „Chevalier de L’Ordre des Arts et des Lettres“ (2013) din partea guvernului francez. Vicepreşedintă (2000-2004) şi preşedintă (2004-2006) a Centrului PEN Român. Cărţile ei, constant reeditate, sunt traduse în 18 limbi şi elogiate în presa românescă şi internaţională.
+
+
+Romane: Drumul egal al fiecărei zile (1975); Dimineaţă pierdută (1984); Întâlnirea (2003, 2007); Provizorat (2010); Fontana di Trevi (2018); Voci la distanţă (2022).
+Proză scurtă: Dăruieşte-ţi o zi de vacanţă (1979); Varăprimăvară (1989); Gara de Est (2008).
+Nonficţiune: Obsesia politicii, interviuri (1995); Cele două Românii, publicistică (2000); Anii romantici, memorialistică (2014); Crescând lângă doi nostalgici, memorialistică (2023).
+
+`,
+            en: `“Childhood is the age we carry in us all our lives. From the stories we listened to and read then, we chose our imaginary models, just as from the upbringing we chose our human models.
+Aware of the power of habits from childhood, an ever-widening community of parents and teachers, psychologists and sociologists, editors, illustrators, and writers for children, strive to stabilize the habit of reading from a young age, which enriches young minds. The fate of man, today confronted with high technology, created by him, gains an extra chance through the book of childhood and adolescence.
+The new generations of parents seem to understand the usefulness, and fairs and festivals are becoming more colorful with an influx of young readers”. - Gabriela Adameșteanu
+
+
+Gabriela Adameșteanu is one of the most important prose writers of the post-war Romanian literature. She graduated from the Faculty of Romanian Language and Literature, University of Bucharest (1965). Editor at the Encyclopedic Publishing House (1965-1984) and lecturer at Cartea Românească (1985-1989). She was the editor of the 22 magazine, published by the Social Dialog Group (1991-2005), and then its literary supplement, Bucureştiul Cultural (until 2013). 
+She received the Hellman-Hammett Prize for courage in journalism, awarded by Human Rights Watch (2002), and the title "Chevalier de L’Ordre des Arts et des Lettres" (2013) from the French government. Vicepresident (2000-2004) and president (2004-2006) of the PEN Romanian Center. Her books, constantly reissued, are translated into 18 languages and praised in the Romanian press and international media.
+
+
+Romances: The Equal Road of Every Day (1975); Lost Morning (1984); Meeting (2003, 2007); Provizor (2010); Fontana di Trevi (2018); Voices at a Distance (2022).
+Short prose: Give Yourself a Day off (1979); Summer-Spring (1989); Gara de Est (2008).
+Nonfiction: Obsession with politics, interviews (1995); The Two Romans, publicistic (2000); The Romantic Years, memorialistic (2014); Growing Up with Two Nostalgic, memorialistic (2023).
+`,
+        }
+    } satisfies Guest,
+    vasileIftime: {
+        photo: "/assets/people/vasile_iftime.jpg",
+        name: "Vasile Iftime",
+        role: 'writer',
+        specialGuest: false,
+        content: {
+            ro: `Iftime Vasile (n. 17 decembrie 1971, Sarata Basarab, Hăneşti) – scriitor, membru al Uniunii Scriitorilor din România (din 2008), Membru PEN România (din 2022). A debutat editorial în 2005 cu volumul de poezie Umbre (Editura „Geea”, 2005). A publicat 16 volume de poezie, un roman și un volum de eseu critic. A colaborat la numeroase reviste, a primit și a fost nominalizat la diverse premii. Coordonează ateliere de scriere creativă. „În tot ce ne înconjoară descoperim poezia. Dacă acceptăm realitatea așa cum este, concretă și imediată, dacă ne mulțumim cu ordinea firelor din clepsidră, dacă credem că plânsul este doar circuitul apei în natură, dacă nu înțelegem că păsările duc unul din zece paie în cer și că piatra de râu știe pe de rost poveștile izvoarelor, sâmburele de poezie din inima fiecăruia va fi precum talantul îngropat în pământul nerodirilor și este păcat. Poezia este prea gol și preaplin, noi suntem amfora”, crede Vasile Iftime.`,
+            en: `Iftime Vasile (born December 17, 1971, Sarata Basarab, Hăneşti) – writer, member of the Writers' Union of Romania (from 2008), member of PEN Romania (from 2022). He debuted in 2005 with the poetry volume Umbre (Editura „Geea”, 2005). He has published 16 poetry volumes, a novel, and a critical essay volume. He has collaborated with many magazines, received and was nominated for various prizes. He coordinates creative writing workshops. "In everything that surrounds us we discover poetry. If we accept reality as it is, concrete and immediate, if we are content with the order of the waters in nature, if we believe that the weeping is only the circuit of water in nature, if we do not understand that the birds carry one out of ten feathers in the sky and that the river stone knows of the stories of the springs, the core of poetry in each of us will be like the talent buried in the earth of the unhewn stones and it is a sin. Poetry is too empty and too superficial, we are amphorae", believes Vasile Iftime.`,
+        }
+    } satisfies Guest,
+
 }
 
 export const allGuests = Object.values(guests)
