@@ -27,7 +27,8 @@ export async function load() {
 		...item,
 		category: getCategory(item),
 		title: item.title[locale],
-		excerpt: item.excerpt[locale]
+		excerpt: item.excerpt[locale],
+		image: item.image[locale]
 	}));
 	const translatedGuests = allGuests.map((guest) => ({
 		...guest,

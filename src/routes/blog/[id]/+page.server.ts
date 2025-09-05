@@ -33,6 +33,7 @@ export const load = async ({ params, url }) => {
 		...article,
 		title: article?.title[locale],
 		excerpt: article?.excerpt[locale],
+		image: article?.image[locale],
 		content: article?.content[locale]
 	};
 	
@@ -42,7 +43,7 @@ export const load = async ({ params, url }) => {
 		article: processedArticle,
 		relatedArticles: relatedArticles.map((item) => ({
 			id: item.id,
-			image: item.image,
+			image: item.image[locale],
 			date: item.date,
 			title: item?.title[locale],
 			excerpt: item?.excerpt[locale],

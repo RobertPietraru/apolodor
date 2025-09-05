@@ -41,6 +41,7 @@ export async function load({ url }) {
 		...item,
 		category: getCategory(item),
 		title: item.title[locale],
+		image: item.image[locale],
 		excerpt: item.excerpt[locale]
 	}));
 

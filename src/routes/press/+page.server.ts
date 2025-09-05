@@ -20,6 +20,7 @@ function getPressMetadata(locale: string): PageMetadata {
 export const load = async () => {
     const locale = getLocale();
     return {
-        metadata: getPressMetadata(locale)
+        metadata: getPressMetadata(locale),
     };
 };
+
