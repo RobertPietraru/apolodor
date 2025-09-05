@@ -93,7 +93,7 @@
 	let { children } = $props();
 </script>
 
-<header class="border-warning border-b-2 bg-background shadow-sm">
+<header class="border-warning border-b-2 bg-background shadow-sm sticky top-0 z-50">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-20 items-center justify-between">
 			<div class="flex items-center sm:hidden">
