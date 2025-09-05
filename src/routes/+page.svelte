@@ -1,6 +1,16 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
-	import { Calendar, MapPin, Star, FileText, Image, ArrowRight, Mail, Phone, Facebook, Instagram, Youtube } from '@lucide/svelte';
+	import {
+		Calendar,
+		MapPin,
+		Star,
+		FileText,
+		Image,
+		ArrowRight,
+		Mail,
+		Facebook,
+		Instagram
+	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
 	import { page } from '$app/stores';
@@ -23,64 +33,39 @@
 	<section id="contact_section" class="container mx-auto px-4 py-16">
 		<h2 class="mb-12 text-center text-4xl font-bold">{m.footer_contact()}</h2>
 		<div class="grid place-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
-			<div class="flex flex-col items-center text-center">
-				<div class="mb-4 rounded-full bg-primary/10 p-4">
-					<Phone class="h-8 w-8 text-primary" />
-				</div>
-				<h3 class="mb-2 text-xl font-semibold">Telefon</h3>
-				<p class="text-muted-foreground">
-					{m.footer_phone()}
-				</p>
-			</div>
-
-			<div class="flex flex-col items-center text-center">
-				<div class="mb-4 rounded-full bg-destructive/10 p-4">
-					<Mail class="h-8 w-8 text-destructive" />
+			<a class="flex flex-col items-center text-center" href="mailto:{m.footer_email()}">
+				<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
+					<Mail class="h-5 w-5 text-destructive" />
 				</div>
 				<h3 class="mb-2 text-xl font-semibold">Email</h3>
-				<a
-					href="mailto:{m.footer_email()}"
-					class="text-muted-foreground hover:text-destructive transition-colors"
-				>
+				<span>
 					{m.footer_email()}
-				</a>
-			</div>
+				</span>
+			</a>
 
-			<div class="flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
-				<div class="mb-4 rounded-full bg-warning/10 p-4">
-					<Star class="h-8 w-8 text-warning" />
+			<a
+				class="flex flex-col items-center text-center"
+				href="https://www.facebook.com/festivalul.apolodor"
+			>
+				<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
+					<Facebook class="h-5 w-5 text-destructive" />
 				</div>
-				<h3 class="mb-2 text-xl font-semibold">{m.footer_follow()}</h3>
-				<div class="flex items-center gap-4">
-					<a
-						href="https://www.facebook.com/festivalul.apolodor"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="rounded-full bg-primary/10 p-2 transition-colors hover:bg-primary/20"
-						aria-label={m.social_facebook()}
-					>
-						<Facebook class="h-5 w-5 text-primary" />
-					</a>
-					<a
-						href="https://www.instagram.com/festivalul_apolodor/"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="rounded-full bg-destructive/10 p-2 transition-colors hover:bg-destructive/20"
-						aria-label={m.social_instagram()}
-					>
-						<Instagram class="h-5 w-5 text-destructive" />
-					</a>
-					<!-- <a
-						href="https://youtube.com"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="rounded-full bg-warning/10 p-2 transition-colors hover:bg-warning/20"
-						aria-label={m.social_youtube()}
-					>
-						<Youtube class="h-5 w-5 text-warning" />
-					</a> -->
+				<h3 class="mb-2 text-xl font-semibold">Facebook</h3>
+				<span class="text-muted-foreground transition-colors hover:text-destructive">
+					@festivalul.apolodor
+				</span>
+			</a>
+
+			<a
+				class="flex flex-col items-center text-center"
+				href="https://www.instagram.com/festivalul_apolodor/"
+			>
+				<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
+					<Instagram class="h-5 w-5 text-destructive" />
 				</div>
-			</div>
+				<h3 class="mb-2 text-xl font-semibold">Instagram</h3>
+				<span> @festivalul_apolodor </span>
+			</a>
 		</div>
 	</section>
 {/snippet}

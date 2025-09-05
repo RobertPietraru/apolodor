@@ -243,7 +243,6 @@
 				<h3 class="mb-4 text-lg font-bold">{m.footer_contact()}</h3>
 				<ul class="flex flex-wrap gap-4 text-sm md:block md:space-y-2">
 					<li>{m.footer_email()}</li>
-					<li>{m.footer_phone()}</li>
 				</ul>
 			</div>
 			<div>
