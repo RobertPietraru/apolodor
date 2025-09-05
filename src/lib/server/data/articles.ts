@@ -159,78 +159,8 @@ Ada Milea va prezenta un concert unic ce combină:
     },
     {
         id: "3",
-        related: ["1", "2"],
-        featured: true,
-        title: {
-            en: 'New Workshop Series Added',
-            ro: 'Serie Nouă de Ateliere Adăugată'
-        },
-        date: '2025-06-05',
-        excerpt: {
-            en: 'Due to popular demand, we have added new creative writing and illustration workshops...',
-            ro: 'Datorită cererii mari, am adăugat noi ateliere de scriere creativă și ilustrație...'
-        },
-        content: {
-            en: `# New Creative Workshops Added!
-
-## Expanding Our Creative Program
-
-We're excited to announce additional workshops in response to overwhelming interest!
-
-### New Workshops
-
-#### Creative Writing Workshop
-- **Ages**: 12-15
-- **Duration**: 2 hours
-- **Materials provided**: Notebooks, pens, inspiration cards
-
-#### Illustration Masterclass
-- **Ages**: 8-14
-- **Duration**: 3 hours
-- **Materials provided**: Art supplies, sketch paper
-
-### Workshop Schedule
-
-| Workshop | Time | Location | Spaces |
-|----------|------|----------|---------|
-| Creative Writing | 10:00 AM | Room A1 | 15 |
-| Illustration | 2:00 PM | Art Studio | 12 |
-
-*Pre-registration required. Limited spots available!*`,
-            ro: `# Noi Ateliere Creative Adăugate!
-
-## Ne Extindem Programul Creativ
-
-Suntem încântați să anunțăm ateliere suplimentare ca răspuns la interesul covârșitor!
-
-### Ateliere Noi
-
-#### Atelier de Scriere Creativă
-- **Vârste**: 12-15
-- **Durată**: 2 ore
-- **Materiale incluse**: Caiete, pixuri, carduri de inspirație
-
-#### Masterclass de Ilustrație
-- **Vârste**: 8-14
-- **Durată**: 3 ore
-- **Materiale incluse**: Materiale de artă, bloc de desen
-
-### Program Ateliere
-
-| Atelier | Ora | Locație | Locuri |
-|---------|-----|----------|---------|
-| Scriere Creativă | 10:00 | Sala A1 | 15 |
-| Ilustrație | 14:00 | Studio Artă | 12 |
-
-*Înscriere prealabilă necesară. Locuri limitate!*`
-        },
-        image: '/assets/placeholders/workshop.jpg',
-        category: 'workshops'
-    },
-    {
-        id: "4",
         featured: false,
-        related: ["1", "2", "3"],
+        related: ["1", "2"],
         title: {
             en: 'Program Schedule Updates',
             ro: 'Modificări ale Programului'
@@ -297,7 +227,7 @@ Am făcut câteva ajustări pentru a optimiza experiența festivalului!
     },
     {
         id: "5",
-        related: ["1", "2", "3", "4"],
+        related: ["1", "2", "3"],
         featured: false,
         title: {
             en: 'Meet Our Guest Authors',
@@ -333,7 +263,7 @@ We're excited to welcome these amazing authors to our festival:
 Join us for readings, book signings, and interactive sessions with these wonderful writers!`,
             ro: `# Autori Invitați 2025
 
-## O Lineup Incredibil de Talent Literar
+## Un Incredibil de Talent Literar
 
 Suntem încântați să îi primim pe acești autori minunați la festivalul nostru:
 

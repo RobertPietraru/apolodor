@@ -558,17 +558,9 @@ Nonfiction: Obsession with politics, interviews (1995); The Two Romans, publicis
 
 export const allGuests = Object.values(guests)
 
-export const landingPageGuests = {
-    writers: [
-        guests.florinBican,
-        guests.veronicaNiculescu,
-        guests.adinaRosetti,
-        guests.mateiVisinec,
-    ],
-    illustrators: [
-        guests.ralucaBurca,
-        guests.sabinaDrinceanu,
-        guests.biancaSimionescu,
-    ],
-    singer: guests.adaMilea,
+export const landingPageGuestCounts = {
+    writers: Object.values(guests).filter((guest) => guest.role === 'writer').length,
+    illustrators: Object.values(guests).filter((guest) => guest.role === 'illustrator').length,
+    singers: Object.values(guests).filter((guest) => guest.role === 'singer').length,
+    moderators: Object.values(guests).filter((guest) => guest.role === 'moderator').length,
 }

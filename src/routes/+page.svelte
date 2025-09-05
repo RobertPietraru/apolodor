@@ -9,7 +9,16 @@
 		ArrowRight,
 		Mail,
 		Facebook,
-		Instagram
+		Instagram,
+
+		Palette,
+
+		BookOpen,
+
+		Mic
+
+
+
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
@@ -129,46 +138,32 @@
 {/snippet}
 {#snippet guestsSection()}
 	<section class="bg-accent/5 px-4 py-16">
-		<h2 class="mb-12 text-center text-4xl font-bold">{m.guests_special()}</h2>
+		<div class="container mx-auto">
+			<h2 class="mb-12 text-center text-4xl font-bold">{m.guests_special()}</h2>
 
-		<div class="mx-auto max-w-6xl">
-			<div class="grid gap-12">
-				<!-- Scriitori Section -->
-				<div>
-					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_writers()}</h3>
-					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-						{#each data.guests.writers as guest}
-							<div class="flex flex-col items-center text-center">
-								<div class="mb-4 h-32 w-32">
-									<img
-										src={guest.photo}
-										alt={guest.name}
-										class="h-full w-full rounded-full border-4 border-primary/20 object-cover shadow-lg"
-									/>
-								</div>
-								<h4 class="font-semibold">{guest.name}</h4>
-							</div>
-						{/each}
+			<div class="grid gap-8 md:grid-cols-3">
+				<div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+					<div class="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center">
+						<Palette class="h-8 w-8 text-primary" />
 					</div>
+					<span class="relative mb-4 block text-center text-5xl font-bold text-primary">{data.guests.illustrators}</span>
+					<h4 class="relative text-center text-xl font-semibold">{m.guests_illustrators()}</h4>
 				</div>
 
-				<!-- Artiste Vizuale Section -->
-				<div>
-					<h3 class="mb-6 border-b pb-2 text-2xl font-semibold">{m.guests_illustrators()}</h3>
-					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-						{#each data.guests.illustrators as guest}
-							<div class="flex flex-col items-center text-center">
-								<div class="mb-4 h-32 w-32">
-									<img
-										src={guest.photo}
-										alt={guest.name}
-										class="h-full w-full rounded-full border-4 border-destructive/20 object-cover shadow-lg"
-									/>
-								</div>
-								<h4 class="font-semibold">{guest.name}</h4>
-							</div>
-						{/each}
+				<div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+					<div class="absolute -right-4 -top-4 h-32 w-32 rounded-full bg-primary/10 flex items-center justify-center">
+						<BookOpen class="h-10 w-10 text-primary" />
 					</div>
+					<span class="relative mb-4 block text-center text-6xl font-bold text-primary">{data.guests.writers}</span>
+					<h4 class="relative text-center text-xl font-semibold">{m.guests_writers()}</h4>
+				</div>
+
+				<div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+					<div class="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center">
+						<Mic class="h-8 w-8 text-primary" />
+					</div>
+					<span class="relative mb-4 block text-center text-5xl font-bold text-primary">{data.guests.moderators}</span>
+					<h4 class="relative text-center text-xl font-semibold">{m.guests_moderators_short()}</h4>
 				</div>
 			</div>
 		</div>

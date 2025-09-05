@@ -1,4 +1,4 @@
-import { landingPageGuests } from '$lib/server/data/guests';
+import { landingPageGuestCounts } from '$lib/server/data/guests';
 import { articles } from '$lib/server/data/articles';
 import { getLocale } from '$lib/paraglide/runtime.js';
 import { m } from '$lib/paraglide/messages';
@@ -31,7 +31,7 @@ export async function load() {
 	}));
 
 	return {
-		guests: landingPageGuests,
+		guests: landingPageGuestCounts,
 		articles: featuredArticles,
 		metadata: getHomeMetadata(locale)
 	};
