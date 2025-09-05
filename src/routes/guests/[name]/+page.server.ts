@@ -1,4 +1,4 @@
-import { specialGuests, type Guest } from "$lib/server/data/guests"
+import { allGuests, type Guest } from "$lib/server/data/guests"
 import { error } from "@sveltejs/kit";
 import { getLocale } from '$lib/paraglide/runtime.js';
 import { getBaseMetadata, type PageMetadata } from '$lib/utils/metadata';
@@ -18,7 +18,7 @@ function getGuestProfileMetadata(locale: string, guest: Guest): PageMetadata {
 
 export const load = ({ params }) => {
 	const locale = getLocale();
-	const guests = specialGuests.filter((g) => g.role === "writer" && g.name === params.name);
+	const guests = allGuests.filter((g) => g.name === params.name);
 	if (guests.length === 0) {
 		error(404, "Nu am putut gasi scriitorul");
 	}

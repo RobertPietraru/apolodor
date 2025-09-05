@@ -15,7 +15,7 @@
 	"about_description": "A festival dedicated to literature and art for young people",
 	"guests_writers": "Writers",
 	"guests_illustrators": "Illustrators",
-	"guests_special": "Special Guests",
+	"guests_special": "Guests",
 	"guests_description": "Figures from the world of literature and art",
 	"exhibitions_title": "Exhibitions and Events",
 	"exhibitions_description": "Discover art and creativity",
@@ -107,7 +107,7 @@
 	"about_section_title": "About the Festival",
 	"partners_section_title": "Partners",
 	"partners_section_subtitle": "Our partners who make this festival possible",
-	"special_guests": "Special Guests",
+	"special_guests": "Guests",
 	"writers": "Writers",
 	"illustrators": "Illustrators",
 	"see_details": "See Details",
@@ -160,5 +160,7 @@
 	"press_funders": "Funders",
 	"press_media_partners": "Media partners",
 	"press_free_access": "ACCESS TO ALL PROGRAM EVENTS IS FREE",
-	"nav_contact": "Contact"
+	"nav_contact": "Contact",
+	"guests_moderators": "Moderators",
+	"guests_singers": "Musicians"
 }

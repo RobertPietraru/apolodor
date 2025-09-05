@@ -1,7 +1,7 @@
 export interface Guest {
     photo: string,
     name: string,
-    role: 'writer' | 'illustrator' | 'singer',
+    role: 'writer' | 'illustrator' | 'singer' | 'moderator',
     specialGuest: boolean,
     content: {
         ro: string,
@@ -88,7 +88,7 @@ He writes for "Familia" magazine and has a newsletter with weekly children's boo
         photo: "/assets/people/bianca_simionescu.jpg",
         specialGuest: true,
         name: "Bianca Simionescu",
-        role: 'writer',
+        role: 'illustrator',
         content: {
             ro: `# Bianca Simionescu
 
@@ -339,6 +339,10 @@ Viorel Ilișoi, born in Botoșani, is a writer, journalist, and editor. He is kn
         name: "Ada Milea",
         specialGuest: false,
         role: 'singer',
+        content: {
+            ro: ``,
+            en: ``,
+        }
     } satisfies Guest,
 
     ralucaBurca: {
@@ -346,6 +350,33 @@ Viorel Ilișoi, born in Botoșani, is a writer, journalist, and editor. He is kn
         name: "Raluca Burca",
         role: 'illustrator',
         specialGuest: false,
+        content: {
+            ro: `Raluca Burcă este ilustratoare și iubitoare de povești pentru copii.
+
+De-a lungul celor 6 ani de experiență a colaborat cu Muzeul de artă Brașov, Ambasada Spaniei la București, Metrorex, Cărturești, Teatrul Ion Creangă, precum și edituri, cum ar fi Humanitas, Signatura, Cartier, Editura pentru Artă și Literatură.
+
+A studiat artele grafice la Facultatea de Arte din Iași, București și Polonia.
+
+În 2018, a fost bursieră a Fundației Regale Margareta a României și tot în același an, a devenit membră a Clubului Ilustratorilor.
+
+În 2024, la invitația Ministerului Culturii, a reprezentat România la Târgul Internațional de carte ilustrată “Bologna Children’s Book Fair”.
+
+Raluca lucrează în tehnici tradiționale, pe care le îmbină cu o curiozitate artistică, explorând constant modalități de a da viață poveștilor prin artă.
+`,
+            en: `
+Raluca Burca is an illustrator and lover of stories for children.
+
+Over the 6 years of experience, she has collaborated with the Brașov Museum of Art, the Spanish Embassy in Bucharest, Metrorex, Cărturești, the Ion Creangă Theater, as well as publishers, such as Humanitas, Signatura, Cartier, and Editura pentru Artă și Literatură.
+
+She studied graphic arts at the Faculty of Arts in Iași, Buchurești, and Poland.
+
+In 2018, she was a scholarship holder of the Royal Margareta Foundation of Romania and in the same year, she became a member of the Club of Illustrators.
+
+In 2024, at the invitation of the Ministry of Culture, she represented Romania at the Bologna Children's Book Fair.
+
+Raluca works in traditional techniques, which she combines with an artistic curiosity, exploring constantly ways to give life to stories through art.
+`
+        }
     } satisfies Guest,
 
     sabinaDrinceanu: {
@@ -390,10 +421,45 @@ Since 2023, she has been part of the Drawing Group Iași illustrators' group, an
 Since 2021, she has been a tenured faculty member in the graphics specialization at the "George Enescu" National University of Arts Iași.`
         }
     } satisfies Guest,
+    adelaGreceanu: {
+        photo: "/assets/people/adela_greceanu.jpg",
+        name: "Adela Greceanu",
+        role: 'moderator',
+        specialGuest: false,
+        content: {
+            ro: `Adela Greceanu (n. 1975) este scriitoare şi jurnalistă. Realizează, împreună cu Matei Martin, emisiunea „Timpul prezent”, la Radio România Cultural. De-a lungul timpului a intervievat numeroase personalități culturale, din țară și străinătate. A publicat patru volume de poezie, un roman și cîteva povestiri. În 2021 i-a apărut antologia „Șuruburi, șaibe, cuie, piulițe. Poeme alese 1997-2014”, Editura Cartier.`,
+            en: `Adela Greceanu (b. 1975) is a writer and journalist. She produces, together with Matei Martin, the "Timpul prezent" program, at Radio România Cultural. Over the years, she has interviewed numerous cultural figures, from Romania and abroad. She has published four volumes of poetry, a novel, and several short stories. In 2021, the anthology "Șuruburi, șaibe, cuie, piulițe. Poeme alese 1997-2014" was published, Editura Cartier.`
+        }
+    } satisfies Guest,
+    ralucaAftene: {
+        photo: "/assets/people/raluca_aftene.jpg",
+        name: "Raluca Aftene",
+        role: 'moderator',
+        specialGuest: false,
+        content: {
+            ro: `# Raluca Aftene
+Realizator de emisiuni şi prezentator la TVR Iaşi, cu o experinţă vastă în numeroase genuri publicistice: reportaj, documentar, actualitate. Pentru scurta vreme a  fost şi librar. Ca jurnalist, a realizat interviuri cu numeroase personalităţi din lumea literară, între care  câştigătorul Nobel pentru Literatură Abdulrazak Gurnah,  Richard Ford, Jonathan Franzen, Kapka Kassabova, Arian Harwicz.`,
+            en: `# Raluca Aftene
+Realizator de emisiuni şi prezentator la TVR Iaşi, cu o experinţă vastă în numeroase genuri publicistice: reportaj, documentar, actualitate. Pentru scurta vreme a  fost şi librar. Ca jurnalist, a realizat interviuri cu numeroase personalităţi din lumea literară, între care  câştigătorul Nobel pentru Literatură Abdulrazak Gurnah,  Richard Ford, Jonathan Franzen, Kapka Kassabova, Arian Harwicz.`,
+        }
+    } satisfies Guest,
+    mateiMartin: {
+        photo: "/assets/people/matei_martin.jpg",
+        name: "Matei Martin",
+        role: 'moderator',
+        specialGuest: false,
+        content: {
+            ro: `# Matei Martin
+Matei Martin este jurnalist. 
+Co-realizator al emisiunii „Timpul prezent” la Radio România Cultural, redactor-șef al revistei „Observator cultural”, fondator al newsletterului „Vineri”,  Matei e interesat de transformarea instituțiilor și de evoluția politicilor culturale din Europa și din România.`, 
+en: `# Matei Martin
+Matei Martin is a journalist. 
+Co-realizer of the "Timpul prezent" program at Radio România Cultural, editor-in-chief of the "Observator cultural" magazine, founder of the "Vineri" newsletter, Matei is interested in the transformation of institutions and the evolution of cultural policies in Europe and Romania.`,
+        }
+    } satisfies Guest,
 }
 
-const allGuests = Object.values(guests)
-export const specialGuests: Guest[] = allGuests.filter(guest => guest.specialGuest)
+export const allGuests = Object.values(guests)
 
 export const landingPageGuests = {
     writers: [

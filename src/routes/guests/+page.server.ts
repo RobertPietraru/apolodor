@@ -1,4 +1,4 @@
-import { specialGuests } from "$lib/server/data/guests"
+import { allGuests } from "$lib/server/data/guests"
 import { getLocale } from '$lib/paraglide/runtime.js';
 import { getBaseMetadata, type PageMetadata } from '$lib/utils/metadata';
 import * as m from '$lib/paraglide/messages';
@@ -17,13 +17,19 @@ function getGuestsMetadata(locale: string): PageMetadata {
 
 export const load = () => {
     const locale = getLocale();
+    
+    const mapGuest = (guest: any) => ({
+        name: guest.name,
+        photo: guest.photo,
+        role: guest.role,
+        specialGuest: guest.specialGuest
+    });
+    
     return {
-        guests: specialGuests.filter((g) => g.role === "writer").map((e) => {
-            return {
-                name: e.name,
-                photo: e.photo,
-            }
-        }),
+        writers: allGuests.filter((g) => g.role === "writer").map(mapGuest),
+        illustrators: allGuests.filter((g) => g.role === "illustrator").map(mapGuest),
+        singers: allGuests.filter((g) => g.role === "singer").map(mapGuest),
+        moderators: allGuests.filter((g) => g.role === "moderator").map(mapGuest),
         metadata: getGuestsMetadata(locale)
     }
 }

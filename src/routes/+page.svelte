@@ -189,7 +189,7 @@
 						<div class="relative h-48 w-48 shrink-0">
 							<div class="bg-warning/20 absolute -inset-4 animate-pulse rounded-full"></div>
 							<img
-								src="/assets/people/ada_milea.jpeg"
+								src="/assets/people/ada_milea.jpg"
 								alt="Ada Milea"
 								class="border-warning relative h-full w-full rounded-full border-4 object-cover shadow-lg"
 							/>
