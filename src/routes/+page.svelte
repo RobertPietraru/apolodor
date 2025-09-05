@@ -390,7 +390,7 @@
 			<h2 class="text-3xl font-bold whitespace-nowrap text-primary">{title}</h2>
 			<div class="h-px flex-1 bg-gradient-to-l from-transparent to-primary/50"></div>
 		</div>
-		<div class="grid gap-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10">
+		<div class="grid gap-6 grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 place-items-center">
 			{#each guests as guest}
 						<div
 							class="relative h-26 w-26 overflow-hidden rounded-full border-4 border-primary/20 shadow-md transition-all duration-500 group-hover:border-primary/60 group-hover:shadow-2xl"
