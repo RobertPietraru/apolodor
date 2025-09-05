@@ -1,4 +1,4 @@
-import { landingPageGuestCounts } from '$lib/server/data/guests';
+import { allGuests } from '$lib/server/data/guests';
 import { articles } from '$lib/server/data/articles';
 import { getLocale } from '$lib/paraglide/runtime.js';
 import { m } from '$lib/paraglide/messages';
@@ -29,9 +29,24 @@ export async function load() {
 		title: item.title[locale],
 		excerpt: item.excerpt[locale]
 	}));
+	const translatedGuests = allGuests.map((guest) => ({
+		...guest,
+		content: guest.content[locale]
+	}));
 
+	console.log({
+		writers: translatedGuests.filter((guest) => guest.role === 'writer').length,
+		illustrators: translatedGuests.filter((guest) => guest.role === 'illustrator').length,
+		singers: translatedGuests.filter((guest) => guest.role === 'singer').length,
+		moderators: translatedGuests.filter((guest) => guest.role === 'moderator').length,
+	})
 	return {
-		guests: landingPageGuestCounts,
+		guests: {
+			writers: translatedGuests.filter((guest) => guest.role === 'writer'),
+			illustrators: translatedGuests.filter((guest) => guest.role === 'illustrator'),
+			singers: translatedGuests.filter((guest) => guest.role === 'singer'),
+			moderators: translatedGuests.filter((guest) => guest.role === 'moderator'),
+		},
 		articles: featuredArticles,
 		metadata: getHomeMetadata(locale)
 	};

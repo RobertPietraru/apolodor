@@ -9,20 +9,11 @@
 		ArrowRight,
 		Mail,
 		Facebook,
-		Instagram,
-
-		Palette,
-
-		BookOpen,
-
-		Mic
-
-
-
+		Instagram
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { localizeHref, getLocale } from '$lib/paraglide/runtime';
 	const { data } = $props();
 	let locale = $state(getLocale());
@@ -139,33 +130,9 @@
 {#snippet guestsSection()}
 	<section class="bg-accent/5 px-4 py-16">
 		<div class="container mx-auto">
-			<h2 class="mb-12 text-center text-4xl font-bold">{m.guests_special()}</h2>
-
-			<div class="grid gap-8 md:grid-cols-3">
-				<div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-					<div class="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center">
-						<Palette class="h-8 w-8 text-primary" />
-					</div>
-					<span class="relative mb-4 block text-center text-5xl font-bold text-primary">{data.guests.illustrators}</span>
-					<h4 class="relative text-center text-xl font-semibold">{m.guests_illustrators()}</h4>
-				</div>
-
-				<div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-					<div class="absolute -right-4 -top-4 h-32 w-32 rounded-full bg-primary/10 flex items-center justify-center">
-						<BookOpen class="h-10 w-10 text-primary" />
-					</div>
-					<span class="relative mb-4 block text-center text-6xl font-bold text-primary">{data.guests.writers}</span>
-					<h4 class="relative text-center text-xl font-semibold">{m.guests_writers()}</h4>
-				</div>
-
-				<div class="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-					<div class="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center">
-						<Mic class="h-8 w-8 text-primary" />
-					</div>
-					<span class="relative mb-4 block text-center text-5xl font-bold text-primary">{data.guests.moderators}</span>
-					<h4 class="relative text-center text-xl font-semibold">{m.guests_moderators_short()}</h4>
-				</div>
-			</div>
+			{@render sectionWithGuests(m.guests_writers(), data.guests.writers	)}
+			{@render sectionWithGuests(m.guests_illustrators(), data.guests.illustrators)}
+			{@render sectionWithGuests(m.guests_moderators_short(), data.guests.moderators)}
 		</div>
 	</section>
 {/snippet}
@@ -393,7 +360,7 @@
 	<meta property="og:description" content={data.metadata.ogDescription} />
 	<meta property="og:image" content={data.metadata.ogImage} />
 	<meta property="og:type" content={data.metadata.ogType} />
-	<meta property="og:url" content={$page.url.href} />
+	<meta property="og:url" content={page.url.href} />
 	<meta property="og:site_name" content="APOLODOR" />
 
 	<!-- Twitter -->
@@ -403,7 +370,7 @@
 	<meta name="twitter:image" content={data.metadata.ogImage} />
 
 	<!-- Additional SEO -->
-	<link rel="canonical" href={$page.url.href} />
+	<link rel="canonical" href={page.url.href} />
 	<meta name="robots" content="index, follow" />
 	<meta name="author" content="APOLODOR Festival Team" />
 
@@ -415,6 +382,30 @@
 		rel="stylesheet"
 	/>
 </svelte:head>
+
+{#snippet sectionWithGuests(title: string, guests: typeof data.guests.writers)}
+	<section class="">
+		<div class="flex items-center gap-4 my-6">
+			<div class="h-px flex-1 bg-gradient-to-r from-transparent to-primary/50"></div>
+			<h2 class="text-3xl font-bold whitespace-nowrap text-primary">{title}</h2>
+			<div class="h-px flex-1 bg-gradient-to-l from-transparent to-primary/50"></div>
+		</div>
+		<div class="grid gap-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10">
+			{#each guests as guest}
+						<div
+							class="relative h-26 w-26 overflow-hidden rounded-full border-4 border-primary/20 shadow-md transition-all duration-500 group-hover:border-primary/60 group-hover:shadow-2xl"
+						>
+							<img
+								src={guest.photo}
+								alt={guest.name}
+								class="h-full w-full object-cover transition-all duration-700 group-hover:scale-115 group-hover:rotate-6"
+							/>
+						</div>
+				
+			{/each}
+		</div>
+	</section>
+{/snippet}
 
 <style>
 	.font-rubik {

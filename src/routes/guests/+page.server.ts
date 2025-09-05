@@ -22,7 +22,6 @@ export const load = () => {
         name: guest.name,
         photo: guest.photo,
         role: guest.role,
-        specialGuest: guest.specialGuest
     });
     
     return {

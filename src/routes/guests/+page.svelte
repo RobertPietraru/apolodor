@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { m } from '$lib/paraglide/messages';
-	import * as Card from '$lib/components/ui/card';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { localizeHref, getLocale } from '$lib/paraglide/runtime';
 	const { data } = $props();
 	let locale = $state(getLocale());
@@ -17,7 +16,7 @@
 	<meta property="og:description" content={data.metadata.ogDescription} />
 	<meta property="og:image" content={data.metadata.ogImage} />
 	<meta property="og:type" content={data.metadata.ogType} />
-	<meta property="og:url" content={$page.url.href} />
+	<meta property="og:url" content={page.url.href} />
 	<meta property="og:site_name" content="APOLODOR" />
 
 	<!-- Twitter -->
@@ -27,7 +26,7 @@
 	<meta name="twitter:image" content={data.metadata.ogImage} />
 
 	<!-- Additional SEO -->
-	<link rel="canonical" href={$page.url.href} />
+	<link rel="canonical" href={page.url.href} />
 	<meta name="robots" content="index, follow" />
 	<meta name="author" content="APOLODOR Festival Team" />
 </svelte:head>
@@ -58,6 +57,7 @@
 		{@render singerSection()}
 	{/if}
 </main>
+
 {#snippet singerSection()}
 	<section class="space-y-8">
 		<div class="flex items-center gap-4">
@@ -222,7 +222,7 @@
 	<section class="space-y-8">
 		<div class="flex items-center gap-4">
 			<div class="h-px flex-1 bg-gradient-to-r from-transparent to-primary/50"></div>
-			<h2 class="text-3xl font-bold whitespace-nowrap text-primary">{m.guests_moderators()}</h2>
+			<h2 class="text-3xl font-bold whitespace-nowrap text-primary">{m.guests_moderators_short()}</h2>
 			<div class="h-px flex-1 bg-gradient-to-l from-transparent to-primary/50"></div>
 		</div>
 		<div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
