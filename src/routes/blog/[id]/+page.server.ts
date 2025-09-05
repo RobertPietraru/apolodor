@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit';
 import { getBaseMetadata, type PageMetadata } from '$lib/utils/metadata';
 import * as m from '$lib/paraglide/messages';
 
-function getBlogArticleMetadata(locale: string, article: any): PageMetadata {
+function getBlogArticleMetadata(locale: string, article: typeof articles[number]): PageMetadata {
 	const base = getBaseMetadata(locale);
 	const articleTitle = article.title;
 	const articleDesc = article.excerpt || m.meta_blog_article_fallback();
@@ -15,7 +15,7 @@ function getBlogArticleMetadata(locale: string, article: any): PageMetadata {
 		description: articleDesc,
 		ogTitle: articleTitle,
 		ogDescription: articleDesc,
-		ogImage: article.image || base.ogImage,
+		ogImage: article.image[locale] || base.ogImage,
 		ogType: 'article'
 	};
 }
