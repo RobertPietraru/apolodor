@@ -79,7 +79,6 @@
 	"blog_category_guests": "Invitați",
 	"blog_category_workshops": "Ateliere",
 	"blog_recommended_articles": "Articole Recomandate",
-	"discover_guests": "Descoperă Invitații",
 	"about_section_title": "Despre Festival",
 	"errorTitle": "Ne pare rău, a apărut o eroare",
 	"blog_latest_updates": "Ultimele actualizări",
@@ -165,5 +164,6 @@
 	"guests_moderators_long": "Moderatorii serilor „Copilării pe scenă”",
 	"guests_moderators_short": "Moderatori",
 	"guests_singers": "Muzicieni",
-	"blog_category_news": "Noutăți"
+	"blog_category_news": "Noutăți",
+	"discover_guests": "Descoperă Invitații"
 }

@@ -110,10 +110,10 @@
 			>
 				<Button
 					size="custom"
-					href={localizeHref('/guests', { locale })}
+					href={localizeHref('/program', { locale })}
 					class="after:animate-shine rounded-full bg-primary px-6 text-base font-bold text-primary-foreground transition-all duration-300 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-primary/20 after:via-transparent after:to-primary/20 after:opacity-0 after:transition-opacity hover:scale-105 lg:px-8 lg:py-3 lg:text-lg"
 				>
-					{m.discover_guests()}
+					{m.discover_program()}
 				</Button>
 			</div>
 		</div>
