@@ -377,7 +377,7 @@
 
 </svelte:head>
 
-{#snippet sectionWithGuests(title: string, guests: typeof data.guests.writers)}
+{#snippet sectionWithGuests(title: string, guests: typeof data.guests.writers | typeof data.guests.illustrators | typeof data.guests.moderators)}
 	<section class="">
 		<div class="flex items-center gap-4 my-6">
 			<div class="h-px flex-1 bg-gradient-to-r from-transparent to-primary/50"></div>

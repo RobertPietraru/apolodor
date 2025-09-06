@@ -1,19 +1,41 @@
-export const articles = [
+export const articles: {
+  id: string;
+  related: string[];
+  featured: boolean;
+  title: {
+    en: string;
+    ro: string;
+  };
+  date: string;
+  excerpt: {
+    en: string;
+    ro: string;
+  };
+  content: {
+    en: string;
+    ro: string;
+  };
+  image: {
+    en: string;
+    ro: string;
+  };
+  category: 'program' | 'workshops' | 'news' | 'guests';
+}[] = [
     {
-        id: "1",
-        related: ["2", "3", "4"],
-        featured: true,
-        title: {
-            en: 'Press Release',
-            ro: 'Comunicat de presă'
-        },
-        date: '2025-09-05',
-        excerpt: {
-            en: 'The APOLODOR Children\'s and Youth Literature Festival brings to the public exhibits that reflect contemporary trends in Romanian illustration',
-            ro: 'Festivalul de Literatură pentru Copii și Adolescenți APOLODOR aduce publicului expoziții ce reflectă tendințele contemporane din ilustrația românească'
-        },
-        content: {
-            en: `
+      id: "1",
+      related: ["2", "3", "4"],
+      featured: true,
+      title: {
+        en: 'Press Release',
+        ro: 'Comunicat de presă'
+      },
+      date: '2025-09-05',
+      excerpt: {
+        en: 'The APOLODOR Children and Youth Literature Festival brings to the public exhibits that reflect contemporary trends in Romanian illustration',
+        ro: 'Festivalul de Literatură pentru Copii și Adolescenți APOLODOR aduce publicului expoziții ce reflectă tendințele contemporane din ilustrația românească'
+      },
+      content: {
+        en: `
 # Press Release
 
 ## **The APOLODOR Festival – A Celebration of Romanian Book Illustration**
@@ -126,7 +148,7 @@ Botosani County School Inspectorate • Mihai Eminescu National Theater • Ipot
 ## 🎟 Access
 **All events in the program are free to attend.**
 `,
-            ro: `
+        ro: `
 # Comunicat de presă
 
 ## **Festivalul APOLODOR – un regal al ilustrației de carte românească**
@@ -239,35 +261,35 @@ Inspectoratul Școlar Județean Botoșani • Teatrul Național „Mihai Eminesc
 ## 🎟 Acces
 **Accesul la toate evenimentele din program este gratuit.**
 `,
-        },
-        image: {
-            en: '/assets/articles/press.jpg',
-            ro: '/assets/articles/press.jpg'
-        },
-        category: 'program'
+      },
+      image: {
+        en: '/assets/articles/press.jpg',
+        ro: '/assets/articles/press.jpg'
+      },
+      category: 'news'
     },
     {
-        id: "2",
-        related: ["1", "3", "4"],
-        featured: true,
-        title: {
-            en: 'The APOLODOR Workshop Registration is OPEN',
-            ro: 'START la înscrierile pentru Atelierele APOLODOR'
-        },
-        date: '2025-09-05',
-        image: {
-            en: '/assets/articles/workshop_registration_en.png',
-            ro: '/assets/articles/workshop_registration_ro.png'
-        },
-        category: 'program',
+      id: "2",
+      related: ["1", "3", "4"],
+      featured: true,
+      title: {
+        en: 'The APOLODOR Workshop Registration is OPEN',
+        ro: 'START la înscrierile pentru Atelierele APOLODOR'
+      },
+      date: '2025-09-05',
+      image: {
+        en: '/assets/articles/workshop_registration_en.png',
+        ro: '/assets/articles/workshop_registration_ro.png'
+      },
+      category: 'program',
 
-        excerpt: {
-            en: 'Registration is OPEN for APOLODOR Workshops Comics, screenwriting, reportage, book illustration, printing techniques, and poetry come to life in Botoșani!',
-            ro: 'START la înscrierile pentru Atelierele APOLODOR Benzile desenate, scenariul de film, reportajul, ilustrația de carte, tehnica tiparului și poezia prind viață la Botoșani! **Benzile desenate, scenariul de film, reportajul, ilustrația de carte, tehnica tiparului și poezia** prind viață la Botoșani!',
-        },
+      excerpt: {
+        en: 'Registration is OPEN for APOLODOR Workshops Comics, screenwriting, reportage, book illustration, printing techniques, and poetry come to life in Botoșani!',
+        ro: 'START la înscrierile pentru Atelierele APOLODOR Benzile desenate, scenariul de film, reportajul, ilustrația de carte, tehnica tiparului și poezia prind viață la Botoșani! **Benzile desenate, scenariul de film, reportajul, ilustrația de carte, tehnica tiparului și poezia** prind viață la Botoșani!',
+      },
 
-        content: {
-            en: `
+      content: {
+        en: `
 # Registration is OPEN for **APOLODOR Workshops**
 
 **Comics, screenwriting, reportage, book illustration, printing techniques, and poetry** come to life in Botoșani!
@@ -343,7 +365,7 @@ Questions & partnerships: **apolodor.festival@gmail.com**
 **Sponsors:** Nea Ilie Bucătarul Sulița • Practic-Comerț-Strugaru S.R.L Darabani • Rida Confectionery Botoșani • Artechwine Botoșani • Danimet Exim SRL • SC Optim Diagnostic SRL
 
              `,
-            ro: ` 
+        ro: ` 
 # START la înscrierile pentru **Atelierele APOLODOR**
 
 **Benzile desenate, scenariul de film, reportajul, ilustrația de carte, tehnica tiparului și poezia** prind viață la Botoșani!
@@ -419,30 +441,30 @@ Festivalul **APOLODOR** a fost lansat pe **18 iulie** și se desfășoară **18 
 **Sponsori:** Nea Ilie Bucătarul Sulița • Practic-Comerț-Strugaru S.R.L Darabani • Cofetăria Rida Botoșani • Artechwine Botoșani • Danimet Exim SRL • SC Optim Diagnostic SRL
  
             `,
-        },
+      },
     },
     {
-        id: "3",
-        related: ["1", "2", "4"],
-        featured: true,
-        title: {
-            en: 'The APOLODOR Workshop Registration is OPEN',
-            ro: 'START la înscrierile pentru Atelierele APOLODOR'
-        },
-        date: '2025-09-06',
-        image: {
-            en: '/assets/articles/program.jpg',
-            ro: '/assets/articles/program.jpg'
-        },
-        category: 'program',
+      id: "3",
+      related: ["1", "2", "4"],
+      featured: true,
+      title: {
+        en: 'The schedule of the Children and Youth Literature Festival APOLODOR',
+        ro: 'Programul Festivalului de Literatură pentru Copii și Adolescenți APOLODOR',
+      },
+      date: '2025-09-06',
+      image: {
+        en: '/assets/articles/program.jpg',
+        ro: '/assets/articles/program.jpg'
+      },
+      category: 'workshops',
 
-        excerpt: {
-            en: 'The schedule of the Children\'s and Teen Literature Festival APOLODOR',
-            ro: 'Programul Festivalului de Literatură pentru Copii și Adolescenți APOLODOR',
-        },
+      excerpt: {
+        ro: "Descoperă programul Festivalului de Literatură pentru Copii și Adolescenți APOLODOR",
+        en: "Discover the schedule of the Children and Youth Literature Festival APOLODOR",
+      },
 
-        content: {
-            en: `
+      content: {
+        en: `
 # Children's and Teen Literature Festival APOLODOR  
 **September 18–21, 2025**  
 **Botoșani, Romania**
@@ -548,7 +570,7 @@ Festivalul **APOLODOR** a fost lansat pe **18 iulie** și se desfășoară **18 
 **Admission to all festival events is free.**
 
 `,
-            ro: `
+        ro: `
 # Programul Festivalului de Literatură pentru Copii și Adolescenți APOLODOR  
 **18-21 septembrie 2025**  
 **Botoșani**
@@ -653,8 +675,14 @@ Festivalul **APOLODOR** a fost lansat pe **18 iulie** și se desfășoară **18 
 
 **Accesul la toate evenimentele din program este gratuit.**
             `,
-        },
+      },
     }
 
 
+  ];
+
+export const featuredArticleIds = [
+  "3",
+  "2",
+  "1",
 ];

@@ -39,7 +39,7 @@
 		if (sortBy !== 'newest') params.set('sort', sortBy);
 
 		const newURL = params.toString() ? `?${params.toString()}` : '';
-		goto(newURL, { replaceState: true });
+		goto(newURL, { replaceState: true, noScroll: true });
 	}
 
 	function clearSearch() {

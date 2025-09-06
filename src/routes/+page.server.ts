@@ -1,46 +1,46 @@
 import { allGuests } from '$lib/server/data/guests';
-import { articles } from '$lib/server/data/articles';
+import { articles, featuredArticleIds } from '$lib/server/data/articles';
 import { getLocale } from '$lib/paraglide/runtime.js';
-import { m } from '$lib/paraglide/messages';
+import * as m from '$lib/paraglide/messages';
 import { getBaseMetadata, type PageMetadata } from '$lib/utils/metadata';
 
  function getHomeMetadata(locale: string): PageMetadata {
 	return getBaseMetadata(locale);
 }
 
-function getCategory(item: typeof articles[number]) {
-	if (item.category === 'program') {
+function getCategory(item: typeof articles[number]['category']) {
+	if (item === 'program') {
 		return m.blog_category_program();
 	}
-	if (item.category === 'guests') {
+	if (item === 'guests') {
 		return m.blog_category_guests();
 	}
-	if (item.category === 'workshops') {
+	if (item === 'workshops') {
 		return m.blog_category_workshops();
 	}
-	return item.category;
+
+	if (item === 'news') {
+		return m.blog_category_news();
+	}
+	return item;
 }
 
 export async function load() {
 	const locale = getLocale();
-	const featuredArticles = articles.filter((item) => item.featured).map((item) => ({
+	const featuredArticles = featuredArticleIds.map((id) => articles.find((item) => item.id === id)).filter((item) => item !== undefined).map((item) => ({
 		...item,
-		category: getCategory(item),
+		category: getCategory(item.category),
 		title: item.title[locale],
 		excerpt: item.excerpt[locale],
-		image: item.image[locale]
+		image: item.image[locale],
+		content: item.content[locale]
 	}));
+
 	const translatedGuests = allGuests.map((guest) => ({
 		...guest,
 		content: guest.content[locale]
 	}));
 
-	console.log({
-		writers: translatedGuests.filter((guest) => guest.role === 'writer').length,
-		illustrators: translatedGuests.filter((guest) => guest.role === 'illustrator').length,
-		singers: translatedGuests.filter((guest) => guest.role === 'singer').length,
-		moderators: translatedGuests.filter((guest) => guest.role === 'moderator').length,
-	})
 	return {
 		guests: {
 			writers: translatedGuests.filter((guest) => guest.role === 'writer'),
